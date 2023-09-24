@@ -1679,6 +1679,12 @@ blockquote::before {
   justify-content: center;
 }
 
+.brands-left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
 /*
 .brands {
   display: grid;
