@@ -904,7 +904,7 @@ blockquote::before {
   margin-right: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
-  padding: 8px 15px;
+  padding: 10px 15px;
 }
 
 .tags-block-link:hover {
