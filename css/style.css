@@ -45,6 +45,25 @@ h6,
     font-weight: 500 !important;
 }
 
+.advisee-list {
+    font-size: 18px; /* Adjust this value as needed */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+.advisee-list li {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+    font-family: Georgia, serif;
+}
+
 
 /*** Button ***/
 .btn {
