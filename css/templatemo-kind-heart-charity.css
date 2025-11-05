@@ -675,8 +675,8 @@ strong {
 }
 
 .featured-block-text {
-  color: var(--primary-color);
-  font-size: var(--h5-font-size);
+  color: var(--secondary-color);
+  font-size: var(--h9-font-size);
   margin-top: 20px;
   transition: all 0.5s;
 }
