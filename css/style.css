@@ -54,6 +54,15 @@ h6,
     margin-bottom: 10px;
 }
 
+.news-block-collaborators {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    min-height: auto;
+    line-height: 0.8;
+    padding: 0;
+}
+
 
 /*** Button ***/
 .btn {
