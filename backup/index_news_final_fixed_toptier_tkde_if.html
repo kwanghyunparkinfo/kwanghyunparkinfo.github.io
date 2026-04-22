@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<title>BDAI Lab</title>
+<link href="images/logos/BDAI_logo_new.png" rel="shortcut icon"/>
+<!-- CSS FILES -->
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-icons.css" rel="stylesheet"/>
+<link href="css/templatemo-kind-heart-charity.css" rel="stylesheet"/>
+<!--
+
+TemplateMo 581 Kind Heart Charity
+
+https://templatemo.com/tm-581-kind-heart-charity
+
+-->
+<style>
+        .home-news-section {
+            background: #f8fbff;
+        }
+        .home-news-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 28px 30px;
+            box-shadow: 0 12px 32px rgba(15,37,84,.08);
+            border: 1px solid rgba(15,37,84,.06);
+        }
+        .home-news-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .home-news-head h5 {
+            margin-bottom: 6px;
+        }
+        .home-news-head p {
+            margin: 0;
+            color: #6c7a92;
+        }
+        .home-news-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .home-news-chip {
+            border: 1px solid #dbe4f0;
+            background: #fff;
+            color: #24324b;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .18s ease;
+        }
+        .home-news-chip.active,
+        .home-news-chip:hover {
+            background: #0b2f73;
+            border-color: #0b2f73;
+            color: #fff;
+        }
+        .home-news-timeline {
+            position: relative;
+            display: grid;
+            gap: 18px;
+        }
+        .home-news-item {
+            display: grid;
+            grid-template-columns: 120px 120px 1fr;
+            gap: 18px;
+            align-items: start;
+            padding-top: 18px;
+            border-top: 1px solid #e7edf6;
+        }
+        .home-news-item:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+        .home-news-item.hidden-news-item {
+            display: none !important;
+        }
+        .home-news-date {
+            color: #2f6cff;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .home-news-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7px 12px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: #fff;
+            min-width: 96px;
+        }
+        .badge-publication { background: #5b6cff; }
+        .badge-event { background: #1c9ab6; }
+        .badge-patent { background: #8e58ff; }
+        .badge-people { background: #ef8d2f; }
+        .home-news-content h6 {
+            margin-bottom: 8px;
+            font-size: 18px;
+            line-height: 1.35;
+        }
+        .home-news-content p {
+            margin-bottom: 8px;
+            color: #5f6f87;
+        }
+        .home-news-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .home-news-links a {
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        @media (max-width: 991px) {
+            .home-news-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        .home-news-actions{
+            margin-top: 26px;
+            display:flex;
+            justify-content:center;
+        }
+        .home-news-pagination{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            flex-wrap:wrap;
+            padding:10px 14px;
+            border-radius:999px;
+            background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(246,249,255,.98));
+            border:1px solid rgba(15,37,84,.08);
+            box-shadow:0 10px 24px rgba(15,37,84,.08);
+        }
+        .home-news-pagination-btn{
+            min-width:42px;
+            height:42px;
+            border:none;
+            border-radius:999px;
+            background:transparent;
+            color:#24324b;
+            font-size:14px;
+            font-weight:800;
+            cursor:pointer;
+            transition:transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+        }
+        .home-news-pagination-btn:hover{
+            transform:translateY(-1px);
+            background:#eef4ff;
+            color:#0b2f73;
+        }
+        .home-news-pagination-btn.active{
+            background:linear-gradient(135deg, #1f5fff, #0b2f73);
+            color:#fff;
+            box-shadow:0 10px 20px rgba(31,95,255,.24);
+        }
+        .home-news-pagination-nav{
+            min-width:auto;
+            padding:0 14px;
+            border-radius:999px;
+            background:#fff;
+            border:1px solid #dbe4f0;
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+        }
+        .home-news-pagination-nav:hover{
+            background:#0b2f73;
+            color:#fff;
+            border-color:#0b2f73;
+        }
+        .home-news-pagination-nav:disabled{
+            opacity:.45;
+            cursor:not-allowed;
+            transform:none;
+            background:#f4f7fb;
+            color:#8a97ad;
+            border-color:#e6edf7;
+        }
+        .home-news-pagination-ellipsis{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            min-width:28px;
+            color:#6c7a92;
+            font-weight:700;
+        }
+
+    
+.home-news-year-header{
+    font-size:22px;
+    font-weight:800;
+    color:#0b2f73;
+    margin-top:28px;
+    margin-bottom:6px;
+    border-left:4px solid #2f6cff;
+    padding-left:10px;
+}
+
+.home-news-timeline{
+    position:relative;
+}
+.home-news-year-header{
+    position:sticky;
+    top:88px;
+    z-index:4;
+    background:rgba(248,251,255,.92);
+    backdrop-filter:blur(8px);
+    box-shadow:0 8px 18px rgba(15,37,84,.06);
+    border-radius:14px;
+    padding:12px 14px 12px 16px;
+}
+.home-news-item.milestone-founded{
+    position:relative;
+    padding:22px 22px 18px 18px;
+    border-top:none;
+    border-radius:22px;
+    background:
+        radial-gradient(circle at top right, rgba(47,108,255,.10), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,1), rgba(246,249,255,1));
+    border:1px solid rgba(47,108,255,.16);
+    box-shadow:0 16px 34px rgba(15,37,84,.08);
+}
+.home-news-item.milestone-founded::before{
+    content:"Milestone";
+    position:absolute;
+    top:16px;
+    right:18px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:7px 12px;
+    border-radius:999px;
+    background:linear-gradient(135deg, #1f5fff, #0b2f73);
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+.home-news-item.milestone-founded .home-news-date{
+    color:#0b2f73;
+}
+.home-news-item.milestone-founded .home-news-content h6{
+    color:#0b2f73;
+    font-size:20px;
+}
+.home-news-item.milestone-founded .home-news-content p{
+    color:#46556d;
+}
+@media (max-width: 991px){
+    .home-news-year-header{
+        top:72px;
+    }
+    .home-news-item.milestone-founded::before{
+        position:static;
+        margin-bottom:10px;
+    }
+}
+
+
+.home-news-badge.top-tier{
+    background: linear-gradient(135deg, #ffb100, #ff7a00);
+    color:#fff;
+}
+.home-news-venue{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
+.home-news-venue .top-tier-flag{
+    margin-left:8px;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.05em;
+    background:linear-gradient(135deg,#ffb100,#ff7a00);
+    color:#fff;
+}
+
+
+.home-news-item.top-tier-publication{
+    border-radius:18px;
+    padding:16px 16px 14px;
+    margin-left:-8px;
+    margin-right:-8px;
+    background:linear-gradient(180deg, rgba(255,183,0,.06), rgba(255,255,255,1));
+    box-shadow:0 10px 24px rgba(255,145,0,.08);
+    transition:transform .18s ease, box-shadow .18s ease;
+}
+.home-news-item.top-tier-publication:hover{
+    transform:translateY(-2px) scale(1.01);
+    box-shadow:0 16px 32px rgba(255,145,0,.12);
+}
+
+
+.venue-with-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-weight:600;
+}
+.top-tier-icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#1f5fff,#0b2f73);
+    color:#fff;
+    font-size:11px;
+    box-shadow:0 4px 10px rgba(31,95,255,.25);
+}
+
+
+.home-news-content h6{
+    font-weight:500;
+    font-size:15px;
+    line-height:1.4;
+}
+
+</style>
+</head>
+<body id="section_1">
+<!--- Menu ---->
+<nav class="navbar navbar-expand-lg bg-light shadow-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<a href="https://bdai.yonsei.ac.kr/"><img alt="BDAI Lab" class="logo img-fluid" src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;"/></a>
+<a href="https://bdai.yonsei.ac.kr/"><img alt="BDAI Lab" class="logo img-fluid" src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;"/></a>
+<!--<span>
+                        BDAI Lab
+                        <small>Computer Science, Yonsei University</small>
+                    </span>-->
+</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="research.html">Research</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link click-scroll dropdown-toggle" data-bs-toggle="dropdown" href="#section_5" id="navbarLightDropdownMenuLink" role="button">Publications</a>
+<ul aria-labelledby="navbarLightDropdownMenuLink" class="dropdown-menu dropdown-menu-light">
+<li><a class="dropdown-item" href="conferences.html">Confs/Journals</a></li>
+<li><a class="dropdown-item" href="patents.html">Patents</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link click-scroll dropdown-toggle" data-bs-toggle="dropdown" href="faculty.html" id="navbarLightDropdownMenuLink" role="button">People</a>
+<ul aria-labelledby="navbarLightDropdownMenuLink" class="dropdown-menu dropdown-menu-light">
+<li><a class="dropdown-item" href="faculty.html">Faculty</a></li>
+<li><a class="dropdown-item" href="team.html">Team</a></li>
+<!--<li><a class="dropdown-item" href="#">Alumni</a></li>-->
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="teaching.html">Teaching</a>
+</li>
+<!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        -->
+<li class="nav-item">
+<a class="nav-link" href="gallery.html">Gallery</a>
+</li>
+<li class="nav-item ms-3">
+<a class="nav-link custom-btn custom-border-btn btn" href="#section_contact">Join BDAI Lab</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<main>
+<section class="news-detail-header-section text-center">
+<div class="section-overlay"></div>
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-12">
+<h1 class="text-white">Big Data Systems &amp; Artificial Intelligence Lab</h1>
+<h5 class="text-white">Department of Computer Science</h5>
+<h5 class="text-white">College of Computing, Yonsei University</h5>
+</div>
+</div>
+</div>
+</section>
+<!-- Begin Home News Timeline -->
+<section class="section-padding home-news-section" id="section_news">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-12 mx-auto">
+<div class="home-news-box">
+<div class="home-news-head">
+<div>
+<h5 class="mb-1">Latest News</h5>
+<p>Recent publications, patents, team updates, and research events from BDAI Lab.</p>
+</div>
+</div>
+<div class="home-news-filters" id="homeNewsFilters">
+<button class="home-news-chip active" data-filter="all">All</button>
+<button class="home-news-chip" data-filter="publication">Publication</button>
+<button class="home-news-chip" data-filter="event">Event</button>
+<button class="home-news-chip" data-filter="patent">Patent</button>
+<button class="home-news-chip" data-filter="people">People</button>
+</div>
+<div class="home-news-timeline" id="homeNewsTimeline"><div class="home-news-item top-tier-publication" data-category="publication">
+<div class="home-news-date">Mar 2026</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "DFLOP") was accepted to <span class="venue-with-badge">SIGMOD</span> [Top-tier].</h6>
+<p>This work was accepted to <strong>SIGMOD</strong>, reflecting ongoing research progress from BDAI Lab <span class="top-tier-flag">Top-tier</span>.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Mar 2026</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Pyungjoo Kim to BDAI Lab as a graduate student.</h6>
+<p>Pyungjoo Kim joined BDAI Lab in March 2026 as a graduate student, further expanding the lab’s research capacity in next-generation data and AI systems.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="publication">
+<div class="home-news-date">Feb 2026</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "CANNON") was accepted to <strong>DAC </strong> [Top-tier].</h6>
+<p>This work was accepted to <strong>DAC</strong>, reflecting ongoing research progress from BDAI Lab.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item top-tier-publication" data-category="publication">
+<div class="home-news-date">Jan 2026</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "Exqutor") was accepted to <span class="venue-with-badge">ICDE</span> [Top-tier].</h6>
+<p>This work was accepted to <strong>ICDE </strong>, reflecting ongoing research progress from BDAI Lab <span class="top-tier-flag">Top-tier</span>.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item top-tier-publication" data-category="publication">
+<div class="home-news-date">Jan 2026</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "FaScalSQL") was accepted to <span class="venue-with-badge">ICDE</span> [Top-tier].</h6>
+<p>This work was accepted to <strong>ICDE </strong>, reflecting ongoing research progress from BDAI Lab <span class="top-tier-flag">Top-tier</span>.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="patent">
+<div class="home-news-date">2025–2026</div>
+<div><span class="home-news-badge badge-patent">Patent</span></div>
+<div class="home-news-content">
+<h6>New patent activities reflect BDAI’s growing impact in data systems and AI infrastructure.</h6>
+<p>The patents page now includes work on multimodal large language model training optimization, AI-and-RAN traffic prediction, and <em>Feature Store Data Preparation Optimization</em>, spanning both domestic and US patent filings.</p>
+<div class="home-news-links">
+<a href="patents.html">View patents <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="publication">
+<div class="home-news-date">Dec 2025</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "Spatial Transport Optimization") was accepted to <strong>CVPR </strong> [Top-tier].</h6>
+<p>This work was accepted to <strong>CVPR</strong>, reflecting ongoing research progress from BDAI Lab.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Dec 2025</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Seeun Park, Yurim Oh, and Nari Hyun as undergraduate research interns.</h6>
+<p>In December 2025, Seeun Park, Yurim Oh, and Nari Hyun joined BDAI Lab as undergraduate interns, strengthening the lab’s student research community across data systems and AI.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item top-tier-publication" data-category="publication">
+<div class="home-news-date">Nov 2025</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "SPID-Join") was accepted to <span class="venue-with-badge">SIGMOD</span> [Top-tier].</h6>
+<p>This work was accepted to <strong>SIGMOD</strong>, reflecting ongoing research progress from BDAI Lab <span class="top-tier-flag">Top-tier</span>.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="event">
+<div class="home-news-date">Nov 2025</div>
+<div><span class="home-news-badge badge-event">Event</span></div>
+<div class="home-news-content">
+<h6>BDAI expanded research outreach through industry and community events in late 2025.</h6>
+<p>Recent highlights include a meeting with Yiwen from Microsoft GSL and participation in the Korean Database Conference 2025, both featured in the gallery page.</p>
+<div class="home-news-links">
+<a href="gallery.html">Recent events <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Sep 2025</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome YuHsing Li and Yongjin Choi as graduate students, and Hyerin Chung as an undergraduate intern.</h6>
+<p>September 2025 marked another phase of BDAI’s growth, with YuHsing Li and Yongjin Choi joining as graduate students and Hyerin Chung joining as an undergraduate research intern.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Jun 2025</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Sungje Park and Joonseo Heo as undergraduate research interns.</h6>
+<p>Sungje Park and Joonseo Heo joined BDAI Lab in June 2025 as undergraduate interns, contributing to the lab’s expanding pipeline of student researchers.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Mar 2025</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Hyejung Hwang, Chaerim Lee, Sihyun Kim, and Jaeyoung Sim as graduate students.</h6>
+<p>In March 2025, Hyejung Hwang, Chaerim Lee, Sihyun Kim, and Jaeyoung Sim joined BDAI Lab as graduate students, broadening the lab’s research strength across systems and AI.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="event">
+<div class="home-news-date">2025</div>
+<div><span class="home-news-badge badge-event">Event</span></div>
+<div class="home-news-content">
+<h6>BDAI Lab presented recent work at IEEE BigData 2025 and IEEE BigDataW 2025.</h6>
+<p>The gallery highlights the lab’s participation at IEEE BigData 2025 in December 2025 as well as IEEE BigDataW 2025 (D2ET), reflecting active engagement with the international data and AI systems community.</p>
+<div class="home-news-links">
+<a href="gallery.html">View gallery <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Jan 2025</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Yongjin Choi and Minhyuk Oh as undergraduate interns.</h6>
+<p>Yongjin Choi and Minhyuk Oh joined BDAI Lab in January 2025 as undergraduate interns, contributing to the lab’s early 2025 research activities.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item top-tier-publication" data-category="publication">
+<div class="home-news-date">Sep 2024</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "Pushing ML Predictions into DBMSs (Extended Abstract)") was accepted to <span class="venue-with-badge">ICDE</span> [Top-tier].</h6>
+<p>This work was accepted to <strong>ICDE </strong>, reflecting ongoing research progress from BDAI Lab <span class="top-tier-flag">Top-tier</span>.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item top-tier-publication" data-category="publication">
+<div class="home-news-date">Aug 2024</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "Optimizing Data Pipelines for Machine Learning in Feature Stores") was accepted to <span class="venue-with-badge">VLDB</span> [Top-tier].</h6>
+<p>This work was accepted to <strong>VLDB</strong>, reflecting ongoing research progress from BDAI Lab <span class="top-tier-flag">Top-tier</span>.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="publication">
+<div class="home-news-date">Jul 2024</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "Pushing ML Predictions into DBMSs") was accepted to TKDE [IF 10.4].</h6>
+<p>This work was accepted to TKDE [IF 10.4], reflecting ongoing research progress from BDAI Lab.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="publication">
+<div class="home-news-date">Jun 2024</div>
+<div><span class="home-news-badge badge-publication">Publication</span></div>
+<div class="home-news-content">
+<h6>One paper (titled "Trinity") was accepted to IEEE Access.</h6>
+<p>This work was accepted to IEEE Access, reflecting ongoing research progress from BDAI Lab.</p>
+<div class="home-news-links">
+<a href="conferences.html">View paper <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Mar 2024</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Woojin Seo as a visiting scholar from Samsung Electronics.</h6>
+<p>Woojin Seo joined BDAI Lab in March 2024 as a visiting scholar from Samsung Electronics, strengthening the lab’s ties with industry and applied systems research.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Mar 2024</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome the first graduate student cohort to BDAI Lab.</h6>
+<p>In March 2024, Hyeonjun An, Ganghyun Kim, Hyunjoon Kim, and Seokwon Lee joined as BDAI Lab’s first graduate students, marking a major milestone in the lab’s growth.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Jan 2024</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Hyejung Hwang as an undergraduate intern.</h6>
+<p>Hyejung Hwang joined BDAI Lab in January 2024 as an undergraduate intern, beginning her research journey with the lab before later advancing to a graduate role.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Sep 2023</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Ganghyun Kim as an undergraduate intern.</h6>
+<p>Ganghyun Kim joined BDAI Lab in September 2023 as an undergraduate intern, contributing to the lab’s early student research activities.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Aug 2023</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome Hyunjoon Sung as an undergraduate intern.</h6>
+<p>Hyunjoon Sung joined BDAI Lab in August 2023 as an undergraduate intern, becoming part of the lab’s earliest undergraduate research team.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item" data-category="people">
+<div class="home-news-date">Jun 2023</div>
+<div><span class="home-news-badge badge-people">People</span></div>
+<div class="home-news-content">
+<h6>Welcome the first undergraduate interns to BDAI Lab.</h6>
+<p>In June 2023, Minji Park, Hyunmin Yoo, Hyunjoon Kim, Chaerim Lim, Seungyeon Baek, Hyunjoon Sung, and Ganghyun Kim joined BDAI Lab as its first undergraduate interns, laying the foundation for the lab’s research community.</p>
+<div class="home-news-links">
+<a href="team.html">Meet the team <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div><div class="home-news-item milestone-founded" data-category="event">
+<div class="home-news-date">Mar 2023</div>
+<div><span class="home-news-badge badge-event">Event</span></div>
+<div class="home-news-content">
+<h6>BDAI Lab was founded at Yonsei University.</h6>
+<p>BDAI Lab was officially established in March 2023, launching its mission to advance data systems, AI infrastructure, and data-centric AI applications through integrated research.</p>
+<div class="home-news-links">
+<a href="research.html">Learn more <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div></div>
+<div class="home-news-actions">
+<div class="home-news-pagination" id="homeNewsPagination"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- End Home News Timeline -->
+<!-- Begin Collaborators -->
+<section class="section-padding section-bg" id="section_2">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-12 mx-auto">
+<div class="custom-text-box">
+<div class="news-block-title mb-2">
+<h5 class="mb-3"><a class="news-block-title-link" href="#"></a>Research Partners</h5>
+<!--<h6><a href="#" class="news-block-title-link">Research Partners</a> </h6>-->
+</div>
+<div class="news-block-two-col-info">
+<ul class="brands">
+<li class="brands__item">
+<a href="https://www.microsoft.com/en-us/research/">
+<img alt="" src="images/logos/MSR.gif"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.amazon.science/">
+<img alt="" src="images/logos/Amazon.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://research.google/">
+<img alt="" src="images/logos/google_research.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://research.facebook.com/">
+<img alt="" src="images/logos/Meta.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.sap.com/">
+<img alt="" src="images/logos/SAP_2011_logo.svg.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.linkedin.com/">
+<img alt="" src="images/logos/linkedin.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.intel.com/content/www/us/en/research/overview.html">
+<img alt="" src="images/logos/Intel.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://eng.sk.com/">
+<img alt="" src="images/logos/SK_Group-Logo.wine.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://sra.samsung.com/">
+<img alt="" src="images/logos/SamsungResearch.webp"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.cs.wisc.edu/">
+<img alt="" src="images/logos/Wisc.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.csd.cmu.edu/">
+<img alt="" src="images/logos/cmu.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.cis.upenn.edu/">
+<img alt="" src="images/logos/UPenn.jpg"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.cs.washington.edu/">
+<img alt="" src="images/logos/UW.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.bu.edu/cs/">
+<img alt="" src="images/logos/BU.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://cse.ucsd.edu/">
+<img alt="" src="images/logos/UCSD.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://cs.uchicago.edu/">
+<img alt="" src="images/logos/UChicago.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.tudelft.nl/en/">
+<img alt="" src="images/logos/TUDelft.jpg"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.u-tokyo.ac.jp/en/">
+<img alt="" src="images/logos/UofTokyo2.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.waseda.jp/top/en/">
+<img alt="" src="images/logos/waseda.jpg"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://english.ecnu.edu.cn/">
+<img alt="" src="images/logos/East_China_Normal_University_logo.svg.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://mbaen.rmbs.ruc.edu.cn/">
+<img alt="" src="images/logos/renmin.webp"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://www.ocha.ac.jp/en/index.html">
+<img alt="" src="images/logos/Ochanomizu.jpg"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://ece.snu.ac.kr/">
+<img alt="" src="images/logos/snu.png"/>
+</a>
+</li>
+<li class="brands__item">
+<a href="https://cs.kaist.ac.kr/">
+<img alt="" src="images/logos/KAIST.png"/>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- End Collaborators -->
+<section class="contact-section section-padding" id="section_contact">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-12 mb-5">
+<h2>Join BDAI Lab</h2>
+</div>
+<div class="col-lg-7 col-12">
+<div class="news-block">
+<div class="news-block-info">
+<div class="news-block-title mb-2">
+<h4>Masters/Ph.D Students</h4>
+</div>
+<div class="news-block-body">
+<p>BDAI Lab is accepting Masters/Ph.D students. Please send your CV and transcript to Prof. Park.</p>
+</div>
+</div>
+<div class="news-block-info">
+<div class="news-block-title mb-2">
+<h4>Undergraduate Internship</h4>
+</div>
+<div class="news-block-body">
+<p>BDAI Lab has multiple openings for undergraduate research internship. Please send your CV and transcript to Prof. Park.</p>
+</div>
+</div>
+<div class="news-block-info">
+<div class="news-block-title mb-2">
+<h4>Post-Doctoral Researcher</h4>
+</div>
+<div class="news-block-body">
+<p>BDAI Lab is recruiting post-doctoral researchers. Please send your CV and transcript to Prof. Park.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12 mx-auto">
+<div class="contact-info-wrap">
+<div class="contact-info">
+<h5 class="mb-3">Contact Information</h5>
+<p class="d-flex mb-2">
+<i class="bi-geo-alt me-2"></i>
+                                        Engineering Hall4 D802/D706, 50 Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea (03722)
+                                    </p>
+<p class="d-flex mb-2">
+<i class="bi-telephone me-2"></i>
+<a href="tel: +82-2-2123-2718">
+                                            +82-2-2123-2718
+                                        </a>
+</p>
+<p class="d-flex">
+<i class="bi-envelope me-2"></i>
+<a href="mailto:kwanghyun.park@yonsei.ac.kr">
+                                            kwanghyun.park@yonsei.ac.kr
+                                        </a>
+</p>
+<a class="custom-btn btn mt-3" href="https://www.google.com/maps/place/Yonsei+University+Engineering+Hall+4/data=!3m1!4b1!4m6!3m5!1s0x357c99e2cc1ebefb:0x7f9fc3c306fc6a!8m2!3d37.5618404!4d126.9361569!16s%2Fg%2F11j5z8z6nv">Get Direction</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--
+            <section class="contact-section section-padding" id="section_6">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-12 text-center mx-auto">
+                            <h2 class="mb-5">Join BDAI Lab</h2>
+                        </div>
+
+                        <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+                            <div class="contact-info-wrap">
+
+                                <div class="contact-image-wrap d-flex flex-wrap">
+                                    <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg" class="img-fluid avatar-image" alt="">
+
+                                    <div class="d-flex flex-column justify-content-center ms-3">
+                                        <p class="mb-0">Clara Barton</p>
+                                        <p class="mb-0"><strong>HR & Office Manager</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info">
+                                    <h5 class="mb-3">Contact Infomation</h5>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-geo-alt me-2"></i>
+                                        Engineering Hall4 D802, 50 Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea (03722)
+                                    </p>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-telephone me-2"></i>
+
+                                        <a href="tel: +82-2-2123-2718">
+                                            +82-2-2123-2718
+                                        </a>
+                                    </p>
+
+                                    <p class="d-flex">
+                                        <i class="bi-envelope me-2"></i>
+
+                                        <a href="mailto:kwanghyun.park@yonsei.ac.kr">
+                                            kwanghyun.park@yonsei.ac.kr
+                                        </a>
+                                    </p>
+
+                                    <a href="https://www.google.com/maps/place/Yonsei+University+Engineering+Hall+4/data=!3m1!4b1!4m6!3m5!1s0x357c99e2cc1ebefb:0x7f9fc3c306fc6a!8m2!3d37.5618404!4d126.9361569!16s%2Fg%2F11j5z8z6nv" class="custom-btn btn mt-3">Get Direction</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-12 mx-auto">
+                            <form class="custom-form contact-form" action="#" method="post" role="form">
+                                <h2>Contact form</h2>
+
+                                <p class="mb-4">Or, you can just send an email:
+                                    <a href="#">info@charity.org</a>
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Jack" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Doe" required>
+                                    </div>
+                                </div>
+
+                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jackdoe@gmail.com" required>
+
+                                <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you?"></textarea>
+
+                                <button type="submit" class="form-control">Send Message</button>
+ 
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            -->
+</main>
+<footer class="site-footer">
+<!--
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-12 mb-4">
+                        <img src="images/logo.png" class="logo img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <h5 class="site-footer-title mb-3">Quick Links</h5>
+
+                        <ul class="footer-menu">
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Our Story</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Newsroom</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Causes</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Become a volunteer</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Partner with us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mx-auto">
+                        <h5 class="site-footer-title mb-3">Contact Infomation</h5>
+
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-telephone me-2"></i>
+
+                            <a href="tel: 120-240-9600" class="site-footer-link">
+                                120-240-9600
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <i class="bi-envelope me-2"></i>
+
+                            <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                                donate@charity.org
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex mt-3">
+                            <i class="bi-geo-alt me-2"></i>
+                            Akershusstranda 20, 0150 Oslo, Norway
+                        </p>
+
+                        <a href="#" class="custom-btn btn mt-3">Get Direction</a>
+                    </div>
+                </div>
+            </div>
+            -->
+<div class="container">
+<div class="row">
+<div class="col-12">
+<a href="https://computing.yonsei.ac.kr/eng/index.php">
+<img alt="" src="images/logos/yonsei_computing_logo.png" style="margin-right: 5px; height: 36px; width: auto;"/>
+</a>
+<a href="https://cs.yonsei.ac.kr/csai_en/index.do">
+<img alt="" src="images/logos/yonsei_cs_logo.png" style="margin-right: 0px; height: 34px; width: auto;"/>
+</a>
+</div>
+</div>
+</div>
+<div class="site-footer-bottom">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-7 col-12">
+<p class="copyright-text mb-0">Copyright © 2026 <a href="#">BDAI Lab</a>. All rights reserved.</p>
+</div>
+<div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+<ul class="social-icon">
+<!--
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-instagram"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-linkedin"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-youtube"></a>
+                                </li>
+                                
+
+                                <li class="social-icon-item">
+                                    <a href="https://github.com/orgs/BDAI-Research/repositories" class="social-icon-link bi-github"></a>
+                                </li>
+
+                                -->
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/custom.js"></script>
+<script>
+        (function(){
+            const chips = Array.from(document.querySelectorAll('.home-news-chip'));
+            const items = Array.from(document.querySelectorAll('.home-news-item'));
+            const pagination = document.getElementById('homeNewsPagination');
+            let activeFilter = 'all';
+            let currentPage = 1;
+            const pageSize = 10;
+
+            function getFilteredItems() {
+                return items.filter(item => {
+                    const category = (item.dataset.category || '').toLowerCase();
+                    return activeFilter === 'all' || category === activeFilter;
+                });
+            }
+
+            function createButton(label, className, onClick, disabled, isActive){
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = label;
+                btn.className = className + (isActive ? ' active' : '');
+                if (disabled) btn.disabled = true;
+                btn.addEventListener('click', onClick);
+                return btn;
+            }
+
+            function getPagesToShow(totalPages, currentPage){
+                const pages = [];
+                if (totalPages <= 7) {
+                    for (let i = 1; i <= totalPages; i++) pages.push(i);
+                    return pages;
+                }
+                pages.push(1);
+                if (currentPage > 3) pages.push('...');
+                const start = Math.max(2, currentPage - 1);
+                const end = Math.min(totalPages - 1, currentPage + 1);
+                for (let i = start; i <= end; i++) pages.push(i);
+                if (currentPage < totalPages - 2) pages.push('...');
+                pages.push(totalPages);
+                return [...new Set(pages)];
+            }
+
+            function renderPagination(totalItems) {
+                if (!pagination) return;
+                const totalPages = Math.ceil(totalItems / pageSize);
+                pagination.innerHTML = '';
+
+                if (totalPages <= 1) {
+                    pagination.style.display = 'none';
+                    return;
+                }
+                pagination.style.display = 'flex';
+
+                pagination.appendChild(
+                    createButton('Prev', 'home-news-pagination-btn home-news-pagination-nav', function(){
+                        if (currentPage > 1) {
+                            currentPage--;
+                            updateNews();
+                        }
+                    }, currentPage === 1, false)
+                );
+
+                getPagesToShow(totalPages, currentPage).forEach(p => {
+                    if (p === '...') {
+                        const span = document.createElement('span');
+                        span.className = 'home-news-pagination-ellipsis';
+                        span.textContent = '...';
+                        pagination.appendChild(span);
+                    } else {
+                        pagination.appendChild(
+                            createButton(String(p), 'home-news-pagination-btn', function(){
+                                currentPage = p;
+                                updateNews();
+                            }, false, p === currentPage)
+                        );
+                    }
+                });
+
+                pagination.appendChild(
+                    createButton('Next', 'home-news-pagination-btn home-news-pagination-nav', function(){
+                        if (currentPage < totalPages) {
+                            currentPage++;
+                            updateNews();
+                        }
+                    }, currentPage === totalPages, false)
+                );
+            }
+
+            function updateNews(){
+                const filtered = getFilteredItems();
+
+                items.forEach(item => item.classList.add('hidden-news-item'));
+
+                const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+                if (currentPage > totalPages) currentPage = 1;
+
+                const start = (currentPage - 1) * pageSize;
+                const end = start + pageSize;
+
+                filtered.slice(start, end).forEach(item => {
+                    item.classList.remove('hidden-news-item');
+                });
+
+                renderPagination(filtered.length);
+            }
+
+            chips.forEach(chip => {
+                chip.addEventListener('click', function(){
+                    chips.forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    activeFilter = chip.dataset.filter || 'all';
+                    currentPage = 1;
+                    updateNews();
+                });
+            });
+
+            updateNews();
+        })();
+        </script>
+</body>
+</html>
