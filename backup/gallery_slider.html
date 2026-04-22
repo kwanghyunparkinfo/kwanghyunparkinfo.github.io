@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BDAI Lab - Gallery</title>
+<meta name="description" content="Gallery of research events, conferences, seminars, visits, and lab activities from the Big Data & AI Laboratory at Yonsei University.">
+<link rel="shortcut icon" href="images/logos/BDAI_logo_new.png">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-icons.css" rel="stylesheet">
+<link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
+<style>
+:root{--bdai-navy:#0b2f73;--bdai-navy-2:#123f97;--bdai-blue:#2f6cff;--bdai-bg:#f3f6fb;--bdai-card:#fff;--bdai-border:#dbe4f0;--bdai-border-2:#e9eef7;--bdai-text:#1f2d3d;--bdai-muted:#6b7a90;--bdai-shadow:0 14px 36px rgba(16,37,74,.08);--bdai-shadow-lg:0 18px 48px rgba(16,37,74,.12)}
+body{background:var(--bdai-bg);color:var(--bdai-text)}
+.navbar{background:rgba(255,255,255,.96)!important;border-bottom:1px solid rgba(11,47,115,.06);backdrop-filter:blur(8px)}
+.navbar .nav-link{font-weight:600;color:#24324b;position:relative;padding-bottom:12px}
+.navbar .nav-link:hover,.navbar .nav-link.active{color:var(--bdai-navy)}
+.navbar .nav-link.active::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:3px;border-radius:999px;background:var(--bdai-blue)}
+.gallery-hero{position:relative;padding:78px 0 66px;background:radial-gradient(circle at top right, rgba(85,155,255,.26), transparent 28%),radial-gradient(circle at 70% 35%, rgba(28,154,182,.18), transparent 22%),linear-gradient(135deg,#08245b 0%,#0b3178 55%,#103b8b 100%);overflow:hidden}
+.gallery-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);background-size:36px 36px;opacity:.22}
+.gallery-hero .container{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.12);color:#fff;padding:9px 15px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(5px);margin-bottom:18px}
+.gallery-hero h1{color:#fff;font-size:54px;font-weight:800;line-height:1.05;margin-bottom:14px}
+.gallery-hero p{color:rgba(255,255,255,.9);font-size:17px;line-height:1.72;max-width:780px;margin-bottom:0}
+.gallery-main{padding:34px 0 72px;margin-top:-18px;position:relative;z-index:2}
+.gallery-shell{background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.82);border-radius:28px;box-shadow:var(--bdai-shadow-lg);padding:22px}
+.gallery-toolbar{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:24px}
+.gallery-search{flex:1 1 340px;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--bdai-border);border-radius:14px;padding:12px 14px;box-shadow:0 5px 14px rgba(15,37,84,.04)}
+.gallery-search input{width:100%;border:none;outline:none;background:transparent;color:var(--bdai-text);font-size:14px}
+.gallery-filters{display:flex;gap:10px;flex-wrap:wrap}
+.gallery-chip{border:1px solid var(--bdai-border);background:#fff;color:var(--bdai-text);border-radius:999px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .18s ease}
+.gallery-chip.active,.gallery-chip:hover{background:var(--bdai-navy);border-color:var(--bdai-navy);color:#fff}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.section-head h2{color:var(--bdai-navy);font-size:28px;margin-bottom:6px}
+.section-head p{color:var(--bdai-muted);margin-bottom:0}
+.gallery-slider-card{background:linear-gradient(135deg, rgba(255,255,255,.99) 0%, rgba(246,249,255,.98) 100%);border:1px solid var(--bdai-border);border-radius:24px;overflow:hidden;box-shadow:var(--bdai-shadow);margin-bottom:26px}
+.gallery-carousel .carousel-inner{border-radius:24px;overflow:hidden}
+.gallery-slide{min-height:640px;display:grid;grid-template-columns:1.2fr .95fr;background:#fff}
+.gallery-slide-media{min-height:640px;position:relative;background:linear-gradient(135deg, rgba(11,47,115,.82), rgba(47,108,255,.44)),url('images/slide/volunteer-helping-with-donation-box.jpg') center/cover}
+.media-1{background:linear-gradient(135deg, rgba(11,47,115,.82), rgba(47,108,255,.44)),url('images/slide/volunteer-helping-with-donation-box.jpg') center/cover}
+.media-2{background:linear-gradient(135deg, rgba(11,47,115,.82), rgba(28,154,182,.42)),url('images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg') center/cover}
+.media-3{background:linear-gradient(135deg, rgba(11,47,115,.82), rgba(142,88,255,.40)),url('images/slide/medium-shot-people-collecting-donations.jpg') center/cover}
+.media-4{background:linear-gradient(135deg, rgba(11,47,115,.82), rgba(95,149,255,.40)),url('images/slide/volunteer-helping-with-donation-box.jpg') center/cover}
+.media-5{background:linear-gradient(135deg, rgba(11,47,115,.82), rgba(28,154,182,.40)),url('images/slide/medium-shot-people-collecting-donations.jpg') center/cover}
+.media-6{background:linear-gradient(135deg, rgba(11,47,115,.82), rgba(142,88,255,.40)),url('images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg') center/cover}
+.slide-badge{position:absolute;left:24px;bottom:24px;display:inline-block;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.22);padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(4px)}
+.gallery-slide-body{padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:space-between}
+.meta-row{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--bdai-muted);margin-bottom:14px}
+.gallery-slide-body h3{font-size:34px;line-height:1.12;margin-bottom:14px;color:var(--bdai-navy)}
+.gallery-slide-body p{color:var(--bdai-muted);line-height:1.78;margin-bottom:16px;font-size:15px}
+.detail-list{list-style:none;padding-left:0;margin:18px 0 0;display:grid;gap:12px}
+.detail-list li{display:flex;gap:10px;align-items:flex-start;color:var(--bdai-text);background:#f8fbff;border:1px solid var(--bdai-border-2);border-radius:14px;padding:12px 14px}
+.detail-list i{color:var(--bdai-blue);margin-top:3px}
+.gallery-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--bdai-blue);text-decoration:none}
+.gallery-link:hover{color:var(--bdai-navy-2)}
+.carousel-tools{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 22px 22px;flex-wrap:wrap;border-top:1px solid var(--bdai-border-2);background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(248,251,255,.95))}
+.carousel-indicator-custom{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.carousel-indicator-custom button{width:12px;height:12px;border:none;border-radius:999px;background:#cdd9ec;padding:0;opacity:1}
+.carousel-indicator-custom button.active{background:var(--bdai-blue);width:34px;border-radius:999px}
+.carousel-count{color:var(--bdai-muted);font-size:14px;font-weight:600}
+.carousel-nav{display:flex;gap:10px}
+.carousel-nav button{width:46px;height:46px;border-radius:12px;border:1px solid var(--bdai-border);background:#fff;color:var(--bdai-text);font-size:18px;transition:.18s ease}
+.carousel-nav button:hover{background:var(--bdai-navy);color:#fff;border-color:var(--bdai-navy)}
+.timeline-wrap{margin-top:26px;background:var(--bdai-card);border:1px solid var(--bdai-border);border-radius:24px;box-shadow:var(--bdai-shadow);padding:24px}
+.timeline-wrap h2{color:var(--bdai-navy);font-size:28px;margin-bottom:6px}
+.timeline-wrap>p{color:var(--bdai-muted);margin-bottom:22px}
+.timeline{display:grid;gap:14px}
+.timeline-item{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--bdai-border-2)}
+.timeline-item:first-child{border-top:none;padding-top:0}
+.timeline-date{color:var(--bdai-blue);font-weight:700;font-size:14px}
+.timeline-content h5{color:var(--bdai-text);font-size:18px;margin-bottom:6px}
+.timeline-content p{color:var(--bdai-muted);margin-bottom:0;line-height:1.6}
+.cta-panel{margin-top:28px;background:linear-gradient(135deg, rgba(11,47,115,.96), rgba(47,108,255,.84));color:#fff;border-radius:24px;box-shadow:var(--bdai-shadow-lg);padding:26px 28px}
+.cta-panel h3,.cta-panel p{color:#fff}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.cta-actions .btn{border-radius:12px;font-weight:700;padding:11px 18px}
+.btn-light-outline{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff}
+.btn-light-outline:hover{background:rgba(255,255,255,.2);color:#fff}
+@media (max-width:991px){.gallery-slide{grid-template-columns:1fr;min-height:auto}.gallery-slide-media{min-height:300px}.gallery-slide-body{padding:24px 22px}.gallery-slide-body h3{font-size:28px}.timeline-item{grid-template-columns:1fr;gap:6px}}
+@media (max-width:767px){.gallery-hero{padding:58px 0 48px}.gallery-hero h1{font-size:38px}.gallery-shell{padding:14px}.gallery-slide-media{min-height:240px}.gallery-slide-body h3{font-size:24px}.carousel-tools{padding:16px 14px 18px}}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-light shadow-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab">
+<img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab">
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Publications</a>
+<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink1">
+<li><a class="dropdown-item" href="conferences.html">Confs/Journals</a></li>
+<li><a class="dropdown-item" href="patents.html">Patents</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">People</a>
+<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink2">
+<li><a class="dropdown-item" href="faculty.html">Faculty</a></li>
+<li><a class="dropdown-item" href="team.html">Team</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+<li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+<li class="nav-item ms-3"><a class="nav-link custom-btn custom-border-btn btn" href="research.html#section_contact">Join BDAI Lab</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<main>
+<section class="gallery-hero">
+<div class="container">
+<span class="hero-badge"><i class="bi bi-images"></i> Conferences, Visits, and Lab Life</span>
+<h1>BDAI Lab Gallery</h1>
+<p>Explore snapshots from conferences, seminars, invited talks, external visits, collaborative meetings, workshops, and memorable moments from the Big Data &amp; AI Laboratory.</p>
+</div>
+</section>
+
+<section class="gallery-main">
+<div class="container">
+<div class="gallery-shell">
+<div class="gallery-toolbar">
+<div class="gallery-search"><i class="bi bi-search"></i><input type="text" placeholder="Search events, conferences, or keywords..."></div>
+<div class="gallery-filters">
+<button class="gallery-chip active">All</button>
+<button class="gallery-chip">Conferences</button>
+<button class="gallery-chip">Workshops</button>
+<button class="gallery-chip">Visits</button>
+<button class="gallery-chip">Meetups</button>
+<button class="gallery-chip">Lab Activities</button>
+</div>
+</div>
+
+<div class="section-head">
+<div>
+<h2>Gallery Highlights</h2>
+<p>Browse one event at a time through a professional horizontal sliding format.</p>
+</div>
+</div>
+
+<div class="gallery-slider-card">
+<div id="bdaiGalleryCarousel" class="carousel slide gallery-carousel" data-bs-ride="false" data-bs-interval="false">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<div class="gallery-slide">
+<div class="gallery-slide-media media-1"><span class="slide-badge">Featured Event</span></div>
+<div class="gallery-slide-body">
+<div>
+<div class="meta-row"><span><i class="bi bi-calendar-event"></i> 8–11 December 2025</span><span><i class="bi bi-tag"></i> Conference</span></div>
+<h3>IEEE BigData 2025</h3>
+<p>This slide format is designed for a cleaner and more focused gallery experience. It gives each event enough space for context, date, category, and a short narrative instead of crowding many cards into a single screen.</p>
+<ul class="detail-list">
+<li><i class="bi bi-check-circle-fill"></i><span>Flagship international conference participation</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Research presentation and external visibility</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Suitable for keynote, paper, or demo highlights</span></li>
+</ul>
+</div>
+<div><a href="#" class="gallery-link">View Event Details <i class="bi bi-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="gallery-slide">
+<div class="gallery-slide-media media-2"><span class="slide-badge">Workshop</span></div>
+<div class="gallery-slide-body">
+<div>
+<div class="meta-row"><span><i class="bi bi-calendar-event"></i> 10 December 2025</span><span><i class="bi bi-tag"></i> Workshop</span></div>
+<h3>IEEE BigDataW 2025 (D2ET)</h3>
+<p>Use this structure for workshop participation, poster sessions, focused research tracks, and domain-specific satellite events connected to larger conferences.</p>
+<ul class="detail-list">
+<li><i class="bi bi-check-circle-fill"></i><span>Workshop talk or poster presentation</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Smaller but highly targeted research audience</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Easy to connect with paper or news pages later</span></li>
+</ul>
+</div>
+<div><a href="#" class="gallery-link">View Gallery <i class="bi bi-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="gallery-slide">
+<div class="gallery-slide-media media-3"><span class="slide-badge">Visit</span></div>
+<div class="gallery-slide-body">
+<div>
+<div class="meta-row"><span><i class="bi bi-calendar-event"></i> 14 November 2025</span><span><i class="bi bi-tag"></i> Visit</span></div>
+<h3>Meeting with Yiwen (Microsoft GSL)</h3>
+<p>This layout is also effective for industrial visits, invited guests, collaboration meetings, and research exchange sessions with external partners.</p>
+<ul class="detail-list">
+<li><i class="bi bi-check-circle-fill"></i><span>Industry collaboration and research dialogue</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Professional format for visitor highlights</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Can be extended to partner logos and captions</span></li>
+</ul>
+</div>
+<div><a href="#" class="gallery-link">View Gallery <i class="bi bi-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="gallery-slide">
+<div class="gallery-slide-media media-4"><span class="slide-badge">Conference</span></div>
+<div class="gallery-slide-body">
+<div>
+<div class="meta-row"><span><i class="bi bi-calendar-event"></i> 27 August 2024</span><span><i class="bi bi-tag"></i> Conference</span></div>
+<h3>VLDB 2024</h3>
+<p>Ideal for international flagship conferences, paper presentations, demos, and moments that show the lab’s global research visibility.</p>
+<ul class="detail-list">
+<li><i class="bi bi-check-circle-fill"></i><span>Conference participation and paper presentation</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Strong signal for academic reputation</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Works well with captions or multiple photos</span></li>
+</ul>
+</div>
+<div><a href="#" class="gallery-link">View Gallery <i class="bi bi-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="gallery-slide">
+<div class="gallery-slide-media media-5"><span class="slide-badge">Academic Visit</span></div>
+<div class="gallery-slide-body">
+<div>
+<div class="meta-row"><span><i class="bi bi-calendar-event"></i> 1 August 2024</span><span><i class="bi bi-tag"></i> Visit</span></div>
+<h3>Gathering with Prof. Rihan - TU Delft</h3>
+<p>A suitable template for academic visits, international partnership activities, collaborative meetings, and guest interactions.</p>
+<ul class="detail-list">
+<li><i class="bi bi-check-circle-fill"></i><span>Cross-institution collaboration highlight</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Useful for partner and visitor galleries</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Can later include links to related research topics</span></li>
+</ul>
+</div>
+<div><a href="#" class="gallery-link">View Gallery <i class="bi bi-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="gallery-slide">
+<div class="gallery-slide-media media-6"><span class="slide-badge">Lab Activity</span></div>
+<div class="gallery-slide-body">
+<div>
+<div class="meta-row"><span><i class="bi bi-calendar-event"></i> 15 July 2023</span><span><i class="bi bi-tag"></i> Lab Trip</span></div>
+<h3>Sunchon Trip</h3>
+<p>This format can also present internal lab culture in a professional tone, including retreats, game days, team-building events, and memorable group experiences.</p>
+<ul class="detail-list">
+<li><i class="bi bi-check-circle-fill"></i><span>Retreats and team culture moments</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Balances professionalism with warmth</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Works well for annual gallery highlights</span></li>
+</ul>
+</div>
+<div><a href="#" class="gallery-link">View Gallery <i class="bi bi-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="carousel-tools">
+<div class="carousel-indicator-custom">
+<button type="button" data-bs-target="#bdaiGalleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#bdaiGalleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#bdaiGalleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#bdaiGalleryCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#bdaiGalleryCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#bdaiGalleryCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+</div>
+<div class="carousel-count">6 highlighted events</div>
+<div class="carousel-nav">
+<button type="button" data-bs-target="#bdaiGalleryCarousel" data-bs-slide="prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+<button type="button" data-bs-target="#bdaiGalleryCarousel" data-bs-slide="next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="timeline-wrap">
+<h2>Gallery Timeline</h2>
+<p>A compact chronological view for users who want a quick overview of major events.</p>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-date">Dec 2025</div>
+<div class="timeline-content"><h5>IEEE BigData 2025 / BigDataW 2025</h5><p>Conference and workshop activities featuring research presentations and external engagement.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Nov 2025</div>
+<div class="timeline-content"><h5>Meeting with Yiwen (Microsoft GSL)</h5><p>Industrial collaboration meeting and research exchange activity.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">2024</div>
+<div class="timeline-content"><h5>VLDB, TU Delft Gathering, SK AI Summit, and other events</h5><p>A year of international conferences, academic visits, workshops, and industry-facing activities.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">2023</div>
+<div class="timeline-content"><h5>Sunchon Trip and other lab activities</h5><p>Representative moments from internal lab culture and team-building events.</p></div>
+</div>
+</div>
+</div>
+
+<div class="cta-panel">
+<h3>Want to share a new gallery item?</h3>
+<p>This area can later be connected to an internal upload workflow, Google Drive folder, or a simple form for submitting conference photos, event highlights, and lab activity updates.</p>
+<div class="cta-actions">
+<a href="news.html" class="btn btn-light">Go to News</a>
+<a href="research.html#section_contact" class="btn btn-light-outline">Contact the Lab</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<a href="https://computing.yonsei.ac.kr/eng/index.php"><img src="images/logos/yonsei_computing_logo.png" style="margin-right: 5px; height: 36px; width: auto;" alt=""></a>
+<a href="https://cs.yonsei.ac.kr/csai_en/index.do"><img src="images/logos/yonsei_cs_logo.png" style="margin-right: 0px; height: 34px; width: auto;" alt=""></a>
+</div>
+</div>
+</div>
+<div class="site-footer-bottom">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-7 col-12"><p class="copyright-text mb-0">Copyright © 2026 <a href="#">BDAI Lab</a></p></div>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

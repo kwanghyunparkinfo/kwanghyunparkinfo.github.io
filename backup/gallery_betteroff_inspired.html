@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BDAI Lab - Gallery</title>
+<meta name="description" content="A redesigned immersive gallery for BDAI Lab events, conferences, visits, and lab life.">
+<link rel="shortcut icon" href="images/logos/BDAI_logo_new.png">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-icons.css" rel="stylesheet">
+<link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
+<style>
+:root{--bg:#070b14;--panel:#0d1322;--line:rgba(255,255,255,.08);--text:#f5f7fb;--muted:rgba(235,241,255,.68);--blue:#4f8cff;--cyan:#49d7ff;--pink:#ff5ea8;--lime:#8af27d}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at top right, rgba(79,140,255,.16), transparent 18%),radial-gradient(circle at 75% 22%, rgba(255,94,168,.10), transparent 16%),linear-gradient(180deg, #060a12 0%, #090f1c 100%);color:var(--text);overflow-x:hidden}
+.navbar{background:rgba(7,11,20,.72)!important;border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:blur(14px)}
+.navbar .nav-link{color:rgba(255,255,255,.82);font-weight:600;position:relative;padding-bottom:12px}
+.navbar .nav-link:hover,.navbar .nav-link.active{color:#fff}
+.navbar .nav-link.active:after{content:"";position:absolute;left:0;right:0;bottom:2px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--pink))}
+.gallery-shell{max-width:1600px;margin:0 auto;padding:32px 22px 64px}
+.hero{min-height:36vh;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:end;padding:34px 0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d7e5ff;padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.04)}
+.hero h1{margin:18px 0 12px;font-size:clamp(48px,7vw,96px);line-height:.95;letter-spacing:-.05em;font-weight:900}
+.hero p{max-width:760px;color:var(--muted);font-size:17px;line-height:1.8;margin:0}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.meta-chip{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:16px;color:#fff;font-size:13px;font-weight:700;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.gallery-layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;align-items:start}
+.side-rail{position:sticky;top:92px;border:1px solid var(--line);border-radius:28px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));backdrop-filter:blur(14px)}
+.rail-title{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:16px}
+.rail-title h3{margin:0;font-size:24px;letter-spacing:-.02em}.rail-title small{color:var(--muted);display:block;margin-top:6px}
+.filter-group{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.filter-btn{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);color:#eaf1ff;border-radius:999px;padding:10px 14px;font-size:13px;font-weight:700;transition:.18s ease}
+.filter-btn.active,.filter-btn:hover{background:linear-gradient(90deg, rgba(79,140,255,.24), rgba(73,215,255,.18));border-color:rgba(79,140,255,.35)}
+.rail-list{display:grid;gap:10px;max-height:62vh;overflow:auto;padding-right:4px}
+.rail-item{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;padding:12px;text-decoration:none;color:#fff;border-radius:18px;border:1px solid transparent;background:rgba(255,255,255,.025);transition:.18s ease}
+.rail-item:hover,.rail-item.active{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.rail-index{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(135deg, rgba(79,140,255,.22), rgba(255,94,168,.15));font-size:13px;font-weight:800}
+.rail-item h4{margin:0 0 4px;font-size:14px;line-height:1.3}.rail-item p{margin:0;font-size:12px;color:var(--muted)}
+.deck{display:grid;gap:22px}
+.slide{position:relative;min-height:88vh;scroll-margin-top:90px;border-radius:32px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0a1020;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+.slide.hidden-slide{display:none!important}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.02)}
+.slide-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,10,18,.12) 0%, rgba(6,10,18,.34) 45%, rgba(6,10,18,.88) 100%)}
+.bg-1{background-image:linear-gradient(135deg, rgba(79,140,255,.42), rgba(6,10,18,.25)), url('images/slide/volunteer-helping-with-donation-box.jpg')}
+.bg-2{background-image:linear-gradient(135deg, rgba(73,215,255,.30), rgba(6,10,18,.25)), url('images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg')}
+.bg-3{background-image:linear-gradient(135deg, rgba(255,94,168,.28), rgba(6,10,18,.25)), url('images/slide/medium-shot-people-collecting-donations.jpg')}
+.bg-4{background-image:linear-gradient(135deg, rgba(138,242,125,.22), rgba(6,10,18,.25)), url('images/slide/volunteer-helping-with-donation-box.jpg')}
+.bg-5{background-image:linear-gradient(135deg, rgba(79,140,255,.26), rgba(255,94,168,.22)), url('images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg')}
+.bg-6{background-image:linear-gradient(135deg, rgba(73,215,255,.22), rgba(138,242,125,.18)), url('images/slide/medium-shot-people-collecting-donations.jpg')}
+.slide-body{position:relative;z-index:1;min-height:88vh;display:grid;align-items:end;grid-template-columns:1.25fr .75fr;gap:24px;padding:34px}
+.slide-main{max-width:860px}
+.slide-tag{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.slide-main h2{margin:16px 0 12px;font-size:clamp(32px,4vw,64px);line-height:.96;font-weight:900;letter-spacing:-.04em}
+.slide-main p{margin:0;font-size:16px;line-height:1.8;color:rgba(243,247,255,.82);max-width:720px}
+.slide-side{justify-self:end;width:min(100%,360px);border-radius:28px;padding:20px;background:rgba(6,10,18,.58);border:1px solid rgba(255,255,255,.10);backdrop-filter:blur(14px)}
+.side-kicker{font-size:12px;font-weight:800;color:#d9e7ff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.detail-row{padding:12px 0;border-top:1px solid rgba(255,255,255,.08)} .detail-row:first-of-type{border-top:none;padding-top:0}
+.detail-row .label{display:block;font-size:12px;color:rgba(235,241,255,.56);margin-bottom:4px}
+.detail-row .value{display:block;font-size:15px;line-height:1.55;color:#fff}
+.slide-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.slide-actions a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font-weight:800;font-size:14px;padding:11px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07)}
+.footer-note{margin-top:22px;padding:22px 24px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg, rgba(79,140,255,.08), rgba(255,255,255,.03))}
+.footer-note h3{margin:0 0 10px;font-size:24px}.footer-note p{margin:0;color:var(--muted);line-height:1.8}
+@media (max-width:1199px){.gallery-layout{grid-template-columns:1fr}.side-rail{position:relative;top:0}}
+@media (max-width:991px){.hero{grid-template-columns:1fr}.hero-meta{justify-content:flex-start}.slide,.slide-body{min-height:auto}.slide-body{grid-template-columns:1fr;padding:22px}.slide-side{justify-self:start;width:100%}}
+@media (max-width:767px){.gallery-shell{padding:20px 14px 54px}.hero{padding:18px 0}.hero h1{font-size:42px}.slide-main h2{font-size:30px}.side-rail{padding:14px;border-radius:22px}.slide{border-radius:24px}}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg shadow-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab">
+<img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab">
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Publications</a><ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink1"><li><a class="dropdown-item" href="conferences.html">Confs/Journals</a></li><li><a class="dropdown-item" href="patents.html">Patents</a></li></ul></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">People</a><ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink2"><li><a class="dropdown-item" href="faculty.html">Faculty</a></li><li><a class="dropdown-item" href="team.html">Team</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+<li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+<li class="nav-item ms-3"><a class="nav-link custom-btn custom-border-btn btn" href="research.html#section_contact">Join BDAI Lab</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<main class="gallery-shell">
+<section class="hero">
+<div>
+<span class="eyebrow"><i class="bi bi-grid-3x3-gap-fill"></i> Immersive Gallery Interface</span>
+<h1>Gallery,<br>recomposed.</h1>
+<p>This version shifts the BDAI gallery from a conventional archive into an immersive visual deck. It takes inspiration from the referenced interface’s cinematic browsing style—large visual panels, minimal framing, and a curated vertical flow of highlights—while adapting it to conferences, visits, workshops, and lab life. The referenced site presents a visually led archive organized around repeated image-led entries such as “Inspire” and “Showcase” across months, which informed this more editorial, full-panel direction. citeturn441653view0</p>
+</div>
+<div class="hero-meta">
+<span class="meta-chip"><i class="bi bi-arrows-fullscreen"></i> Full-panel cards</span>
+<span class="meta-chip"><i class="bi bi-collection"></i> Curated event deck</span>
+<span class="meta-chip"><i class="bi bi-mouse"></i> Scroll-led browsing</span>
+</div>
+</section>
+
+<section class="gallery-layout">
+<aside class="side-rail">
+<div class="rail-title"><div><h3>Event Index</h3><small>Click to jump. Filter to focus.</small></div></div>
+<div class="filter-group">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="conference">Conference</button>
+<button class="filter-btn" data-filter="visit">Visit</button>
+<button class="filter-btn" data-filter="workshop">Workshop</button>
+<button class="filter-btn" data-filter="lab">Lab Life</button>
+</div>
+<div class="rail-list">
+<a class="rail-item active" data-target="slide-1" href="#slide-1"><div class="rail-index">01</div><div><h4>IEEE BigData 2025</h4><p>Conference · Dec 2025</p></div></a>
+<a class="rail-item" data-target="slide-2" href="#slide-2"><div class="rail-index">02</div><div><h4>BigDataW 2025</h4><p>Workshop · Dec 2025</p></div></a>
+<a class="rail-item" data-target="slide-3" href="#slide-3"><div class="rail-index">03</div><div><h4>Microsoft GSL Visit</h4><p>Visit · Nov 2025</p></div></a>
+<a class="rail-item" data-target="slide-4" href="#slide-4"><div class="rail-index">04</div><div><h4>VLDB 2024</h4><p>Conference · Aug 2024</p></div></a>
+<a class="rail-item" data-target="slide-5" href="#slide-5"><div class="rail-index">05</div><div><h4>TU Delft Gathering</h4><p>Visit · Aug 2024</p></div></a>
+<a class="rail-item" data-target="slide-6" href="#slide-6"><div class="rail-index">06</div><div><h4>Sunchon Trip</h4><p>Lab Life · Jul 2023</p></div></a>
+</div>
+</aside>
+
+<div class="deck">
+<article class="slide" id="slide-1" data-category="conference"><div class="slide-bg bg-1"></div><div class="slide-body"><div class="slide-main"><span class="slide-tag"><i class="bi bi-stars"></i> Featured Conference</span><h2>IEEE BigData 2025</h2><p>A flagship conference highlight can lead the gallery with a near full-screen visual treatment. This format makes each event feel more like a chapter than a small card, giving you space for atmosphere, narrative, and context.</p></div><div class="slide-side"><div class="side-kicker">Snapshot</div><div class="detail-row"><span class="label">Date</span><span class="value">8–11 December 2025</span></div><div class="detail-row"><span class="label">Category</span><span class="value">Conference</span></div><div class="detail-row"><span class="label">Focus</span><span class="value">Paper presentation, external visibility, and research networking</span></div><div class="slide-actions"><a href="#"><i class="bi bi-images"></i> View Album</a><a href="news.html"><i class="bi bi-arrow-up-right"></i> Related News</a></div></div></div></article>
+<article class="slide" id="slide-2" data-category="workshop"><div class="slide-bg bg-2"></div><div class="slide-body"><div class="slide-main"><span class="slide-tag"><i class="bi bi-braces-asterisk"></i> Workshop Session</span><h2>IEEE BigDataW 2025 (D2ET)</h2><p>This layout also works well for satellite events, posters, and workshop participation. It keeps the visual experience consistent while letting smaller moments feel equally intentional.</p></div><div class="slide-side"><div class="side-kicker">Snapshot</div><div class="detail-row"><span class="label">Date</span><span class="value">10 December 2025</span></div><div class="detail-row"><span class="label">Category</span><span class="value">Workshop</span></div><div class="detail-row"><span class="label">Focus</span><span class="value">Focused technical exchange and workshop discussion</span></div><div class="slide-actions"><a href="#"><i class="bi bi-images"></i> View Album</a><a href="news.html"><i class="bi bi-arrow-up-right"></i> Related News</a></div></div></div></article>
+<article class="slide" id="slide-3" data-category="visit"><div class="slide-bg bg-3"></div><div class="slide-body"><div class="slide-main"><span class="slide-tag"><i class="bi bi-buildings"></i> Industry Visit</span><h2>Meeting with Yiwen (Microsoft GSL)</h2><p>Visits and collaboration moments feel stronger in a cinematic layout like this because the page can communicate both the event itself and the tone of the interaction, rather than just the title.</p></div><div class="slide-side"><div class="side-kicker">Snapshot</div><div class="detail-row"><span class="label">Date</span><span class="value">14 November 2025</span></div><div class="detail-row"><span class="label">Category</span><span class="value">Visit</span></div><div class="detail-row"><span class="label">Focus</span><span class="value">Industry collaboration and research dialogue</span></div><div class="slide-actions"><a href="#"><i class="bi bi-images"></i> View Album</a><a href="news.html"><i class="bi bi-arrow-up-right"></i> Related News</a></div></div></div></article>
+<article class="slide" id="slide-4" data-category="conference"><div class="slide-bg bg-4"></div><div class="slide-body"><div class="slide-main"><span class="slide-tag"><i class="bi bi-globe2"></i> International Conference</span><h2>VLDB 2024</h2><p>For top-tier international conferences, this direction feels more premium than a standard image grid. It can later accommodate real conference photos, poster shots, or figure thumbnails without breaking the layout.</p></div><div class="slide-side"><div class="side-kicker">Snapshot</div><div class="detail-row"><span class="label">Date</span><span class="value">27 August 2024</span></div><div class="detail-row"><span class="label">Category</span><span class="value">Conference</span></div><div class="detail-row"><span class="label">Focus</span><span class="value">Global research visibility and community presence</span></div><div class="slide-actions"><a href="#"><i class="bi bi-images"></i> View Album</a><a href="news.html"><i class="bi bi-arrow-up-right"></i> Related News</a></div></div></div></article>
+<article class="slide" id="slide-5" data-category="visit"><div class="slide-bg bg-5"></div><div class="slide-body"><div class="slide-main"><span class="slide-tag"><i class="bi bi-mortarboard-fill"></i> Academic Visit</span><h2>Gathering with Prof. Rihan · TU Delft</h2><p>Academic visits, partner meetings, and international collaborations fit naturally into this UI because each story is treated as a designed scene rather than a compressed list item.</p></div><div class="slide-side"><div class="side-kicker">Snapshot</div><div class="detail-row"><span class="label">Date</span><span class="value">1 August 2024</span></div><div class="detail-row"><span class="label">Category</span><span class="value">Visit</span></div><div class="detail-row"><span class="label">Focus</span><span class="value">International exchange and academic networking</span></div><div class="slide-actions"><a href="#"><i class="bi bi-images"></i> View Album</a><a href="news.html"><i class="bi bi-arrow-up-right"></i> Related News</a></div></div></div></article>
+<article class="slide" id="slide-6" data-category="lab"><div class="slide-bg bg-6"></div><div class="slide-body"><div class="slide-main"><span class="slide-tag"><i class="bi bi-emoji-smile"></i> Lab Life</span><h2>Sunchon Trip</h2><p>The interface should not only celebrate conferences and official events. It should also let internal culture moments feel elevated, warm, and visually memorable without becoming casual or messy.</p></div><div class="slide-side"><div class="side-kicker">Snapshot</div><div class="detail-row"><span class="label">Date</span><span class="value">15 July 2023</span></div><div class="detail-row"><span class="label">Category</span><span class="value">Lab Life</span></div><div class="detail-row"><span class="label">Focus</span><span class="value">Retreats, bonding, and team identity</span></div><div class="slide-actions"><a href="#"><i class="bi bi-images"></i> View Album</a><a href="news.html"><i class="bi bi-arrow-up-right"></i> Related News</a></div></div></div></article>
+
+<div class="footer-note"><h3>How to use this layout well</h3><p>Replace the placeholder backgrounds with real event photographs, keep each slide concise, and let the sequence act like a visual journal. This kind of interface works best when the lab treats each event as a curated highlight rather than trying to expose every image at once.</p></div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container"><div class="row"><div class="col-12"><a href="https://computing.yonsei.ac.kr/eng/index.php"><img src="images/logos/yonsei_computing_logo.png" style="margin-right: 5px; height: 36px; width: auto;" alt=""></a><a href="https://cs.yonsei.ac.kr/csai_en/index.do"><img src="images/logos/yonsei_cs_logo.png" style="margin-right: 0px; height: 34px; width: auto;" alt=""></a></div></div></div>
+<div class="site-footer-bottom"><div class="container"><div class="row"><div class="col-lg-6 col-md-7 col-12"><p class="copyright-text mb-0">Copyright © 2026 <a href="#">BDAI Lab</a></p></div></div></div></div>
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/custom.js"></script>
+<script>
+(function(){
+  const railItems = Array.from(document.querySelectorAll('.rail-item'));
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+  let activeFilter = 'all';
+  function applyFilter(){
+    slides.forEach(slide=>{
+      const cat = slide.dataset.category || 'all';
+      const visible = activeFilter === 'all' || cat === activeFilter;
+      slide.classList.toggle('hidden-slide', !visible);
+      const rail = railItems.find(r=>r.dataset.target===slide.id);
+      if(rail) rail.style.display = visible ? 'grid' : 'none';
+    });
+  }
+  buttons.forEach(btn=>{
+    btn.addEventListener('click', function(){
+      buttons.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter || 'all';
+      applyFilter();
+    });
+  });
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        railItems.forEach(r=>r.classList.toggle('active', r.dataset.target===entry.target.id));
+      }
+    });
+  }, {threshold:0.45});
+  slides.forEach(slide=>observer.observe(slide));
+  applyFilter();
+})();
+</script>
+</body>
+</html>

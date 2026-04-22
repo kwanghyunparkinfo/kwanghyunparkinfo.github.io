@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BDAI Lab - News</title>
+  <meta name="description" content="Latest news, highlights, announcements, and achievements from the Big Data & AI Laboratory at Yonsei University.">
+  <link rel="shortcut icon" href="images/logos/BDAI_logo_new.png">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
+  <style>
+    :root{--bdai-navy:#0b2f73;--bdai-navy-2:#123f97;--bdai-blue:#2f6cff;--bdai-teal:#1c9ab6;--bdai-bg:#f3f6fb;--bdai-card:#fff;--bdai-border:#dbe4f0;--bdai-border-2:#e7edf6;--bdai-text:#1f2d3d;--bdai-muted:#6b7a90;--bdai-shadow:0 14px 36px rgba(16,37,74,.08);--bdai-shadow-lg:0 18px 48px rgba(16,37,74,.12)}
+    body{background:var(--bdai-bg);color:var(--bdai-text)}
+    .navbar{background:rgba(255,255,255,.96)!important;border-bottom:1px solid rgba(11,47,115,.06);backdrop-filter:blur(8px)}
+    .navbar .nav-link{font-weight:600;color:#24324b;position:relative;padding-bottom:12px}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:var(--bdai-navy)}
+    .navbar .nav-link.active::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:3px;border-radius:999px;background:var(--bdai-blue)}
+    .news-hero{position:relative;padding:78px 0 64px;background:radial-gradient(circle at top right, rgba(85,155,255,.28), transparent 26%),radial-gradient(circle at 75% 32%, rgba(28,154,182,.18), transparent 20%),linear-gradient(135deg,#08245b 0%,#0b3178 55%,#103b8b 100%);overflow:hidden}
+    .news-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);background-size:36px 36px;opacity:.22}
+    .news-hero .container{position:relative;z-index:1}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.12);color:#fff;padding:9px 15px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(5px);margin-bottom:18px}
+    .news-hero h1{color:#fff;font-size:54px;font-weight:800;line-height:1.05;margin-bottom:14px}
+    .news-hero p{color:rgba(255,255,255,.9);font-size:17px;line-height:1.7;max-width:760px;margin-bottom:0}
+    .news-main{padding:34px 0 72px;margin-top:-18px;position:relative;z-index:2}
+    .news-shell{background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.82);border-radius:28px;box-shadow:var(--bdai-shadow-lg);padding:22px}
+    .news-toolbar{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:24px}
+    .news-search{flex:1 1 340px;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--bdai-border);border-radius:14px;padding:12px 14px;box-shadow:0 5px 14px rgba(15,37,84,.04)}
+    .news-search input{width:100%;border:none;outline:none;background:transparent;color:var(--bdai-text);font-size:14px}
+    .news-filters{display:flex;gap:10px;flex-wrap:wrap}
+    .news-chip{border:1px solid var(--bdai-border);background:#fff;color:var(--bdai-text);border-radius:999px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .18s ease}
+    .news-chip.active,.news-chip:hover{background:var(--bdai-navy);border-color:var(--bdai-navy);color:#fff}
+    .news-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,.95fr);gap:22px;align-items:start}
+    .featured-news{background:linear-gradient(135deg, rgba(255,255,255,.98) 0%, rgba(246,249,255,.98) 100%);border:1px solid var(--bdai-border);border-radius:24px;overflow:hidden;box-shadow:var(--bdai-shadow)}
+    .featured-media{min-height:320px;background:linear-gradient(135deg, rgba(11,47,115,.92), rgba(47,108,255,.68)),url('images/slide/volunteer-helping-with-donation-box.jpg') center/cover;display:flex;align-items:end;padding:24px}
+    .featured-badge{display:inline-block;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.22);padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(4px)}
+    .featured-body{padding:24px}
+    .news-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--bdai-muted);margin-bottom:12px}
+    .featured-body h2{font-size:30px;line-height:1.15;margin-bottom:14px;color:var(--bdai-navy)}
+    .featured-body p{color:var(--bdai-muted);line-height:1.72;margin-bottom:16px}
+    .news-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--bdai-blue);text-decoration:none}
+    .news-link:hover{color:var(--bdai-navy-2)}
+    .news-list{margin-top:22px;display:grid;gap:18px}
+    .news-card{display:grid;grid-template-columns:210px minmax(0,1fr);gap:18px;background:var(--bdai-card);border:1px solid var(--bdai-border);border-radius:22px;overflow:hidden;box-shadow:var(--bdai-shadow);transition:transform .18s ease, box-shadow .18s ease}
+    .news-card:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(16,37,74,.11)}
+    .news-card-media{min-height:190px;background:linear-gradient(135deg, rgba(11,47,115,.78), rgba(47,108,255,.45)),url('images/slide/medium-shot-people-collecting-donations.jpg') center/cover}
+    .news-card-body{padding:20px 20px 20px 0}
+    .news-card-body h3{font-size:22px;line-height:1.2;margin-bottom:10px;color:var(--bdai-navy)}
+    .news-card-body p{color:var(--bdai-muted);margin-bottom:14px;line-height:1.67}
+    .sidebar-panel{background:var(--bdai-card);border:1px solid var(--bdai-border);border-radius:24px;box-shadow:var(--bdai-shadow);padding:22px;margin-bottom:18px}
+    .sidebar-panel h4{font-size:20px;color:var(--bdai-navy);margin-bottom:16px}
+    .archive-list,.category-list{list-style:none;padding-left:0;margin:0;display:grid;gap:10px}
+    .archive-list a,.category-list a{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:14px;background:#f8fbff;color:var(--bdai-text);text-decoration:none;border:1px solid var(--bdai-border-2);transition:all .18s ease}
+    .archive-list a:hover,.category-list a:hover{background:#eef4ff;border-color:#d6e3ff}
+    .mini-news{display:grid;gap:14px}
+    .mini-news-item{padding-bottom:14px;border-bottom:1px solid #e8eef7}
+    .mini-news-item:last-child{border-bottom:none;padding-bottom:0}
+    .mini-news-item h5{font-size:16px;line-height:1.35;margin-bottom:6px;color:var(--bdai-text)}
+    .mini-news-item span{color:var(--bdai-muted);font-size:13px}
+    .newsletter-box{background:linear-gradient(135deg, rgba(11,47,115,.96), rgba(47,108,255,.84));color:#fff}
+    .newsletter-box h4,.newsletter-box p{color:#fff}
+    .newsletter-input{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+    .newsletter-input input{flex:1 1 100%;border-radius:12px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.14);color:#fff;padding:12px 14px;outline:none}
+    .newsletter-input input::placeholder{color:rgba(255,255,255,.72)}
+    .newsletter-input button{border:none;border-radius:12px;background:#fff;color:var(--bdai-navy);font-weight:700;padding:12px 16px}
+    .pagination-wrap{margin-top:28px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .page-btn{width:42px;height:42px;border-radius:12px;border:1px solid var(--bdai-border);background:#fff;color:var(--bdai-text);font-weight:700}
+    .page-btn.active,.page-btn:hover{background:var(--bdai-navy);color:#fff;border-color:var(--bdai-navy)}
+    @media (max-width:991px){.news-layout{grid-template-columns:1fr}.news-card{grid-template-columns:1fr}.news-card-body{padding:0 18px 18px}}
+    @media (max-width:767px){.news-hero{padding:58px 0 48px}.news-hero h1{font-size:38px}.featured-body h2{font-size:24px}.news-shell{padding:14px}.featured-media{min-height:250px}}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab">
+        <img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Publications</a>
+            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink1">
+              <li><a class="dropdown-item" href="conferences.html">Confs/Journals</a></li>
+              <li><a class="dropdown-item" href="patents.html">Patents</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">People</a>
+            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink2">
+              <li><a class="dropdown-item" href="faculty.html">Faculty</a></li>
+              <li><a class="dropdown-item" href="team.html">Team</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+          <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item ms-3"><a class="nav-link custom-btn custom-border-btn btn" href="research.html#section_contact">Join BDAI Lab</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="news-hero">
+      <div class="container">
+        <span class="hero-badge"><i class="bi bi-megaphone"></i> Lab Updates & Announcements</span>
+        <h1>BDAI Lab News</h1>
+        <p>Stay updated on research highlights, awards, publications, invited talks, project milestones, student achievements, and major announcements from the Big Data &amp; AI Laboratory.</p>
+      </div>
+    </section>
+
+    <section class="news-main">
+      <div class="container">
+        <div class="news-shell">
+          <div class="news-toolbar">
+            <div class="news-search"><i class="bi bi-search"></i><input type="text" placeholder="Search news, keywords, or tags..."></div>
+            <div class="news-filters">
+              <button class="news-chip active">All</button><button class="news-chip">Research</button><button class="news-chip">Awards</button><button class="news-chip">Publications</button><button class="news-chip">Events</button><button class="news-chip">Announcements</button>
+            </div>
+          </div>
+
+          <div class="news-layout">
+            <div>
+              <article class="featured-news">
+                <div class="featured-media"><span class="featured-badge">Featured News</span></div>
+                <div class="featured-body">
+                  <div class="news-meta"><span><i class="bi bi-calendar-event"></i> April 2026</span><span><i class="bi bi-tag"></i> Research Highlight</span><span><i class="bi bi-pin-angle"></i> Pinned</span></div>
+                  <h2>BDAI Lab Launches New Research Initiative on Data-Centric AI Systems</h2>
+                  <p>Use this featured space for the lab’s most important update of the month, such as a major grant award, a new research initiative, a keynote announcement, or a high-impact conference acceptance.</p>
+                  <a href="#" class="news-link">Read Full Story <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </article>
+
+              <div class="news-list">
+                <article class="news-card">
+                  <div class="news-card-media"></div>
+                  <div class="news-card-body">
+                    <div class="news-meta"><span><i class="bi bi-calendar-event"></i> April 18, 2026</span><span><i class="bi bi-tag"></i> Publications</span></div>
+                    <h3>Paper Accepted to a Major Database / Systems Conference</h3>
+                    <p>This block is suitable for regular news entries. It works well for paper acceptances, workshop papers, demos, journal publications, patents, and technical reports.</p>
+                    <a href="#" class="news-link">Read More <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </article>
+
+                <article class="news-card">
+                  <div class="news-card-media" style="background:linear-gradient(135deg, rgba(11,47,115,.78), rgba(28,154,182,.45)),url('images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg') center/cover;"></div>
+                  <div class="news-card-body">
+                    <div class="news-meta"><span><i class="bi bi-calendar-event"></i> April 10, 2026</span><span><i class="bi bi-tag"></i> Awards</span></div>
+                    <h3>Student Receives Best Paper / Fellowship / Travel Award</h3>
+                    <p>Use this section for student recognitions, dissertation awards, distinguished internships, faculty awards, media coverage, and external honors.</p>
+                    <a href="#" class="news-link">Read More <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </article>
+
+                <article class="news-card">
+                  <div class="news-card-media" style="background:linear-gradient(135deg, rgba(11,47,115,.78), rgba(142,88,255,.40)),url('images/slide/volunteer-helping-with-donation-box.jpg') center/cover;"></div>
+                  <div class="news-card-body">
+                    <div class="news-meta"><span><i class="bi bi-calendar-event"></i> March 30, 2026</span><span><i class="bi bi-tag"></i> Events</span></div>
+                    <h3>BDAI Lab Hosts Seminar, Workshop, or Distinguished Talk</h3>
+                    <p>This card can be used for seminar announcements, reading groups, summer schools, industrial collaborations, research visits, and outreach activities.</p>
+                    <a href="#" class="news-link">Read More <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </article>
+
+                <article class="news-card">
+                  <div class="news-card-media" style="background:linear-gradient(135deg, rgba(11,47,115,.78), rgba(95,149,255,.42)),url('images/slide/medium-shot-people-collecting-donations.jpg') center/cover;"></div>
+                  <div class="news-card-body">
+                    <div class="news-meta"><span><i class="bi bi-calendar-event"></i> March 20, 2026</span><span><i class="bi bi-tag"></i> Lab Announcement</span></div>
+                    <h3>New Students and Visiting Researchers Join the Lab</h3>
+                    <p>This format also works for new member introductions, alumni updates, graduation milestones, and internal lab announcements.</p>
+                    <a href="#" class="news-link">Read More <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="pagination-wrap">
+                <button class="page-btn active">1</button><button class="page-btn">2</button><button class="page-btn">3</button><button class="page-btn"><i class="bi bi-chevron-right"></i></button>
+              </div>
+            </div>
+
+            <aside>
+              <div class="sidebar-panel">
+                <h4>Recent Updates</h4>
+                <div class="mini-news">
+                  <div class="mini-news-item"><h5>Research project selected for national funding</h5><span>April 2026</span></div>
+                  <div class="mini-news-item"><h5>New paper on AI systems accepted</h5><span>April 2026</span></div>
+                  <div class="mini-news-item"><h5>Lab members present at an international conference</h5><span>March 2026</span></div>
+                </div>
+              </div>
+
+              <div class="sidebar-panel">
+                <h4>Categories</h4>
+                <ul class="category-list">
+                  <li><a href="#"><span>Research</span><span>12</span></a></li>
+                  <li><a href="#"><span>Publications</span><span>9</span></a></li>
+                  <li><a href="#"><span>Awards</span><span>5</span></a></li>
+                  <li><a href="#"><span>Events</span><span>7</span></a></li>
+                  <li><a href="#"><span>Lab Announcements</span><span>6</span></a></li>
+                </ul>
+              </div>
+
+              <div class="sidebar-panel">
+                <h4>Archive</h4>
+                <ul class="archive-list">
+                  <li><a href="#"><span>2026</span><span>14</span></a></li>
+                  <li><a href="#"><span>2025</span><span>21</span></a></li>
+                  <li><a href="#"><span>2024</span><span>17</span></a></li>
+                </ul>
+              </div>
+
+              <div class="sidebar-panel newsletter-box">
+                <h4>Broadcast Updates</h4>
+                <p>Replace this box with your preferred newsletter, mailing list, Google Form, or lab contact workflow.</p>
+                <div class="newsletter-input">
+                  <input type="email" placeholder="Enter email address">
+                  <button type="button">Subscribe</button>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="https://computing.yonsei.ac.kr/eng/index.php"><img src="images/logos/yonsei_computing_logo.png" style="margin-right: 5px; height: 36px; width: auto;" alt=""></a>
+          <a href="https://cs.yonsei.ac.kr/csai_en/index.do"><img src="images/logos/yonsei_cs_logo.png" style="margin-right: 0px; height: 34px; width: auto;" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-7 col-12"><p class="copyright-text mb-0">Copyright © 2026 <a href="#">BDAI Lab</a></p></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/click-scroll.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>

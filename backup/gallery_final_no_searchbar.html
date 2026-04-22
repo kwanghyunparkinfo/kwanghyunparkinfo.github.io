@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>BDAI Lab - Gallery</title>
+
+        <link rel="shortcut icon" href="images/logos/BDAI_logo_new.png">
+
+        <!-- CSS FILES -->        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
+
+        <!-- ##### NEW #### -->
+
+        <!--<link rel="stylesheet" type="text/css" href="css2/bootstrap.min.css">-->
+        <link rel="stylesheet" type="text/css" href="css2/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css2/templatemo-style.css">
+
+        <!-- JavaScripts -->
+        <script src="js2/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js2/vendor/modernizr.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM"></script>
+
+        <!-- ##### end of NEW #### -->
+<!--
+
+TemplateMo 581 Kind Heart Charity
+
+https://templatemo.com/tm-581-kind-heart-charity
+
+-->
+
+    </head>
+    
+    <body id="section_1">
+        
+        <!--- Menu ---->
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <a href="https://bdai.yonsei.ac.kr/"><img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab"></a>
+                    <a href="https://bdai.yonsei.ac.kr/"><img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab"></a>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="research.html">Research</a>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Publications</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="conferences.html">Confs/Journals</a></li>
+                                <li><a class="dropdown-item" href="patents.html">Patents</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link click-scroll dropdown-toggle" href="faculty.html" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">People</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="faculty.html">Faculty</a></li>
+                                <li><a class="dropdown-item" href="team.html">Team</a></li>
+                                <!--<li><a class="dropdown-item" href="#">Alumni</a></li>-->
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="teaching.html">Teaching</a>
+                        </li>
+                        
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        -->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn btn" href="#section_contact">Join BDAI Lab</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+
+            <section class="news-detail-header-section text-center">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <h3 class="text-white">Gallery</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Start -->
+            <section class="section-padding section-bg" id="section_2">
+                <style>
+                    .bdai-gallery-wrap{
+                        max-width: 1600px;
+                        margin: 0 auto;
+                    }
+                    .bdai-gallery-toolbar{
+                        display:flex;
+                        justify-content:space-between;
+                        gap:14px;
+                        align-items:center;
+                        flex-wrap:wrap;
+                        margin-bottom:24px;
+                        padding:18px;
+                        border-radius:26px;
+                        border:1px solid rgba(15,37,84,.08);
+                        background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(247,250,255,.95));
+                        box-shadow:0 10px 26px rgba(16,37,74,.06);
+                    }
+                    .bdai-gallery-search{
+                        flex:1 1 340px;
+                        display:flex;
+                        align-items:center;
+                        gap:10px;
+                        border-radius:14px;
+                        padding:12px 14px;
+                        background:#fff;
+                        border:1px solid #dbe4f0;
+                    }
+                    .bdai-gallery-search input{
+                        width:100%;
+                        border:none;
+                        outline:none;
+                        background:transparent;
+                    }
+                    .bdai-gallery-filters{
+                        display:flex;
+                        gap:10px;
+                        flex-wrap:wrap;
+                    }
+                    .bdai-gallery-filter{
+                        border:1px solid #dbe4f0;
+                        background:#fff;
+                        color:#24324b;
+                        border-radius:999px;
+                        padding:10px 14px;
+                        font-size:13px;
+                        font-weight:700;
+                        transition:.18s ease;
+                    }
+                    .bdai-gallery-filter.active,
+                    .bdai-gallery-filter:hover{
+                        background:#0b2f73;
+                        border-color:#0b2f73;
+                        color:#fff;
+                    }
+                    .bdai-gallery-grid{
+                        column-count:4;
+                        column-gap:28px;
+                    }
+                    .bdai-gallery-card{
+                        break-inside:avoid;
+                        margin:0 0 28px;
+                        position:relative;
+                        border-radius:28px;
+                        overflow:hidden;
+                        background:#0d1422;
+                        border:1px solid rgba(15,37,84,.08);
+                        box-shadow:0 18px 50px rgba(16,37,74,.14);
+                        transition:transform .35s ease, box-shadow .35s ease;
+                        cursor:pointer;
+                    }
+                    .bdai-gallery-card:hover{
+                        transform:scale(1.08) translateY(-10px);
+                        z-index:10;
+                        box-shadow:0 40px 100px rgba(0,0,0,.35);
+                    }
+                    .bdai-gallery-card.hidden-card{
+                        display:none !important;
+                    }
+                    .bdai-gallery-media{
+                        position:relative;
+                        width:100%;
+                        background-size:cover;
+                        background-position:center;
+                        transition:transform .4s ease;
+                    }
+                    .bdai-gallery-card:hover .bdai-gallery-media{
+                        transform:scale(1.08);
+                    }
+                    .bdai-gallery-media:after{
+                        content:"";
+                        position:absolute;
+                        inset:0;
+                        background:linear-gradient(180deg, rgba(7,11,18,.04) 0%, rgba(7,11,18,.16) 40%, rgba(7,11,18,.82) 100%);
+                    }
+                    .bdai-gallery-hs{aspect-ratio:4/5;}
+                    .bdai-gallery-hm{aspect-ratio:4/5.5;}
+                    .bdai-gallery-hl{aspect-ratio:4/6.4;}
+                    .bdai-gallery-overlay{
+                        position:absolute;
+                        inset:auto 0 0 0;
+                        z-index:2;
+                        padding:18px 18px 16px;
+                        opacity:0;
+                        transform:translateY(18px);
+                        transition:opacity .28s ease, transform .28s ease;
+                        pointer-events:none;
+                    }
+                    .bdai-gallery-card:hover .bdai-gallery-overlay{
+                        opacity:1;
+                        transform:translateY(0);
+                    }
+                    .bdai-gallery-tag{
+                        display:inline-flex;
+                        align-items:center;
+                        gap:8px;
+                        padding:8px 12px;
+                        border-radius:999px;
+                        background:rgba(255,255,255,.14);
+                        border:1px solid rgba(255,255,255,.14);
+                        font-size:11px;
+                        font-weight:800;
+                        text-transform:uppercase;
+                        letter-spacing:.08em;
+                        color:#fff;
+                    }
+                    .bdai-gallery-overlay h3{
+                        margin:12px 0 8px;
+                        font-size:26px;
+                        line-height:1.05;
+                        letter-spacing:-.03em;
+                        font-weight:900;
+                        color:#fff;
+                    }
+                    .bdai-gallery-overlay p{
+                        margin:0;
+                        color:rgba(245,248,252,.82);
+                        font-size:14px;
+                        line-height:1.65;
+                    }
+                    .bdai-gallery-meta{
+                        display:flex;
+                        gap:10px;
+                        flex-wrap:wrap;
+                        margin-top:14px;
+                    }
+                    .bdai-gallery-meta span{
+                        display:inline-flex;
+                        align-items:center;
+                        gap:7px;
+                        font-size:12px;
+                        color:rgba(235,241,255,.78);
+                    }
+                    .bdai-gallery-modal{
+                        position:fixed;
+                        inset:0;
+                        z-index:2000;
+                        display:none;
+                        background:rgba(5,8,14,.92);
+                        backdrop-filter:blur(10px);
+                    }
+                    .bdai-gallery-modal.active{display:block;}
+                    .bdai-gallery-modal-inner{
+                        position:absolute;
+                        inset:28px;
+                        display:grid;
+                        grid-template-columns:minmax(0,1.2fr) 360px;
+                        gap:22px;
+                        align-items:stretch;
+                    }
+                    .bdai-gallery-modal-media{
+                        position:relative;
+                        border-radius:28px;
+                        overflow:hidden;
+                        border:1px solid rgba(255,255,255,.08);
+                        background:#0d1422 center/cover no-repeat;
+                        box-shadow:0 30px 80px rgba(0,0,0,.35);
+                    }
+                    .bdai-gallery-modal-panel{
+                        border-radius:28px;
+                        padding:24px;
+                        border:1px solid rgba(255,255,255,.08);
+                        background:linear-gradient(180deg, rgba(16,25,45,.96), rgba(12,19,34,.96));
+                        color:#fff;
+                        overflow:auto;
+                    }
+                    .bdai-gallery-modal-top{
+                        display:flex;
+                        justify-content:space-between;
+                        gap:14px;
+                        align-items:flex-start;
+                        margin-bottom:20px;
+                    }
+                    .bdai-gallery-modal-kicker{
+                        font-size:12px;
+                        font-weight:800;
+                        letter-spacing:.12em;
+                        text-transform:uppercase;
+                        color:rgba(235,241,255,.66);
+                    }
+                    .bdai-gallery-modal-title{
+                        margin:8px 0 0;
+                        font-size:34px;
+                        line-height:1.02;
+                        letter-spacing:-.03em;
+                        font-weight:900;
+                    }
+                    .bdai-gallery-modal-close{
+                        width:44px;
+                        height:44px;
+                        border:none;
+                        border-radius:14px;
+                        background:rgba(255,255,255,.08);
+                        color:#fff;
+                        font-size:22px;
+                    }
+                    .bdai-gallery-modal-desc{
+                        color:rgba(245,248,252,.82);
+                        line-height:1.8;
+                        font-size:15px;
+                        margin-bottom:18px;
+                    }
+                    .bdai-gallery-modal-meta{
+                        display:grid;
+                        gap:12px;
+                    }
+                    .bdai-gallery-modal-meta .meta{
+                        padding:14px 16px;
+                        border-radius:16px;
+                        background:rgba(255,255,255,.04);
+                        border:1px solid rgba(255,255,255,.08);
+                    }
+                    .bdai-gallery-modal-meta .label{
+                        display:block;
+                        font-size:12px;
+                        color:rgba(235,241,255,.56);
+                        margin-bottom:5px;
+                    }
+                    .bdai-gallery-modal-meta .value{
+                        display:block;
+                        font-size:15px;
+                        line-height:1.55;
+                        color:#fff;
+                    }
+                    @media (max-width:1360px){
+                        .bdai-gallery-grid{column-count:3;}
+                    }
+                    @media (max-width:991px){
+                        .bdai-gallery-grid{column-count:2;}
+                        .bdai-gallery-modal-inner{
+                            inset:16px;
+                            grid-template-columns:1fr;
+                        }
+                        .bdai-gallery-modal-media{min-height:46vh;}
+                    }
+                    @media (max-width:640px){
+                        .bdai-gallery-grid{column-count:1;}
+                    }
+                </style>
+
+                <div class="bdai-gallery-wrap">
+                    <div class="container">
+                        <div class="bdai-gallery-toolbar">
+                            
+    <div class="bdai-gallery-search" style="flex:0 0 auto;">
+        <button class="bdai-gallery-filter" id="searchBtn">
+            <i class="bi bi-search"></i> Search
+        </button>
+    </div>
+    
+                            <div class="bdai-gallery-filters">
+                                <button class="bdai-gallery-filter active" data-filter="all">All</button>
+                                <button class="bdai-gallery-filter" data-filter="conference">Conference</button>
+                                <button class="bdai-gallery-filter" data-filter="visit">Visit</button>
+                                <button class="bdai-gallery-filter" data-filter="workshop">Workshop</button>
+                                <button class="bdai-gallery-filter" data-filter="lab">Lab Life</button>
+                            </div>
+                        </div>
+
+                        <div class="bdai-gallery-grid" id="bdaiGalleryGrid">
+
+                            <article class="bdai-gallery-card" data-category="conference" data-search="IEEE BigData 2025 conference december 2025 research presentation" data-title="IEEE BigData 2025" data-desc="Flagship conference participation with strong external visibility and research presentation context." data-date="8-11 December 2025" data-tag="Conference" data-image="images/gallery/BigData2025.png">
+                                <div class="bdai-gallery-media bdai-gallery-hl" style="background-image:url('images/gallery/BigData2025.png')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-stars"></i> Conference</span>
+                                    <h3>IEEE BigData 2025</h3>
+                                    <p>Flagship conference participation with strong external visibility and research presentation context.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Dec 2025</span>
+                                        <span><i class="bi bi-globe2"></i> International</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="workshop" data-search="IEEE BigDataW 2025 D2ET workshop december 2025" data-title="IEEE BigDataW 2025 (D2ET)" data-desc="Focused technical exchange around workshop participation and specialized tracks." data-date="10 December 2025" data-tag="Workshop" data-image="images/gallery/BigDataW2025.jpeg">
+                                <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/BigDataW2025.jpeg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-braces-asterisk"></i> Workshop</span>
+                                    <h3>BigDataW 2025</h3>
+                                    <p>Focused technical exchange around workshop participation and specialized tracks.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Dec 2025</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="visit" data-search="Microsoft GSL Yiwen visit november 2025 industry collaboration" data-title="Meeting with Yiwen (Microsoft GSL)" data-desc="Industry exchange and research dialogue in a more compact gallery story format." data-date="14 November 2025" data-tag="Visit" data-image="images/gallery/MSvisit2025.jpeg">
+                                <div class="bdai-gallery-media bdai-gallery-hm" style="background-image:url('images/gallery/MSvisit2025.jpeg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-buildings"></i> Visit</span>
+                                    <h3>Microsoft GSL Visit</h3>
+                                    <p>Industry exchange and research dialogue in a more compact gallery story format.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Nov 2025</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="conference" data-search="Korean Database Conference 2025 conference november 2025 domestic" data-title="Korean Database Conference 2025" data-desc="Domestic conference activity, talks, and visibility within the Korean DB community." data-date="8 November 2025" data-tag="Conference" data-image="images/gallery/KDBC25.jpeg">
+                                <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/KDBC25.jpeg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-mic"></i> Conference</span>
+                                    <h3>Korean DB Conf. 2025</h3>
+                                    <p>Domestic conference activity, talks, and visibility within the Korean DB community.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Nov 2025</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="conference" data-search="Computer System Society 2025 society event february 2025" data-title="Computer System Society 2025" data-desc="A cleaner way to include society meetings and technical community participation." data-date="11 February 2025" data-tag="Conference" data-image="images/gallery/ComSys25.jpeg">
+                                <div class="bdai-gallery-media bdai-gallery-hm" style="background-image:url('images/gallery/ComSys25.jpeg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-diagram-3"></i> Society Event</span>
+                                    <h3>Computer System Society 2025</h3>
+                                    <p>A cleaner way to include society meetings and technical community participation.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Feb 2025</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="conference" data-search="SK AI Summit 2024 november 2024 summit conference industry" data-title="SK AI Summit 2024" data-desc="Industry-facing event card useful for sponsor or summit moments." data-date="05 November 2024" data-tag="Conference" data-image="images/gallery/SKAISummit24.jpg">
+                                <div class="bdai-gallery-media bdai-gallery-hm" style="background-image:url('images/gallery/SKAISummit24.jpg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-cpu"></i> Summit</span>
+                                    <h3>SK AI Summit 2024</h3>
+                                    <p>Industry-facing event card useful for sponsor or summit moments.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Nov 2024</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="conference" data-search="VLDB 2024 conference august 2024 international paper" data-title="VLDB 2024" data-desc="International flagship venue presence with real BDAI group photography." data-date="27 August 2024" data-tag="Conference" data-image="images/gallery/VLDB24.jpeg">
+                                <div class="bdai-gallery-media bdai-gallery-hl" style="background-image:url('images/gallery/VLDB24.jpeg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-globe2"></i> Conference</span>
+                                    <h3>VLDB 2024</h3>
+                                    <p>International flagship venue presence with real BDAI group photography.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Aug 2024</span>
+                                        <span><i class="bi bi-stars"></i> VLDB</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="visit" data-search="TU Delft Rihan visit august 2024 academic collaboration" data-title="Gathering with Prof. Rihan - TUDelft" data-desc="Academic collaboration and international partner interaction in a denser card layout." data-date="1 August 2024" data-tag="Visit" data-image="images/gallery/RihanVisit2.jpg">
+                                <div class="bdai-gallery-media bdai-gallery-hm" style="background-image:url('images/gallery/RihanVisit2.jpg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-mortarboard-fill"></i> Visit</span>
+                                    <h3>TU Delft Gathering</h3>
+                                    <p>Academic collaboration and international partner interaction in a denser card layout.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Aug 2024</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="workshop" data-search="DI Workshop 2024 july 2024 workshop" data-title="DI Workshop 2024" data-desc="A smaller workshop card that sits naturally in a multi-column visual stack." data-date="11 July 2024" data-tag="Workshop" data-image="images/gallery/diworkshop.jpg">
+                                <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/diworkshop.jpg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-kanban"></i> Workshop</span>
+                                    <h3>DI Workshop 2024</h3>
+                                    <p>A smaller workshop card that sits naturally in a multi-column visual stack.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Jul 2024</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="visit" data-search="Tech Meetup Apollon february 2024 meetup" data-title="Tech Meetup (Apollon)" data-desc="A compact social-professional meetup entry with actual event imagery." data-date="8 February 2024" data-tag="Visit" data-image="images/gallery/ApollonMeetup.jpeg">
+                                <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/ApollonMeetup.jpeg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-cup-hot"></i> Meetup</span>
+                                    <h3>Tech Meetup (Apollon)</h3>
+                                    <p>A compact social-professional meetup entry with actual event imagery.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Feb 2024</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="lab" data-search="Game Day august 2023 lab activity" data-title="Game Day" data-desc="Internal culture moments can stay polished while still feeling warm and personal." data-date="31 August 2023" data-tag="Lab Life" data-image="images/gallery/GameDay.png">
+                                <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/GameDay.png')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-emoji-smile"></i> Lab Life</span>
+                                    <h3>Game Day</h3>
+                                    <p>Internal culture moments can stay polished while still feeling warm and personal.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Aug 2023</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="lab" data-search="New Furniture august 2023 lab activity" data-title="New Furniture Arrived!" data-desc="A compact update card that fits naturally among larger academic event cards." data-date="6 August 2023" data-tag="Lab Life" data-image="images/gallery/Furniture.jpeg">
+                                <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/Furniture.jpeg')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-house-heart"></i> Lab Life</span>
+                                    <h3>New Furniture Arrived</h3>
+                                    <p>A compact update card that fits naturally among larger academic event cards.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Aug 2023</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bdai-gallery-card" data-category="lab" data-search="Sunchon Trip july 2023 lab trip retreat" data-title="Sunchon Trip" data-desc="Retreat and team-bonding moments become more memorable when treated as equal visual entries." data-date="15 July 2023" data-tag="Lab Life" data-image="images/gallery/Sunchon.png">
+                                <div class="bdai-gallery-media bdai-gallery-hl" style="background-image:url('images/gallery/Sunchon.png')"></div>
+                                <div class="bdai-gallery-overlay">
+                                    <span class="bdai-gallery-tag"><i class="bi bi-airplane"></i> Lab Life</span>
+                                    <h3>Sunchon Trip</h3>
+                                    <p>Retreat and team-bonding moments become more memorable when treated as equal visual entries.</p>
+                                    <div class="bdai-gallery-meta">
+                                        <span><i class="bi bi-calendar-event"></i> Jul 2023</span>
+                                        <span><i class="bi bi-people"></i> Team</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bdai-gallery-modal" id="bdaiGalleryModal" aria-hidden="true">
+                    <div class="bdai-gallery-modal-inner">
+                        <div class="bdai-gallery-modal-media" id="bdaiGalleryModalMedia"></div>
+                        <div class="bdai-gallery-modal-panel">
+                            <div class="bdai-gallery-modal-top">
+                                <div>
+                                    <div class="bdai-gallery-modal-kicker">Gallery Item</div>
+                                    <h2 class="bdai-gallery-modal-title" id="bdaiGalleryModalTitle">Title</h2>
+                                </div>
+                                <button class="bdai-gallery-modal-close" id="bdaiGalleryModalClose" aria-label="Close">×</button>
+                            </div>
+                            <div class="bdai-gallery-modal-desc" id="bdaiGalleryModalDesc"></div>
+                            <div class="bdai-gallery-modal-meta">
+                                <div class="meta"><span class="label">Category</span><span class="value" id="bdaiGalleryModalCategory">-</span></div>
+                                <div class="meta"><span class="label">Date</span><span class="value" id="bdaiGalleryModalDate">-</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                (function(){
+                    const input = null;
+                    const buttons = Array.from(document.querySelectorAll('.bdai-gallery-filter'));
+                    const cards = Array.from(document.querySelectorAll('.bdai-gallery-card'));
+                    let active = 'all';
+
+                    function updateGallery(){
+                        const q = (input.value || '').trim().toLowerCase();
+                        cards.forEach(card => {
+                            const cat = (card.dataset.category || '').toLowerCase();
+                            const text = (card.dataset.search || card.textContent || '').toLowerCase();
+                            const okCat = active === 'all' || cat === active;
+                            const okSearch = !q || text.includes(q);
+                            card.classList.toggle('hidden-card', !(okCat && okSearch));
+                        });
+                    }
+
+                    buttons.forEach(btn => {
+                        btn.addEventListener('click', function(){
+                            buttons.forEach(b => b.classList.remove('active'));
+                            btn.classList.add('active');
+                            active = btn.dataset.filter || 'all';
+                            updateGallery();
+                        });
+                    });
+
+                    
+                    updateGallery();
+
+                    const modal = document.getElementById('bdaiGalleryModal');
+                    const modalMedia = document.getElementById('bdaiGalleryModalMedia');
+                    const modalTitle = document.getElementById('bdaiGalleryModalTitle');
+                    const modalDesc = document.getElementById('bdaiGalleryModalDesc');
+                    const modalCategory = document.getElementById('bdaiGalleryModalCategory');
+                    const modalDate = document.getElementById('bdaiGalleryModalDate');
+                    const closeBtn = document.getElementById('bdaiGalleryModalClose');
+
+                    function openModal(card){
+                        modalMedia.style.backgroundImage = "url('" + (card.dataset.image || "") + "')";
+                        modalTitle.textContent = card.dataset.title || "";
+                        modalDesc.textContent = card.dataset.desc || "";
+                        modalCategory.textContent = card.dataset.tag || card.dataset.category || "";
+                        modalDate.textContent = card.dataset.date || "";
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+
+                    function closeModal(){
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+
+                    cards.forEach(card => {
+                        card.addEventListener('click', function(e){
+                            if (e.target.closest('a')) return;
+                            openModal(card);
+                        });
+                    });
+
+                    closeBtn.addEventListener('click', closeModal);
+                    modal.addEventListener('click', function(e){
+                        if (e.target === modal) closeModal();
+                    });
+                    document.addEventListener('keydown', function(e){
+                        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+                    });
+                })();
+                </script>
+            </section>
+            <!-- Gallery End -->
+
+            
+
+            <section class="contact-section section-padding" id="section_contact">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 mb-5">
+                            <h2>Join BDAI Lab</h2>
+                        </div>
+
+                        <div class="col-lg-7 col-12">
+                            <div class="news-block">
+                                <div class="news-block-info">
+                                    <div class="news-block-title mb-2">
+                                        <h4>Masters/Ph.D Students</h4>
+                                    </div>
+                                    <div class="news-block-body">
+                                        <p>BDAI Lab is accepting Masters/Ph.D students. Please send your CV and transcript to Prof. Park.</p>
+                                    </div>
+                                </div>
+                                <div class="news-block-info">
+                                    <div class="news-block-title mb-2">
+                                        <h4>Undergraduate Internship</h4>
+                                    </div>
+                                    <div class="news-block-body">
+                                        <p>BDAI Lab has multiple openings for undergraduate research internship. Please send your CV and transcript to Prof. Park.</p>
+                                    </div>
+                                </div>
+                                <div class="news-block-info">
+                                    <div class="news-block-title mb-2">
+                                        <h4>Post-Doctoral Researcher</h4>
+                                    </div>
+                                    <div class="news-block-body">
+                                        <p>BDAI Lab is recruiting post-doctoral researchers. Please send your CV and transcript to Prof. Park.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mx-auto">
+                            <div class="contact-info-wrap">
+                                <!--<h2>Join BDAI Lab</h2>-->
+
+                                <!--
+                                <div class="contact-image-wrap d-flex flex-wrap">
+                                    <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg" class="img-fluid avatar-image" alt="">
+
+                                    <div class="d-flex flex-column justify-content-center ms-3">
+                                        <p class="mb-0">Clara Barton</p>
+                                        <p class="mb-0"><strong>HR & Office Manager</strong></p>
+                                    </div>
+                                </div>
+                                -->
+
+                                <div class="contact-info">
+                                    <h5 class="mb-3">Contact Infomation</h5>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-geo-alt me-2"></i>
+                                        Engineering Hall4 D802/D706, 50 Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea (03722)
+                                    </p>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-telephone me-2"></i>
+
+                                        <a href="tel: +82-2-2123-2718">
+                                            +82-2-2123-2718
+                                        </a>
+                                    </p>
+
+                                    <p class="d-flex">
+                                        <i class="bi-envelope me-2"></i>
+
+                                        <a href="mailto:kwanghyun.park@yonsei.ac.kr">
+                                            kwanghyun.park@yonsei.ac.kr
+                                        </a>
+                                    </p>
+
+                                    <a href="https://www.google.com/maps/place/Yonsei+University+Engineering+Hall+4/data=!3m1!4b1!4m6!3m5!1s0x357c99e2cc1ebefb:0x7f9fc3c306fc6a!8m2!3d37.5618404!4d126.9361569!16s%2Fg%2F11j5z8z6nv" class="custom-btn btn mt-3">Get Direction</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        
+        <footer class="site-footer">
+
+            <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="https://computing.yonsei.ac.kr/eng/index.php">
+                                <img src="images/logos/yonsei_computing_logo.png" style="margin-right: 5px; height: 36px; width: auto;" alt="" />
+                            </a>
+
+                            <a href="https://cs.yonsei.ac.kr/csai_en/index.do">
+                                <img src="images/logos/yonsei_cs_logo.png" style="margin-right: 0px; height: 34px; width: auto;" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                        
+            </div>
+
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-7 col-12">
+                            <p class="copyright-text mb-0">Copyright © 2026 <a href="#">BDAI Lab</a>
+                        </div>
+                        
+                        <!--
+                        <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                            <ul class="social-icon">
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-instagram"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-linkedin"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-youtube"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        -->
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/counter.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>
