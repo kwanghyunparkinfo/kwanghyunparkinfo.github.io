@@ -17,15 +17,250 @@
         <link href="css/bootstrap-icons.css" rel="stylesheet">
 
         <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
-<!--
 
-TemplateMo 581 Kind Heart Charity
+        <style>
+            .faculty-profile-card{
+                position: sticky;
+                top: 96px;
+                border-radius: 24px;
+                overflow: hidden;
+                background: #ffffff;
+                border: 1px solid rgba(15,37,84,.08);
+                box-shadow: 0 18px 42px rgba(15,37,84,.08);
+            }
+            .faculty-profile-card img{
+                width: 100%;
+                display: block;
+            }
+            .faculty-profile-body{
+                padding: 24px 24px 22px;
+            }
+            .faculty-name{
+                color:#0b2f73;
+                font-size: 24px;
+                font-weight: 850;
+                margin-bottom: 6px;
+            }
+            .faculty-role{
+                color:#607089;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+            .faculty-links{
+                display:flex;
+                flex-wrap:wrap;
+                gap:10px;
+            }
+            .faculty-links a{
+                display:inline-flex;
+                align-items:center;
+                gap:7px;
+                padding:9px 13px;
+                border-radius:999px;
+                border:1px solid rgba(15,37,84,.12);
+                color:#0b2f73;
+                background:#fff;
+                font-size:13px;
+                font-weight:800;
+                text-decoration:none;
+                transition:all .18s ease;
+            }
+            .faculty-links a:hover{
+                background:#0b2f73;
+                color:#fff;
+                border-color:#0b2f73;
+            }
+            .academic-panel{
+                background:#ffffff;
+                border:1px solid rgba(15,37,84,.08);
+                border-radius:24px;
+                padding:28px 30px;
+                box-shadow:0 16px 38px rgba(15,37,84,.07);
+            }
+            .academic-section{
+                padding: 4px 0 26px;
+                margin-bottom: 26px;
+                border-bottom: 1px solid rgba(15,37,84,.08);
+            }
+            .academic-section:last-child{
+                border-bottom:none;
+                margin-bottom:0;
+                padding-bottom:0;
+            }
+            .academic-title{
+                display:flex;
+                align-items:center;
+                gap:12px;
+                margin-bottom:18px;
+            }
+            .academic-title-icon{
+                width:34px;
+                height:34px;
+                border-radius:12px;
+                display:inline-flex;
+                align-items:center;
+                justify-content:center;
+                color:#fff;
+                background:linear-gradient(135deg,#2f6cff,#0b2f73);
+                box-shadow:0 10px 22px rgba(47,108,255,.22);
+                flex:0 0 auto;
+            }
+            .academic-title h6{
+                margin:0;
+                color:#0b2f73;
+                font-size:18px;
+                font-weight:850;
+            }
+            .academic-list{
+                list-style:none;
+                padding:0;
+                margin:0;
+                display:grid;
+                gap:18px;
+            }
+            .academic-list li{
+                display:grid;
+                grid-template-columns: 22px 1fr;
+                gap:12px;
+                color:#4f5f78;
+                line-height:1.65;
+            }
+            .academic-list li i{
+                color:#2f6cff;
+                margin-top:4px;
+            }
+            .academic-list p{
+                margin:0;
+            }
+            .academic-list a{
+                color:#0b2f73;
+                font-weight:700;
+                text-decoration:none;
+                border-bottom:1px solid rgba(47,108,255,.22);
+            }
+            .academic-list a:hover{
+                color:#2f6cff;
+            }
+            .academic-subsection{
+                background:linear-gradient(180deg,#fbfdff,#ffffff);
+                border:1px solid rgba(15,37,84,.07);
+                border-radius:18px;
+                padding:18px 18px 14px;
+                margin-bottom:16px;
+            }
+            .academic-subtitle{
+                color:#0b2f73;
+                font-size:15px;
+                font-weight:850;
+                margin-bottom:12px;
+                display:flex;
+                align-items:center;
+                gap:8px;
+            }
+            .academic-subtitle::before{
+                content:"";
+                width:7px;
+                height:7px;
+                border-radius:50%;
+                background:#2f6cff;
+                box-shadow:0 0 0 4px rgba(47,108,255,.10);
+            }
+            .activity-grid{
+                display:grid;
+                gap:16px;
+            }
+            .talk-item{
+                display:grid;
+                grid-template-columns: 70px 1fr;
+                gap:18px;
+                align-items:flex-start;
+                padding:14px 0;
+                border-top:1px solid rgba(15,37,84,.07);
+            }
+            .talk-item:first-child{
+                border-top:0;
+                padding-top:0;
+            }
+            .talk-year{
+                display:inline-flex;
+                align-items:center;
+                justify-content:center;
+                min-width:58px;
+                padding:6px 8px;
+                border-radius:999px;
+                background:#eef4ff;
+                color:#0b2f73;
+                font-size:12px;
+                font-weight:850;
+            }
+            .talk-title{
+                color:#24324b;
+                font-weight:850;
+                margin-bottom:4px;
+            }
+            .talk-meta{
+                color:#70809a;
+                font-size:14px;
+                line-height:1.55;
+            }
+            .logo-strip{
+                display:flex;
+                flex-wrap:wrap;
+                gap:18px;
+                align-items:center;
+                margin-top:18px;
+                padding-top:16px;
+                border-top:1px dashed rgba(15,37,84,.10);
+            }
+            .logo-strip li{
+                list-style:none;
+                background:#fff;
+                border:1px solid rgba(15,37,84,.08);
+                border-radius:14px;
+                padding:14px 16px;
+                box-shadow:0 8px 18px rgba(15,37,84,.05);
+            }
+            .logo-strip img{
+                max-height:110px;
+                width:auto;
+                max-width:200px;
+                object-fit:contain;
+            }
+            @media (max-width:991px){
+                .faculty-profile-card{position:relative;top:auto;margin-bottom:26px;}
+                .academic-panel{padding:24px 20px;}
+                .talk-item{grid-template-columns:1fr;}
+            }
+        
+            .talk-category{
+                display:flex;
+                align-items:center;
+                gap:10px;
+                margin-bottom:14px;
+                color:#0b2f73;
+                font-weight:850;
+                font-size:15px;
+            }
+            .talk-category::before{
+                content:"";
+                width:9px;
+                height:9px;
+                border-radius:50%;
+                background:#2f6cff;
+                box-shadow:0 0 0 5px rgba(47,108,255,.10);
+            }
+            .talk-category-international::before{
+                background:#0b8f91;
+                box-shadow:0 0 0 5px rgba(11,143,145,.10);
+            }
+            .talk-category-domestic::before{
+                background:#2f6cff;
+                box-shadow:0 0 0 5px rgba(47,108,255,.10);
+            }
 
-https://templatemo.com/tm-581-kind-heart-charity
+        </style>
 
--->
-
-    </head>
+</head>
     
     <body id="section_1">
         
@@ -110,275 +345,168 @@ https://templatemo.com/tm-581-kind-heart-charity
             </section>
 
 
+
             <!-- Begin faculty -->
             <section class="section-padding section-bg" id="section_2">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-12 mx-auto">
-                            <div class="custom-text-block">
-                                    
-                                <img src="images/faculty/kwanghyunpark.jpg" class="volunteer-image img-fluid" alt="">
+                    <div class="row g-4 align-items-start">
 
-                                <div class="custom-block-body text-left">
-                                    <h6 class="mb-0">Kwanghyun Park</h6>
-                                    <p class="text-muted mb-lg-4 mb-md-4">Assistant Professor <br/> 
-                                        <a href="https://cs.yonsei.ac.kr/csai_en/intro/status.do"><u>Department of Computer Science, <br/>Yonsei University</u></a>
+                        <div class="col-lg-4 col-12">
+                            <aside class="faculty-profile-card">
+                                <img src="images/faculty/kwanghyunpark.jpg" alt="Kwanghyun Park">
+                                <div class="faculty-profile-body">
+                                    <div class="faculty-name">Kwanghyun Park</div>
+                                    <p class="faculty-role">
+                                        Assistant Professor<br>
+                                        <a href="https://cs.yonsei.ac.kr/csai_en/intro/status.do"><u>Department of Computer Science, Yonsei University</u></a>
                                     </p>
-                                    <p>
-                                        <a href="https://scholar.google.com/citations?hl=en&user=4jxKOwgAAAAJ&view_op=list_works&sortby=pubdate"><u>[Google Scholar]</u></a>
-                                        <a href="https://cs.yonsei.ac.kr/csai_en/member/fullProfessor.do"><u>[Yonsei Profile]</u></a>
-                                        
-                                    </p>
+                                    <div class="faculty-links">
+                                        <a href="https://scholar.google.com/citations?hl=en&user=4jxKOwgAAAAJ&view_op=list_works&sortby=pubdate"><i class="bi bi-mortarboard"></i> Google Scholar</a>
+                                        <a href="https://cs.yonsei.ac.kr/csai_en/member/fullProfessor.do"><i class="bi bi-person-badge"></i> Yonsei Profile</a>
+                                    </div>
                                 </div>
-                            </div>
+                            </aside>
                         </div>
 
+                        <div class="col-lg-8 col-12">
+                            <div class="academic-panel">
 
-                        <div class="col-lg-8 col-12 mx-auto">
-                            <div class="custom-text-box">       
-                                <div class="custom-text-block">
-                                    <h6 class="mb-0">Education</h6>
-    
-                                    <ul class="custom-list mt-2">
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            <p>Ph.D. and M.Sc. in <u><a href="https://www.cs.wisc.edu/">Computer Science</a></u> (<u><a href="https://database.cs.wisc.edu/">Database Systems Group</a></u>), University of Wisconsin-Madison, USA. 2016. 
-                                                <!--<a href="https://www.usnews.com/best-graduate-schools/top-science-schools/computer-systems-rankings"><u>(#10 in Computer Systems)</u></a>-->
-                                            </p>
-                                            <p class="tags-block-link">
-                                                Advisor: <br/> <a href="https://csd.cmu.edu/people/faculty/jignesh-patel"><u>Jignesh M. Patel</u></a>
+                                <div class="academic-section">
+                                    <div class="academic-title">
+                                        <span class="academic-title-icon"><i class="bi bi-mortarboard"></i></span>
+                                        <h6>Education</h6>
+                                    </div>
+                                    <ul class="academic-list">
+                                        <li>
+                                            <i class="bi-check-circle-fill"></i>
+                                            <p>
+                                                Ph.D. and M.Sc. in <a href="https://www.cs.wisc.edu/">Computer Science</a>
+                                                (<a href="https://database.cs.wisc.edu/">Database Systems Group</a>),
+                                                University of Wisconsin-Madison, USA, 2016.<br>
+                                                Advisor: <a href="https://csd.cmu.edu/people/faculty/jignesh-patel">Jignesh M. Patel</a>
                                             </p>
                                         </li>
-
-                                        
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            <p>B.S. in <u><a href="https://www.cs.stonybrook.edu/">Computer Science</a></u> and B.S. in <u><a href="https://www.stonybrook.edu/commcms/ams/">Applied Mathematics & Statistics</a></u> (Dual Degrees), <br/>
-                                                <b><i>Summa Cum Laude</i></b>, State University of New York at Stony Brook, USA. 2010.
+                                        <li>
+                                            <i class="bi-check-circle-fill"></i>
+                                            <p>
+                                                B.S. in <a href="https://www.cs.stonybrook.edu/">Computer Science</a> and
+                                                B.S. in <a href="https://www.stonybrook.edu/commcms/ams/">Applied Mathematics &amp; Statistics</a>
+                                                (Dual Degrees), <strong><em>Summa Cum Laude</em></strong>,
+                                                State University of New York at Stony Brook, USA, 2010.
                                             </p>
                                         </li>
                                     </ul>
-
-                                    <ul class="brands-left">
-                                        <li class="brands__item">
-                                            <a href="https://www.cs.wisc.edu/">
-                                                <img src="images/logos/Wisc.png" alt="" />
-                                            </a>       
-                                        </li>
-                                        <li class="brands__item">
-                                            <a href="https://www.cs.stonybrook.edu/">
-                                                <img src="images/logos/SBU.svg.png" alt="" />
-                                            </a>       
-                                        </li>
+                                    <ul class="logo-strip">
+                                        <li><a href="https://www.cs.wisc.edu/"><img src="images/logos/Wisc.png" alt="University of Wisconsin-Madison"></a></li>
+                                        <li><a href="https://www.cs.stonybrook.edu/"><img src="images/logos/SBU.svg.png" alt="Stony Brook University"></a></li>
                                     </ul>
                                 </div>
-                                <!--End of Education-->
-                                    
-                                <div class="custom-text-block">
-    
-                                    <h6 class="mb-0">Employment</h6>
-    
-                                    <ul class="custom-list mt-2">
 
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            <p><u><a href="https://cs.yonsei.ac.kr/csai_en/intro/status.do">Computer Science</a></u>, Yonsei University, 2023 - Present
-                                                <!--<a href="https://www.timeshighereducation.com/world-university-rankings/2024/world-ranking?page=3"><u>(#76 in World University Rankings)</u></a>-->
-                                            </p>
-                                        </li>
-
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            <p><u><a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/">Microsoft Gray Systems Lab</a></u>, Senior Research Engineer, 2016 - 2023</p>
-                                        </li>
-    
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            <p><u><a href="https://sra.samsung.com/">Samsung Research America</a></u>, Research Intern, 2013, 2014</p>
-                                        </li>
-    
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            <p><u><a href="https://cs.wisc.edu/">University of Wisconsin-Madison</a></u>, Research Assistant, 2012 - 2016</p>
-                                        </li>
-    
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            <p><u><a href="https://cs.wisc.edu/">University of Wisconsin-Madison</a></u>, Teaching Assistant, 2010 - 2011</p>
-                                        </li>
+                                <div class="academic-section">
+                                    <div class="academic-title">
+                                        <span class="academic-title-icon"><i class="bi bi-briefcase"></i></span>
+                                        <h6>Employment</h6>
+                                    </div>
+                                    <ul class="academic-list">
+                                        <li><i class="bi-check-circle-fill"></i><p><a href="https://cs.yonsei.ac.kr/csai_en/intro/status.do">Computer Science</a>, Yonsei University, 2023 - Present</p></li>
+                                        <li><i class="bi-check-circle-fill"></i><p><a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/">Microsoft Gray Systems Lab</a>, Senior Research Engineer, 2016 - 2023</p></li>
+                                        <li><i class="bi-check-circle-fill"></i><p><a href="https://sra.samsung.com/">Samsung Research America</a>, Research Intern, 2013, 2014</p></li>
+                                        <li><i class="bi-check-circle-fill"></i><p><a href="https://cs.wisc.edu/">University of Wisconsin-Madison</a>, Research Assistant, 2012 - 2016</p></li>
+                                        <li><i class="bi-check-circle-fill"></i><p><a href="https://cs.wisc.edu/">University of Wisconsin-Madison</a>, Teaching Assistant, 2010 - 2011</p></li>
                                     </ul>
-
-                                    <ul class="brands-left">
-                                        
-                                        <li class="brands__item">
-                                            <a href="https://cs.yonsei.ac.kr/csai_en/intro/status.do">
-                                                <img src="images/logos/yonseics.png" alt="" />
-                                            </a>       
-                                        </li>
-                                        
-                                        <li class="brands__item">
-                                            <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/">
-                                                <img src="images/logos/gsl.png" alt="" />
-                                            </a>       
-                                        </li>
-
-                                        <li class="brands__item">
-                                            <a href="https://sra.samsung.com/">
-                                                <img src="images/logos/SamsungResearch.webp" alt="" />
-                                            </a>       
-                                        </li>
-
-                                        <li class="brands__item">
-                                            <a href="https://database.cs.wisc.edu/">
-                                                <img src="images/logos/UWDB.png" alt="" />   
-                                            </a>    
-                                        </li>
+                                    <ul class="logo-strip">
+                                        <li><a href="https://cs.yonsei.ac.kr/csai_en/intro/status.do"><img src="images/logos/yonseics.png" alt="Yonsei Computer Science"></a></li>
+                                        <li><a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/"><img src="images/logos/gsl.png" alt="Microsoft Gray Systems Lab"></a></li>
+                                        <li><a href="https://sra.samsung.com/"><img src="images/logos/SamsungResearch.webp" alt="Samsung Research America"></a></li>
+                                        <li><a href="https://database.cs.wisc.edu/"><img src="images/logos/UWDB.png" alt="UW Database Group"></a></li>
                                     </ul>
                                 </div>
-                                <!-- End of Employment-->
 
-                                <div class="custom-text-block">
-                                    <h6 class="mb-0">International Activities</h6>
+                                <div class="academic-section">
+                                    <div class="academic-title">
+                                        <span class="academic-title-icon"><i class="bi bi-globe2"></i></span>
+                                        <h6>International Activities</h6>
+                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-lg-12 col-12 mx-auto">
-                                            <div class="custom-text-box">
-                                                    <div class="news-block-two-col-info">
-                                                        <div class="news-block-title mb-3">
-                                                            <h7 class="mb-3"><a href="#" class="news-block-title-link"></a>Organizer</h7>
-                                                        </div>
-                            
-                                                        <div class="news-block-body mb-6">
-                                                            <ul class="custom-list mt-2">
+                                    <div class="activity-grid">
+                                        <div class="academic-subsection">
+                                            <div class="academic-subtitle">Organizer</div>
+                                            <ul class="academic-list">
+                                                <li><i class="bi-check-circle-fill"></i><p><a href="https://ws-d2et.w.waseda.jp/">International Workshop on New Generation Databases and Data-Empowering Technologies in Big Data Era</a><br>In conjunction with <a href="https://conferences.cis.um.edu.mo/ieeebigdata2025/">IEEE BigData'25</a></p></li>
+                                                <li><i class="bi-check-circle-fill"></i><p><a href="https://qdml2025.github.io/">International Workshop on Quantum Data and Machine Learning (QDML'25)</a><br>In conjunction with <a href="https://ieee-icde.org/2025/">IEEE ICDE'25</a></p></li>
+                                                <li><i class="bi-check-circle-fill"></i><p><a href="https://www.wis.ewi.tudelft.nl/dbml2023">International Workshop on Databases and Machine Learning (DBML'23)</a><br>In conjunction with <a href="https://icde2023.ics.uci.edu/">IEEE ICDE'23</a></p></li>
+                                            </ul>
+                                        </div>
 
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p><u><a href="https://ws-d2et.w.waseda.jp/">International Workshop on New Generation Databases and Data-Empowering Technologies in Big Data Era</a></u> 
-                                                                        <br/>In conjunction with <a href="https://conferences.cis.um.edu.mo/ieeebigdata2025/">IEEE BigData'25</a>
-                                                                    </p>
-                                                                </li>
+                                        <div class="academic-subsection">
+                                            <div class="academic-subtitle">Senior Program Committee / Meta Reviewer</div>
+                                            <ul class="academic-list">
+                                                <li><i class="bi-check-circle-fill"></i><p><a href="https://icde2027.github.io/">IEEE ICDE'27</a></p></li>
+                                            </ul>
+                                        </div>
 
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p><u><a href="https://qdml2025.github.io/">International Workshop on Quantum Data and Machine Learning (QDML'25)</a></u>
-                                                                        <br/>In conjunction with <a href="https://ieee-icde.org/2025/">IEEE ICDE'25</a>
-                                                                    </p>
-                                                                </li>
-
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p><u><a href="https://www.wis.ewi.tudelft.nl/dbml2023">International Workshop on Databases and Machine Learning (DBML'23)</a></u>
-                                                                        <br/>In conjunction with <a href="https://icde2023.ics.uci.edu/">IEEE ICDE'23</a>
-                                                                    </p>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>    
-                                                    </div>
-
-                                                    <div class="news-block-two-col-info">
-                                                        <div class="news-block-title mb-3">
-                                                            <h7 class="mb-3"><a href="#" class="news-block-title-link"></a>Senior Program Committee/Meta Reviewer</h7>
-                                                        </div>
-                            
-                                                        <div class="news-block-body mb-6">
-                                                            <ul class="custom-list mt-2">
-
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p><a href="https://icde2027.github.io/" class="news-block-title-link">IEEE ICDE'27</a>
-                                                                    </p>
-                                                                </li>
-                                                            </ul>
-                                                        </div>    
-                                                    </div>
-
-                                                    <div class="news-block-two-col-info">
-                                                        <div class="news-block-title mb-3">
-                                                            <h7 class="mb-3"><a href="#" class="news-block-title-link"></a>Program Committee/Reviewer</h7>
-                                                        </div>
-                            
-                                                        <div class="news-block-body mb-6">
-                                                            <ul class="custom-list mt-2">
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p>
-                                                                        <a href="https://2027.sigmod.org/" class="news-block-title-link">ACM SIGMOD'27</a>,
-                                                                        <a href="https://vldb.org/2027/" class="news-block-title-link">VLDB'27</a>
-                                                                    </p>
-                                                                    
-                                                                </li>
-
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p>
-                                                                        <a href="https://vldb.org/2026/" class="news-block-title-link">VLDB'26</a>,
-                                                                        <a href="https://cikm2026.diag.uniroma1.it/" class="news-block-title-link">ACM CIKM'26</a>,
-                                                                        <a href="https://dasfaa2026.github.io/" class="news-block-title-link">DASFAA'26</a>,
-                                                                        <a href="https://damon-db.org/" class="news-block-title-link">DaMoN'26</a>,
-                                                                        <a href="https://www.bigcomputing.org/" class="news-block-title-link">IEEE BigComp'26</a>
-                                                                    </p>
-                                                                    
-                                                                </li>
-
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p>
-                                                                        <a href="https://cikm2025.org/" class="news-block-title-link">ACM CIKM'25</a>, 
-                                                                        <a href="https://pldi25.sigplan.org/home/LCTES-2025" class="news-block-title-link">LCTES'25</a>,
-                                                                        <a href="https://www.bigcomputing.org/" class="news-block-title-link">IEEE BigComp'25</a>
-                                                                    </p>
-                                                                    
-                                                                </li>
-
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p>
-                                                                        <a href="https://dl.acm.org/journal/TOS" class="news-block-title-link">ACM TOS'20</a>
-                                                                    </p>
-                                                                    
-                                                                </li>
-
-                                                                <!--
-                                                                <li class="custom-list-item d-flex">
-                                                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                                                    <p>
-                                                                        <a href="https://2027.sigmod.org/" class="news-block-title-link">ACM SIGMOD'27</a>,
-                                                                        <a href="https://vldb.org/2027/" class="news-block-title-link">VLDB'27</a>,
-                                                                        <a href="https://vldb.org/2026/" class="news-block-title-link">VLDB'26</a>,
-                                                                        <a href="https://cikm2026.diag.uniroma1.it/" class="news-block-title-link">ACM CIKM'26</a>,
-                                                                        <a href="https://cikm2025.org/" class="news-block-title-link">ACM CIKM'25</a>, 
-                                                                        <a href="https://dasfaa2026.github.io/" class="news-block-title-link">DASFAA'26</a>,
-                                                                        <a href="https://damon-db.org/" class="news-block-title-link">DaMoN'26</a>,
-                                                                        <a href="https://pldi25.sigplan.org/home/LCTES-2025" class="news-block-title-link">LCTES'25</a>,
-                                                                        <a href="https://www.bigcomputing.org/" class="news-block-title-link">IEEE BigComp'26</a>,
-                                                                        <a href="https://www.bigcomputing.org/" class="news-block-title-link">IEEE BigComp'25</a>,
-                                                                        <a href="https://dl.acm.org/journal/TOS" class="news-block-title-link">ACM TOS'20</a>
-                                                                    </p> 
-                                                                </li>
-                                                                -->
-
-                                                            </ul>
-                                                        </div>    
-                                                    </div>
-                                            </div>
+                                        <div class="academic-subsection">
+                                            <div class="academic-subtitle">Program Committee / Reviewer</div>
+                                            <ul class="academic-list">
+                                                <li><i class="bi-check-circle-fill"></i><p><a href="https://2027.sigmod.org/">ACM SIGMOD'27</a>, <a href="https://vldb.org/2027/">VLDB'27</a></p></li>
+                                                <li><i class="bi-check-circle-fill"></i><p><a href="https://vldb.org/2026/">VLDB'26</a>, <a href="https://cikm2026.diag.uniroma1.it/">ACM CIKM'26</a>, <a href="https://dasfaa2026.github.io/">DASFAA'26</a>, <a href="https://damon-db.org/">DaMoN'26</a>, <a href="https://www.bigcomputing.org/">IEEE BigComp'26</a></p></li>
+                                                <li><i class="bi-check-circle-fill"></i><p><a href="https://cikm2025.org/">ACM CIKM'25</a>, <a href="https://pldi25.sigplan.org/home/LCTES-2025">LCTES'25</a>, <a href="https://www.bigcomputing.org/">IEEE BigComp'25</a></p></li>
+                                                <li><i class="bi-check-circle-fill"></i><p><a href="https://dl.acm.org/journal/TOS">ACM TOS'20</a></p></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <!--End of International Services-->
-                                
+
+
+                                <div class="academic-section">
+                                    <div class="academic-title">
+                                        <span class="academic-title-icon"><i class="bi bi-mic"></i></span>
+                                        <h6>Invited Talks</h6>
+                                    </div>
+
+                                    <div class="academic-subsection">
+                                        <div class="talk-category talk-category-international">International Invited Talks</div>
+
+                                        <div class="talk-item">
+                                            <div class="talk-year">2026</div>
+                                            <div>
+                                                <div class="talk-title"><a href="https://damon-db.org/">DaMoN 2026</a></div>
+                                                <div class="talk-meta">International invited talk / workshop presentation</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="talk-item">
+                                            <div class="talk-year">2025</div>
+                                            <div>
+                                                <div class="talk-title"><a href="https://conf.ccf.org.cn/web/html7/JBdetail.html?channelId=8a9e362c983bcec5019841c96b660049&CmsId=f9d17335b52048a58add5e54ec6da386&globalId=m1318869215809245184173448452445">NDBC 2025</a></div>
+                                                <div class="talk-meta">International invited talk</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="talk-item">
+                                            <div class="talk-year">2024</div>
+                                            <div>
+                                                <div class="talk-title"><a href="https://sites.google.com/view/kjdb2024/program">KJDB 2024</a></div>
+                                                <div class="talk-meta">International invited talk</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="talk-item">
+                                            <div class="talk-year">2023</div>
+                                            <div>
+                                                <div class="talk-title"><a href="https://www.nri.cmc.osaka-u.ac.jp/2023/11/23/nea2023/">Northeast Asia Symposium 2023</a></div>
+                                                <div class="talk-meta">International invited talk</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
             <!-- End faculty -->
-
-
-
-            
-            
 
             <section class="contact-section section-padding" id="section_contact">
                 <div class="container">
