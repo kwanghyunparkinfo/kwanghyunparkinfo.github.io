@@ -11,6 +11,10 @@
 
         <link rel="shortcut icon" href="images/logos/BDAI_logo_new.png">
 
+        <link rel="preload" as="image" href="images/gallery/BigData2025.png">
+        <link rel="preload" as="image" href="images/gallery/BigDataW2025.jpeg">
+        <link rel="preload" as="image" href="images/gallery/MSvisit2025.jpeg">
+
         <!-- CSS FILES -->        
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -30,13 +34,6 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM"></script>
 
         <!-- ##### end of NEW #### -->
-<!--
-
-TemplateMo 581 Kind Heart Charity
-
-https://templatemo.com/tm-581-kind-heart-charity
-
--->
 
     </head>
     
@@ -45,9 +42,9 @@ https://templatemo.com/tm-581-kind-heart-charity
         <!--- Menu ---->
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <a href="https://bdai.yonsei.ac.kr/"><img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab"></a>
-                    <a href="https://bdai.yonsei.ac.kr/"><img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab"></a>
+                <a class="navbar-brand d-flex align-items-center" href="https://bdai.yonsei.ac.kr/">
+                    <img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab">
+                    <img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -448,6 +445,60 @@ https://templatemo.com/tm-581-kind-heart-charity
                         background:rgba(255,255,255,.14);
                         color:#fff;
                     }
+
+
+                    /* Safari compatibility fixes */
+                    .bdai-gallery-card{
+                        content-visibility: visible !important;
+                        contain-intrinsic-size: auto !important;
+                        contain: none !important;
+                        -webkit-column-break-inside: avoid;
+                        page-break-inside: avoid;
+                        break-inside: avoid;
+                        transform: translateZ(0);
+                        -webkit-transform: translateZ(0);
+                    }
+                    .bdai-gallery-card:hover{
+                        transform: translateY(-8px) !important;
+                        -webkit-transform: translateY(-8px) !important;
+                    }
+                    .bdai-gallery-card:hover .bdai-gallery-media{
+                        transform: scale(1.035) !important;
+                        -webkit-transform: scale(1.035) !important;
+                    }
+                    .bdai-gallery-media{
+                        overflow: hidden;
+                        -webkit-backface-visibility: hidden;
+                        backface-visibility: hidden;
+                        min-height: 320px;
+                    }
+                    .bdai-gallery-hs{height:360px;}
+                    .bdai-gallery-hm{height:430px;}
+                    .bdai-gallery-hl{height:500px;}
+                    @supports (aspect-ratio: 1 / 1){
+                        .bdai-gallery-hs{height:auto; aspect-ratio:4/5;}
+                        .bdai-gallery-hm{height:auto; aspect-ratio:4/5.5;}
+                        .bdai-gallery-hl{height:auto; aspect-ratio:4/6.4;}
+                    }
+                    .bdai-gallery-modal{
+                        -webkit-backdrop-filter: blur(10px);
+                        backdrop-filter: blur(10px);
+                    }
+                    .bdai-gallery-media::after{
+                        -webkit-backdrop-filter: blur(0px);
+                        backdrop-filter: blur(0px);
+                    }
+                    .bdai-gallery-card:hover .bdai-gallery-media::after{
+                        -webkit-backdrop-filter: blur(2px);
+                        backdrop-filter: blur(2px);
+                    }
+                    @media (max-width: 640px){
+                        .bdai-gallery-hs,
+                        .bdai-gallery-hm,
+                        .bdai-gallery-hl{height:auto; min-height:360px; aspect-ratio:4/5;}
+                        .navbar-brand img:nth-child(2){margin-right:20px !important; height:42px !important;}
+                    }
+
 
                 </style>
 
