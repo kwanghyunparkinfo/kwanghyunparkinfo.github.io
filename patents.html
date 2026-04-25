@@ -18,29 +18,222 @@
 
         <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
 
-        <!-- NEW -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- End of NEW -->
-<!--
 
-TemplateMo 581 Kind Heart Charity
+    
+        <style>
+            .patents-shell{
+                max-width:1180px;
+                margin:0 auto;
+            }
+            .patents-hero{
+                background:
+                    radial-gradient(circle at top right, rgba(47,108,255,.12), transparent 28%),
+                    linear-gradient(180deg, #ffffff, #f8fbff);
+                border:1px solid rgba(15,37,84,.08);
+                border-radius:28px;
+                padding:32px 34px;
+                box-shadow:0 18px 42px rgba(15,37,84,.08);
+                margin-bottom:32px;
+            }
+            .patents-hero h2{
+                color:#0b2f73;
+                font-weight:850;
+                margin-bottom:10px;
+            }
+            .patents-hero p{
+                color:#66758c;
+                line-height:1.75;
+                margin:0;
+                max-width:920px;
+            }
+            .patent-stats{
+                display:grid;
+                grid-template-columns:repeat(3,minmax(0,1fr));
+                gap:14px;
+                margin-top:22px;
+            }
+            .patent-stat{
+                background:#fff;
+                border:1px solid rgba(15,37,84,.08);
+                border-radius:18px;
+                padding:16px 18px;
+                box-shadow:0 10px 24px rgba(15,37,84,.05);
+            }
+            .patent-stat strong{
+                display:block;
+                color:#0b2f73;
+                font-size:24px;
+                line-height:1;
+                margin-bottom:6px;
+            }
+            .patent-stat span{
+                color:#70809a;
+                font-size:13px;
+                font-weight:700;
+            }
+            .patent-year-group{
+                margin-bottom:28px;
+            }
+            .patent-year-header{
+                display:flex;
+                align-items:center;
+                gap:14px;
+                margin-bottom:14px;
+            }
+            .patent-year{
+                display:inline-flex;
+                align-items:center;
+                justify-content:center;
+                min-width:78px;
+                padding:8px 14px;
+                border-radius:999px;
+                background:#0b2f73;
+                color:#fff;
+                font-weight:850;
+                box-shadow:0 10px 24px rgba(15,37,84,.16);
+            }
+            .patent-year-line{
+                height:1px;
+                flex:1;
+                background:linear-gradient(90deg, rgba(15,37,84,.18), transparent);
+            }
+            .patent-list{
+                display:grid;
+                gap:16px;
+            }
+            .patent-card{
+                display:grid;
+                grid-template-columns:112px 1fr;
+                gap:20px;
+                padding:20px;
+                border-radius:24px;
+                background:#fff;
+                border:1px solid rgba(15,37,84,.08);
+                box-shadow:0 14px 32px rgba(15,37,84,.07);
+                transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+            }
+            .patent-card:hover{
+                transform:translateY(-3px);
+                box-shadow:0 18px 42px rgba(15,37,84,.12);
+                border-color:rgba(47,108,255,.20);
+            }
+            .patent-thumb{
+                width:112px;
+                height:112px;
+                border-radius:20px;
+                background:#f4f7fb;
+                border:1px solid rgba(15,37,84,.08);
+                overflow:hidden;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            .patent-thumb img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+            }
+            .patent-thumb.placeholder img{
+                width:74%;
+                height:74%;
+                object-fit:contain;
+                opacity:.82;
+            }
+            .patent-meta{
+                display:flex;
+                flex-wrap:wrap;
+                gap:8px;
+                margin-bottom:10px;
+            }
+            .patent-badge{
+                display:inline-flex;
+                align-items:center;
+                gap:6px;
+                padding:6px 10px;
+                border-radius:999px;
+                font-size:11px;
+                font-weight:850;
+                letter-spacing:.04em;
+                text-transform:uppercase;
+                background:#eef4ff;
+                color:#0b2f73;
+            }
+            .patent-badge.pending{
+                background:#fff5df;
+                color:#8a5b00;
+            }
+            .patent-title{
+                margin:0 0 8px;
+                color:#0b2f73;
+                font-size:18px;
+                line-height:1.35;
+                font-weight:850;
+            }
+            .patent-title a{
+                color:#0b2f73;
+                text-decoration:none;
+            }
+            .patent-title a:hover{
+                color:#2f6cff;
+            }
+            .patent-korean{
+                color:#607089;
+                line-height:1.55;
+                margin:0 0 10px;
+                font-size:14px;
+            }
+            .patent-authors{
+                color:#4f5f78;
+                line-height:1.65;
+                margin:0 0 12px;
+                font-size:14px;
+            }
+            .patent-actions{
+                display:flex;
+                flex-wrap:wrap;
+                gap:10px;
+            }
+            .patent-actions a,
+            .patent-action-muted{
+                display:inline-flex;
+                align-items:center;
+                gap:7px;
+                padding:9px 12px;
+                border-radius:999px;
+                border:1px solid rgba(15,37,84,.10);
+                background:#fff;
+                color:#0b2f73;
+                font-size:13px;
+                font-weight:800;
+                text-decoration:none;
+            }
+            .patent-actions a:hover{
+                background:#0b2f73;
+                border-color:#0b2f73;
+                color:#fff;
+            }
+            .patent-action-muted{
+                color:#70809a;
+                background:#f8fbff;
+            }
+            @media (max-width:767px){
+                .patent-card{grid-template-columns:1fr;}
+                .patent-thumb{width:100%;height:160px;}
+                .patent-stats{grid-template-columns:1fr;}
+                .navbar-brand img:nth-child(2){margin-right:20px !important;height:42px !important;}
+            }
+        </style>
 
-https://templatemo.com/tm-581-kind-heart-charity
-
--->
-
-    </head>
+</head>
     
     <body id="section_1">
         
         <!--- Menu ---->
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <a href="https://bdai.yonsei.ac.kr/"><img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab"></a>
-                    <a href="https://bdai.yonsei.ac.kr/"><img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab"></a>
+                <a class="navbar-brand d-flex align-items-center" href="https://bdai.yonsei.ac.kr/">
+                    <img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab">
+                    <img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,450 +300,281 @@ https://templatemo.com/tm-581-kind-heart-charity
                     <div class="row">
 
                         <div class="col-lg-12 col-12">
-                            <h3 class="text-white">Global/Domestic Patents</h3>
+                            <h3 class="text-white">Patents</h3>
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <!-- Begin Conferences -->
+            <!-- Patents Start -->
             <section class="section-padding section-bg" id="section_2">
-                
-                <!-- Begin 2025 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2025" data-speed="500"></span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
+                <div class="container patents-shell">
 
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="#">
-                                            <img src="images/logos/coming_soon.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <p><h8><a href="#" class="news-block-title-link">Method And Apparatus For Generating Optimization Framework For Training Multimodal Large Language Model</a> </h8></p>
-                                            <p><h8><a href="#" class="news-block-title-link">멀티모달 대규모 언어 모델 학습의 최적화 프레임워크를 생성하는 방법 및 장치</a> </h8></p>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i><a href="team.html#hyeonjun.an"><u>Hyeonjun An</u></a>, <a href="team.html#hyejung.hwang"><u>Hyejung Hwang</u></a>, <a href="team.html#ganghyun.kim"><u>Ganghyun Kim</u></a>, Sangmin Chung, <b>Kwanghyun Park</b></i>
-                                                </p>
-                                                <!--
-                                                <a href="https://patents.google.com/patent/US20240289818A1/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">18/332,118</span>
-                                                </a>
-                                                -->
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="#">
-                                            <img src="images/logos/coming_soon.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <p><h8><a href="#" class="news-block-title-link">Method and Apparatus for Reliability Quantification-based Traffic Prediction for Supporting AI-and-RAN</a> </h8></p>
-                                            <p><h8><a href="#" class="news-block-title-link">AI-and-RAN 지원을 위한 신뢰도 정량화 기반 트래픽 예측 방법 및 장치</a> </h8></p>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i><a href="team.html#hyejung.hwang"><u>Hyejung Hwang</u></a>, <a href="team.html#yuhsing.li"><u>Yuhsing Li</u></a>, Hyunsoo Lee, Sangmin Chung, <b>Kwanghyun Park</b></i>
-                                                </p>
-                                                <!--
-                                                <a href="https://patents.google.com/patent/US20240289818A1/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">18/332,118</span>
-                                                </a>
-                                                -->
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-             
+                    <!--
+                    <div class="patents-hero">
+                        <h2>Patents</h2>
+                        <p>
+                            Selected global and domestic patent applications and issued patents from BDAI Lab and prior research activities.
+                            These inventions span database systems, machine learning systems, AI infrastructure, and large-scale system optimization.
+                        </p>
+                        <div class="patent-stats">
+                            <div class="patent-stat">
+                                <strong>10</strong>
+                                <span>Total patent records</span>
+                            </div>
+                            <div class="patent-stat">
+                                <strong>8</strong>
+                                <span>Issued / published patents</span>
+                            </div>
+                            <div class="patent-stat">
+                                <strong>2</strong>
+                                <span>Recent applications</span>
                             </div>
                         </div>
                     </div>
+                    -->
+
+                    <div class="patent-year-group">
+                        <div class="patent-year-header">
+                            <span class="patent-year">2025</span>
+                            <span class="patent-year-line"></span>
+                        </div>
+                        <div class="patent-list">
+                            <article class="patent-card">
+                                <div class="patent-thumb placeholder">
+                                    <img src="images/logos/coming_soon.png" alt="Method and Apparatus for Generating an Optimization Framework for Training Multimodal Large Language Models">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge pending"><i class="bi bi-award"></i> Application Filed</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2025</span>
+                                    </div>
+                                    <h4 class="patent-title">Method and Apparatus for Generating an Optimization Framework for Training Multimodal Large Language Models</h4>
+                                    <p class="patent-korean">멀티모달 대규모 언어 모델 학습의 최적화 프레임워크를 생성하는 방법 및 장치</p>
+                                    <p class="patent-authors"><em><a href="team.html#hyeonjun.an">Hyeonjun An</a>, <a href="team.html#hyejung.hwang">Hyejung Hwang</a>, <a href="team.html#ganghyun.kim">Ganghyun Kim</a>, Sangmin Chung, <strong>Kwanghyun Park</strong></em></p>
+                                    <div class="patent-actions">
+                                        <span class="patent-action-muted">Patent details forthcoming</span>
+                                        <span class="patent-action-muted">Patent application</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="patent-card">
+                                <div class="patent-thumb placeholder">
+                                    <img src="images/logos/coming_soon.png" alt="Method and Apparatus for Reliability Quantification-based Traffic Prediction for Supporting AI-and-RAN">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge pending"><i class="bi bi-award"></i> Application Filed</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2025</span>
+                                    </div>
+                                    <h4 class="patent-title">Method and Apparatus for Reliability Quantification-based Traffic Prediction for Supporting AI-and-RAN</h4>
+                                    <p class="patent-korean">AI-and-RAN 지원을 위한 신뢰도 정량화 기반 트래픽 예측 방법 및 장치</p>
+                                    <p class="patent-authors"><em><a href="team.html#hyejung.hwang">Hyejung Hwang</a>, <a href="team.html#yuhsing.li">Yuhsing Li</a>, Hyunsoo Lee, Sangmin Chung, <strong>Kwanghyun Park</strong></em></p>
+                                    <div class="patent-actions">
+                                        <span class="patent-action-muted">Patent details forthcoming</span>
+                                        <span class="patent-action-muted">Patent application</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="patent-year-group">
+                        <div class="patent-year-header">
+                            <span class="patent-year">2024</span>
+                            <span class="patent-year-line"></span>
+                        </div>
+                        <div class="patent-list">
+                            <article class="patent-card">
+                                <div class="patent-thumb">
+                                    <img src="images/Patents/patent8.png" alt="Feature Store Data Preparation Optimization">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge"><i class="bi bi-award"></i> US Patent</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2024</span>
+                                    </div>
+                                    <h4 class="patent-title"><a href="https://patents.google.com/patent/US20240289818A1/en">Feature Store Data Preparation Optimization</a></h4>
+                                    
+                                    <p class="patent-authors"><em>Jesus Camacho Rodriguez, <strong>Kwanghyun Park</strong>, Fotios Psallidas, Xiaoyong Zhu, Jinghui Mo, Rathijit Sen, Matteo Interlandi, Yuanyuan Tian, Rui Liu, Konstantinos Karanasos</em></p>
+                                    <div class="patent-actions">
+                                        <a href="https://patents.google.com/patent/US20240289818A1/en" target="_blank" rel="noopener">View patent <i class="bi bi-arrow-right"></i></a>
+                                        <span class="patent-action-muted">US 18/332,118</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="patent-year-group">
+                        <div class="patent-year-header">
+                            <span class="patent-year">2021</span>
+                            <span class="patent-year-line"></span>
+                        </div>
+                        <div class="patent-list">
+                            <article class="patent-card">
+                                <div class="patent-thumb">
+                                    <img src="images/Patents/patent7.png" alt="Query Processing with Machine Learning">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge"><i class="bi bi-award"></i> US Patent</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2021</span>
+                                    </div>
+                                    <h4 class="patent-title"><a href="https://patents.google.com/patent/US20210124739A1/en">Query Processing with Machine Learning</a></h4>
+                                    
+                                    <p class="patent-authors"><em>Konstantinos Karanasos, Matteo Interlandi, Fotios Psallidas, Rathijit Sen, <strong>Kwanghyun Park</strong>, Ivan Popivanov, Subramaniam Venkatraman Krishnan, Markus Weimer, Yuan Yu, Raghunath Ramakrishnan, Carlo Aldo Curino, Doris Suiyi Xin, Karla Jean Saur</em></p>
+                                    <div class="patent-actions">
+                                        <a href="https://patents.google.com/patent/US20210124739A1/en" target="_blank" rel="noopener">View patent <i class="bi bi-arrow-right"></i></a>
+                                        <span class="patent-action-muted">US 16/990,506</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="patent-year-group">
+                        <div class="patent-year-header">
+                            <span class="patent-year">2020</span>
+                            <span class="patent-year-line"></span>
+                        </div>
+                        <div class="patent-list">
+                            <article class="patent-card">
+                                <div class="patent-thumb">
+                                    <img src="images/Patents/patent6.png" alt="Application Cache Replication to Secondary Application(s)">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge"><i class="bi bi-award"></i> US Patent</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2020</span>
+                                    </div>
+                                    <h4 class="patent-title"><a href="https://patents.google.com/patent/US10613978B2/en">Application Cache Replication to Secondary Application(s)</a></h4>
+                                    
+                                    <p class="patent-authors"><em>Nikhil Teletia, Jae Young Do, <strong>Kwanghyun Park</strong>, Jignesh M. Patel</em></p>
+                                    <div class="patent-actions">
+                                        <a href="https://patents.google.com/patent/US10613978B2/en" target="_blank" rel="noopener">View patent <i class="bi bi-arrow-right"></i></a>
+                                        <span class="patent-action-muted">US 10,613,978</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="patent-year-group">
+                        <div class="patent-year-header">
+                            <span class="patent-year">2019</span>
+                            <span class="patent-year-line"></span>
+                        </div>
+                        <div class="patent-list">
+                            <article class="patent-card">
+                                <div class="patent-thumb">
+                                    <img src="images/Patents/patent5.png" alt="Method for Optimization of Imperative Code Executing Inside a Relational Database Engine">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge"><i class="bi bi-award"></i> US Patent</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2019</span>
+                                    </div>
+                                    <h4 class="patent-title"><a href="https://patents.google.com/patent/US10515075B2/en">Method for Optimization of Imperative Code Executing Inside a Relational Database Engine</a></h4>
+                                    
+                                    <p class="patent-authors"><em>Karthik Saligrama Ramachandra, <strong>Kwanghyun Park</strong>, Alan Dale Halverson, Conor John Cunningham, Cesar Alejandro Galindo-Legaria, Kameswara Venkatesh Emani</em></p>
+                                    <div class="patent-actions">
+                                        <a href="https://patents.google.com/patent/US10515075B2/en" target="_blank" rel="noopener">View patent <i class="bi bi-arrow-right"></i></a>
+                                        <span class="patent-action-muted">US 10,515,075</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="patent-card">
+                                <div class="patent-thumb">
+                                    <img src="images/Patents/patent4.png" alt="Replicating a Primary Application Cache within a Secondary Application Cache">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge"><i class="bi bi-award"></i> US Patent</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2019</span>
+                                    </div>
+                                    <h4 class="patent-title"><a href="https://patents.google.com/patent/US10204048B2/en">Replicating a Primary Application Cache within a Secondary Application Cache</a></h4>
+                                    
+                                    <p class="patent-authors"><em>Nikhil Teletia, Jae Young Do, <strong>Kwanghyun Park</strong>, Jignesh M. Patel</em></p>
+                                    <div class="patent-actions">
+                                        <a href="https://patents.google.com/patent/US10204048B2/en" target="_blank" rel="noopener">View patent <i class="bi bi-arrow-right"></i></a>
+                                        <span class="patent-action-muted">US 10,204,048</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="patent-year-group">
+                        <div class="patent-year-header">
+                            <span class="patent-year">2018</span>
+                            <span class="patent-year-line"></span>
+                        </div>
+                        <div class="patent-list">
+                            <article class="patent-card">
+                                <div class="patent-thumb">
+                                    <img src="images/Patents/patent3.png" alt="Automatic Recovery of Application Cache Warmth">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge"><i class="bi bi-award"></i> US Patent</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2018</span>
+                                    </div>
+                                    <h4 class="patent-title"><a href="https://patents.google.com/patent/US10114765B2/en">Automatic Recovery of Application Cache Warmth</a></h4>
+                                    
+                                    <p class="patent-authors"><em>Nikhil Teletia, Jae Young Do, <strong>Kwanghyun Park</strong>, Jignesh M. Patel</em></p>
+                                    <div class="patent-actions">
+                                        <a href="https://patents.google.com/patent/US10114765B2/en" target="_blank" rel="noopener">View patent <i class="bi bi-arrow-right"></i></a>
+                                        <span class="patent-action-muted">US 10,114,765</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="patent-year-group">
+                        <div class="patent-year-header">
+                            <span class="patent-year">2017</span>
+                            <span class="patent-year-line"></span>
+                        </div>
+                        <div class="patent-list">
+                            <article class="patent-card">
+                                <div class="patent-thumb">
+                                    <img src="images/Patents/patent2.png" alt="Automatic Recovery of Application Cache Warmth">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge"><i class="bi bi-award"></i> US Patent</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2017</span>
+                                    </div>
+                                    <h4 class="patent-title"><a href="https://patents.google.com/patent/US9684607B2/en">Automatic Recovery of Application Cache Warmth</a></h4>
+                                    
+                                    <p class="patent-authors"><em>Nikhil Teletia, Jae Young Do, <strong>Kwanghyun Park</strong>, Jignesh M. Patel</em></p>
+                                    <div class="patent-actions">
+                                        <a href="https://patents.google.com/patent/US9684607B2/en" target="_blank" rel="noopener">View patent <i class="bi bi-arrow-right"></i></a>
+                                        <span class="patent-action-muted">US 9,684,607</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="patent-card">
+                                <div class="patent-thumb">
+                                    <img src="images/Patents/patent1.png" alt="Application Cache Replication to Secondary Application(s)">
+                                </div>
+                                <div class="patent-content">
+                                    <div class="patent-meta">
+                                        <span class="patent-badge"><i class="bi bi-award"></i> US Patent</span>
+                                        <span class="patent-badge"><i class="bi bi-calendar3"></i> 2017</span>
+                                    </div>
+                                    <h4 class="patent-title"><a href="https://patents.google.com/patent/US9684596B2/en">Application Cache Replication to Secondary Application(s)</a></h4>
+                                    
+                                    <p class="patent-authors"><em>Nikhil Teletia, Jae Young Do, <strong>Kwanghyun Park</strong>, Jignesh M. Patel</em></p>
+                                    <div class="patent-actions">
+                                        <a href="https://patents.google.com/patent/US9684596B2/en" target="_blank" rel="noopener">View patent <i class="bi bi-arrow-right"></i></a>
+                                        <span class="patent-action-muted">US 9,684,596</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
                 </div>
-                <!-- End 2025 -->
-
-                <!-- Begin 2024 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2024" data-speed="500"></span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://patents.google.com/patent/US20240289818A1/en">
-                                            <img src="images/Patents/patent8.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://patents.google.com/patent/US20240289818A1/en" class="news-block-title-link">Feature store data preparation optimization</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Jesus CAMACHO RODRIGUEZ, <b>Kwanghyun Park</b>, Fotios PSALLIDAS, Xiaoyong Zhu, Jinghui Mo, Rathijit Sen, Matteo INTERLANDI, Yuanyuan Tian, Rui Liu, Konstantinos Karanasos</i>
-                                                </p>
-                                                <a href="https://patents.google.com/patent/US20240289818A1/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">18/332,118</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-             
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End 2024 -->
-                
-                <!-- Begin 2021 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2021" data-speed="500"></span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://patents.google.com/patent/US20210124739A1/en">
-                                            <img src="images/Patents/patent7.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://patents.google.com/patent/US20210124739A1/en" class="news-block-title-link">Query Processing with Machine Learning</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Konstantinos Karanasos, Matteo Interlandi, Fotios Psallidas, Rathijit Sen, <b>Kwanghyun Park</b>, Ivan Popivanov, Subramaniam VENKATRAMAN KRISHNAN, Markus Weimer, Yuan Yu, Raghunath Ramakrishnan, Carlo Aldo Curino, Doris Suiyi Xin, Karla Jean Saur</i>
-                                                </p>
-                                                <a href="https://patents.google.com/patent/US20210124739A1/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">16/990,506</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-             
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <!-- End 2021 -->
-                 
-                 
-                <!-- Begin 2020 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2020" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://patents.google.com/patent/US10613978B2/en">
-                                            <img src="images/Patents/patent6.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://patents.google.com/patent/US10613978B2/en" class="news-block-title-link">Application cache replication to secondary application (s)</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i> 
-                                                    Nikhil Teletia, Jae Young Do, <b>Kwanghyun Park</b>, Jignesh M Patel
-                                                </i>
-                                                </p>
-                                                <a href="https://patents.google.com/patent/US10613978B2/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">10,613,978, 2020</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-             
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <!-- End 2020 -->
-
-
-                <!-- Begin 2019 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2019" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://patents.google.com/patent/US10515075B2/en">
-                                            <img src="images/Patents/patent5.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://patents.google.com/patent/US10515075B2/en" class="news-block-title-link">Method for optimization of imperative code executing inside a relational database engine</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Karthik Saligrama Ramachandra, <b>Kwanghyun Park</b>, Alan Dale Halverson, Conor John Cunningham, Cesar Alejandro Galindo-Legaria, Kameswara Venkatesh Emani</i>
-                                                </p>
-                                                <a href="https://patents.google.com/patent/US10515075B2/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">10,515,075, 2019</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://patents.google.com/patent/US10204048B2/en">
-                                            <img src="images/Patents/patent4.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://patents.google.com/patent/US10204048B2/en" class="news-block-title-link">Replicating a primary application cache within a secondary application cache</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Nikhil Teletia, Jae Young Do, <b>Kwanghyun Park</b>, Jignesh M Patel</i>
-                                                </p>
-                                                <a href="https://patents.google.com/patent/US10204048B2/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">10,204,048, 2019</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                
-                                
-             
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End 2019 -->
-
-
-                <!-- Begin 2018 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2018" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://patents.google.com/patent/US10114765B2/en">
-                                            <img src="images/Patents/patent3.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://patents.google.com/patent/US10114765B2/en" class="news-block-title-link">Automatic recovery of application cache warmth</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Nikhil Teletia, Jae Young Do, <b>Kwanghyun Park</b>, Jignesh M Patel</i>
-                                                </p>
-                                                <a href="https://patents.google.com/patent/US10114765B2/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">10,114,765, 2018</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-                <!-- End 2018 -->
-
-
-                <!-- Begin 2017 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2017" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://patents.google.com/patent/US9684607B2/en">
-                                            <img src="images/Patents/patent2.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://patents.google.com/patent/US9684607B2/en" class="news-block-title-link">Automatic recovery of application cache warmth</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Nikhil Teletia, Jae Young Do, <b>Kwanghyun Park</b>, Jignesh M Patel</i>
-                                                </p>
-                                                <a href="https://patents.google.com/patent/US9684607B2/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">9,684,607, 2017</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://patents.google.com/patent/US9684596B2/en">
-                                            <img src="images/Patents/patent1.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://patents.google.com/patent/US9684596B2/en" class="news-block-title-link">Application cache replication to secondary application (s)</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Nikhil Teletia, Jae Young Do, <b>Kwanghyun Park</b>, Jignesh M Patel</i>
-                                                </p>
-                                                <a href="https://patents.google.com/patent/US9684596B2/en" class="tags-block-link">
-                                                    US Patent <span class="badge badge-pill badge-primary">9,684,596, 2017</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End 2017 -->
-
-                
-
-
-                
-
-                
             </section>
-            <!-- End Conferences -->
+            <!-- Patents End -->
 
 
 

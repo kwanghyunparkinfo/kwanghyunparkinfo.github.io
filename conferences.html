@@ -20,25 +20,132 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
+        <style>
+            .pub-shell{max-width:1180px;margin:0 auto;}
+            .pub-hero{
+                background:radial-gradient(circle at top right,rgba(47,108,255,.12),transparent 28%),linear-gradient(180deg,#fff,#f8fbff);
+                border:1px solid rgba(15,37,84,.08);
+                border-radius:28px;
+                padding:32px 34px;
+                box-shadow:0 18px 42px rgba(15,37,84,.08);
+                margin-bottom:32px;
+            }
+            .pub-hero h2{color:#0b2f73;font-weight:850;margin-bottom:10px;}
+            .pub-hero p{color:#66758c;line-height:1.75;margin:0;max-width:920px;}
+            .pub-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px;}
+            .pub-stat{background:#fff;border:1px solid rgba(15,37,84,.08);border-radius:18px;padding:16px 18px;box-shadow:0 10px 24px rgba(15,37,84,.05);}
+            .pub-stat strong{display:block;color:#0b2f73;font-size:22px;line-height:1.15;margin-bottom:6px;}
+            .pub-stat span{color:#70809a;font-size:13px;font-weight:700;}
+            .pub-year-group{margin-bottom:30px;}
+            .pub-year-header{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+            .pub-year{display:inline-flex;align-items:center;justify-content:center;min-width:88px;padding:8px 14px;border-radius:999px;background:#0b2f73;color:#fff;font-weight:850;box-shadow:0 10px 24px rgba(15,37,84,.16);}
+            .pub-year.arxiv{background:#8a1538;}
+            .pub-year-line{height:1px;flex:1;background:linear-gradient(90deg,rgba(15,37,84,.18),transparent);}
+            .pub-list{display:grid;gap:16px;}
+            .pub-card{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px;border-radius:24px;background:#fff;border:1px solid rgba(15,37,84,.08);box-shadow:0 14px 32px rgba(15,37,84,.07);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
+            .pub-card:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(15,37,84,.12);border-color:rgba(47,108,255,.20);}
+            .pub-card.top-tier{border-color:rgba(47,108,255,.16);box-shadow:0 16px 38px rgba(47,108,255,.08);}
+            .pub-thumb{width:150px;height:112px;border-radius:20px;background:#f4f7fb;border:1px solid rgba(15,37,84,.08);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+            .pub-thumb img{width:100%;height:100%;object-fit:cover;}
+            .pub-thumb.placeholder img,.pub-thumb.arxiv img{width:78%;height:78%;object-fit:contain;opacity:.88;}
+            .pub-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+            .pub-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;font-size:11px;font-weight:850;letter-spacing:.04em;text-transform:uppercase;background:#eef4ff;color:#0b2f73;}
+            .pub-badge.top{background:#eaf2ff;color:#0b2f73;}
+            .pub-badge.venue{background:#f4f7fb;color:#24324b;}
+            .pub-title{margin:0 0 8px;color:#0b2f73;font-size:18px;line-height:1.35;font-weight:850;}
+            .pub-title a{color:#0b2f73;text-decoration:none;}
+            .pub-title a:hover{color:#2f6cff;}
+            .pub-authors{color:#4f5f78;line-height:1.65;margin:0 0 12px;font-size:14px;}
+            .pub-venue-full{color:#607089;line-height:1.55;margin:0 0 12px;font-size:14px;}
+            .pub-actions{display:flex;flex-wrap:wrap;gap:10px;}
+            .pub-actions a,.pub-action-muted{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border-radius:999px;border:1px solid rgba(15,37,84,.10);background:#fff;color:#0b2f73;font-size:13px;font-weight:800;text-decoration:none;}
+            .pub-actions a:hover{background:#0b2f73;border-color:#0b2f73;color:#fff;}
+            .pub-action-muted{color:#70809a;background:#f8fbff;}
+            .pub-info-panel{border:1px solid rgba(15,37,84,.08);border-radius:24px;background:#fff;box-shadow:0 14px 34px rgba(15,37,84,.06);padding:24px;margin-top:28px;margin-bottom:24px;}
+            .pub-info-panel h4{color:#0b2f73;font-weight:850;margin-bottom:14px;}
+            .pub-info-links{display:flex;flex-wrap:wrap;gap:10px;}
+            .pub-info-links a{display:inline-flex;align-items:center;gap:7px;padding:10px 14px;border-radius:999px;border:1px solid rgba(15,37,84,.10);background:#fff;color:#0b2f73;font-weight:800;text-decoration:none;}
+            .pub-schedule-frame{width:100%;height:900px;border:1px solid rgba(15,37,84,.10);border-radius:22px;overflow:hidden;background:#fff;}
+            @media(max-width:991px){.pub-stats{grid-template-columns:repeat(2,minmax(0,1fr));}.pub-card{grid-template-columns:1fr}.pub-thumb{width:100%;height:180px}.navbar-brand img:nth-child(2){margin-right:20px!important;height:42px!important;}}
+            @media(max-width:640px){.pub-stats{grid-template-columns:1fr}}
         
-<!--
+            .pub-badge.venue a{
+                color: inherit;
+                text-decoration: none;
+            }
+            .pub-venue-full a{
+                color:#607089;
+                text-decoration:none;
+                border-bottom:1px solid rgba(47,108,255,.18);
+                font-weight:700;
+            }
+            .pub-venue-full a:hover{
+                color:#2f6cff;
+            }
 
-TemplateMo 581 Kind Heart Charity
+        
+            .pub-badge i{
+                margin-right:4px;
+            }
+        
+            .pub-collab-strip{
+                display:flex;
+                align-items:center;
+                flex-wrap:wrap;
+                gap:10px;
+                margin:10px 0 12px;
+            }
+            .pub-collab-label{
+                color:#70809a;
+                font-size:12px;
+                font-weight:800;
+                letter-spacing:.04em;
+                text-transform:uppercase;
+                margin-right:2px;
+            }
+            .pub-collab-logo{
+                display:inline-flex;
+                align-items:center;
+                justify-content:center;
+                min-width:62px;
+                height:34px;
+                padding:6px 10px;
+                border-radius:999px;
+                background:#ffffff;
+                border:1px solid rgba(15,37,84,.10);
+                box-shadow:0 8px 18px rgba(15,37,84,.05);
+                transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+            }
+            .pub-collab-logo:hover{
+                transform:translateY(-2px);
+                border-color:rgba(47,108,255,.24);
+                box-shadow:0 12px 24px rgba(15,37,84,.10);
+            }
+            .pub-collab-logo img{
+                max-height:24px;
+                max-width:86px;
+                width:auto;
+                object-fit:contain;
+                display:block;
+            }
+            .pub-collab-logo.logo-bdai img{max-height:18px;}
+            .pub-collab-logo.logo-skt img{max-height:26px;}
+            .pub-collab-logo.logo-hynix img{max-height:25px;}
+            .pub-collab-logo.logo-ms img{max-height:24px;}
 
-https://templatemo.com/tm-581-kind-heart-charity
+        </style>
 
--->
-
-    </head>
+</head>
     
     <body id="section_1">
         
         <!--- Menu ---->
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <a href="https://bdai.yonsei.ac.kr/"><img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab"></a>
-                    <a href="https://bdai.yonsei.ac.kr/"><img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab"></a>
+                <a class="navbar-brand d-flex align-items-center" href="https://bdai.yonsei.ac.kr/">
+                    <img src="images/logos/BDAI_logo_new.png" style="margin-right: 8px;" class="logo img-fluid" alt="BDAI Lab">
+                    <img src="images/logos/BDAI_word.png" style="margin-right: 80px; height: 50px; width: auto;" class="logo img-fluid" alt="BDAI Lab">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,1455 +213,686 @@ https://templatemo.com/tm-581-kind-heart-charity
                     <div class="row">
 
                         <div class="col-lg-12 col-12">
-                            <h3 class="text-white">International Conferences and Journals</h3>
+                            <h3 class="text-white">Publications</h3>
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <!-- Begin Conferences -->
+            <!-- Publications Start -->
             <section class="section-padding section-bg" id="section_2">
+                <div class="container pub-shell">
 
-
-                <!-- Begin arXiv -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <h3><a href="#" class="news-block-title-link text-primary">arXiv</a> </h3>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://arxiv.org/abs/2604.14725">
-                                                <img src="images/logos/ArXiv_logo_2022.svg.png" class="news-image img-fluid" alt="">
-                                            </a>
-
-                                            <!--
-                                            <div class="d-flex">
-                                            
-                                                <a href="https://arxiv.org/abs/2604.14725" target="_blank" style="height:25px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                                </a>
-
-                                                <a href="https://github.com/BDAI-Research/DFLOP" target="_blank" >
-                                                    <i class="fa fa-github"></i> Code
-                                                </a>
-                                            </div>
-                                            -->
-
-                                            <div class="d-flex">
-                                            <!-- Authors -->
-                                             <!--
-                                            <a href="https://github.com/BDAI-Research/DFLOP" target="_blank" >
-                                                    <i class="fa fa-user">‌</i>
-                                            </a>
-                                            -->
-                                            
-                                            <a href="#" target="_blank"><img src="images/logos/BDAI_Text.png" alt="BDAI" style="height:17px; margin-right: 10px;"></a>            
-                                            <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank"><img src="images/logos/MS.jpg" alt="Microsoft" style="height:32px; width:auto;"></a>
-
-                                        </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://arxiv.org/abs/2604.14725" class="news-block-title-link">RELOAD: A Robust and Efficient Learned Query Optimizer for Database Systems</a></h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    <a href="team.html#seokwon.lee"><u>Seokwon Lee</u></a>, 
-                                                    <a href="team.html#jaeyoung.sim"><u>Jaeyoung Sim</u></a>, 
-                                                    <a href="team.html#sihyun.kim"><u>Sihyun Kim</u></a>, 
-                                                    <a href="team.html#yuhsing.li"><u>Yuhsing Li</u></a>, 
-                                                    <a href="https://www.microsoft.com/en-us/research/people/yiwzh/"><u>Yiwen Zhu</u></a>, 
-                                                    <b>Kwanghyun Park</b>
-                                                </i>
-                                                </p>
-                                                <a href="#" class="tags-block-link">
-                                                    Archive <span class="badge badge-pill badge-primary">arXiv</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-           
-                            </div>
+                    <!--
+                    <div class="pub-hero">
+                        <h2>Publications</h2>
+                        <p>
+                            Selected conference and journal publications from BDAI Lab and prior research activities.
+                            The work spans database systems, systems for AI, hardware-software co-design, near-data processing,
+                            query optimization, and machine learning infrastructure.
+                        </p>
+                        <div class="pub-stats">
+                            <div class="pub-stat"><strong>30</strong><span>Selected records</span></div>
+                            <div class="pub-stat"><strong>21</strong><span>Top-tier / flagship venues</span></div>
+                            <div class="pub-stat"><strong>SIGMOD · VLDB · ICDE</strong><span>Database systems</span></div>
+                            <div class="pub-stat"><strong>FAST · DAC · CVPR</strong><span>Systems / AI venues</span></div>
                         </div>
                     </div>
-                </div>
-                 <!-- End arXiv -->
-
-                <!-- Begin 2026 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2026" data-speed="300"></span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
+                    -->
+                    
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year arxiv">arXiv</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card">
+                                <div class="pub-thumb placeholder arxiv">
+                                    <img src="images/logos/ArXiv_logo_2022.svg.png" alt="RELOAD: A Robust and Efficient Learned Query Optimizer for Database Systems">
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://arxiv.org/abs/2603.25120">
-                                            <img src="images/research/DFLOP.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!--<a href="https://github.com/BDAI-Research/DFLOP" class="social-icon-link bi-github"></a>--> 
-
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://arxiv.org/abs/2603.25120" target="_blank" style="height:25px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-
-                                            <!-- Code/github -->
-                                            <a href="https://github.com/BDAI-Research/DFLOP" target="_blank" >
-                                                    <i class="fa fa-github"></i> Code
-                                            </a>
-
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Authors -->
-                                             <!--
-                                            <a href="https://github.com/BDAI-Research/DFLOP" target="_blank" >
-                                                    <i class="fa fa-user">‌</i>
-                                            </a>
-                                            -->
-                                            
-                                            <a href="#" target="_blank"><img src="images/logos/BDAI_Text.png" alt="BDAI" style="height:17px;"></a>            
-                                            <a href="https://www.sktelecom.com/index_en.html" target="_blank"><img src="images/logos/SKT.png" alt="SKT" style="height:45px;"></a>
-                                            <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank"><img src="images/logos/MS.jpg" alt="Microsoft" style="height:32px; width:auto;"></a>
-
-                                        </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a></span>
+                                        
+                                        <span class="pub-badge">Preprint</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="https://arxiv.org/abs/2604.14725" target="_blank" rel="noopener">RELOAD: A Robust and Efficient Learned Query Optimizer for Database Systems</a></h4>
+                                    <p class="pub-authors"><em><a href="team.html#seokwon.lee">Seokwon Lee</a>, <a href="team.html#jaeyoung.sim">Jaeyoung Sim</a>, <a href="team.html#sihyun.kim">Sihyun Kim</a>, <a href="team.html#yuhsing.li">Yuhsing Li</a>, <a href="https://www.microsoft.com/en-us/research/people/yiwzh/">Yiwen Zhu</a>, <strong>Kwanghyun Park</strong></em></p>
+                                    <p class="pub-venue-full"><a href="https://arxiv.org/" target="_blank" rel="noopener">Archive</a></p>
+                                    <div class="pub-collab-strip"><span class="pub-collab-label">Collaborators</span><a class="pub-collab-logo logo-bdai" href="https://bdai.yonsei.ac.kr/" target="_blank" rel="noopener"><img src="images/logos/BDAI_Text.png" alt="BDAI"></a><a class="pub-collab-logo logo-ms" href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank" rel="noopener"><img src="images/logos/MS.jpg" alt="Microsoft"></a></div>
+                                    <div class="pub-actions">
+                                        <a href="https://arxiv.org/abs/2604.14725" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
                                         
                                     </div>
-
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://arxiv.org/abs/2603.25120" class="news-block-title-link">DFLOP: A Data-driven Framework for Multimodal LLM Training Pipeline Optimization</a> 
-                                            </h8>
-                                        </div>
-
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    <a href="team.html#hyeonjun.an"><u>Hyeonjun An</u></a>, 
-                                                    <a href="team.html#sihyun.kim"><u>Sihyun Kim</u></a>, 
-                                                    <a href="team.html#chaerim.lim"><u>Chaerim Lim</u></a>, 
-                                                    <a href="team.html#hyunjoon.kim"><u>Hyunjoon Kim</u></a>, 
-                                                    <a href="https://www.microsoft.com/en-us/research/people/rasen/"><u>Rathijit Sen</u></a>, 
-                                                    Sangmin Jung, Hyeonsoo Lee, Dongwook Kim, Takki Yu, Jinkyu Jeong, Youngsok Kim, and
-                                                    <b>Kwanghyun Park</b>
-                                                </i>
-                                                </p>
-                                                             
-                                                <!--
-                                                <div class="news-block-collaborators" style="font-size:14px; margin-top:1px; margin-bottom:1px; line-height:0.8; padding:0;">
-                                                    Collaborators:
-                                                    <a href="https://www.sktelecom.com/index_en.html" target="_blank"><img src="images/logos/SKT.png" alt="SKT" style="height:55px; width:auto; margin-right:2px;"></a>
-                                                    <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank"><img src="images/logos/MS.jpg" alt="Microsoft" style="height:32px; width:auto; margin-right:2px;"></a>
-                                                </div>
-                                                -->
-                                                <a href="https://sigmod.org/" class="tags-block-link">
-                                                    Proceedings of the International Conference on Management of Data <span class="badge badge-pill badge-primary">SIGMOD</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="#">
-                                            <img src="images/logos/coming_soon.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Authors -->
-                                             <!--
-                                            <a href="https://github.com/BDAI-Research/DFLOP" target="_blank" >
-                                                    <i class="fa fa-user">‌</i>
-                                            </a>
-                                            -->
-                                            
-                                            <a href="#" target="_blank"><img src="images/logos/BDAI_Text.png" alt="BDAI" style="height:17px;"></a>            
-                                            <a href="https://research.skhynix.com/" target="_blank"><img src="images/logos/hynix.png" alt="Hynix" style="height:40px; width:auto; margin-right:2px;"></a>
-                                            <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank"><img src="images/logos/MS.jpg" alt="Microsoft" style="height:32px; width:auto;"></a>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="#" class="news-block-title-link">CANNON: A CXL-Based Near-Memory Processing Architecture for Approximate Nearest Neighbor Search on Real Hardware</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    <a href="team.html#ganghyun.kim"><u>Ganghyun Kim</u></a>,
-                                                    <a href="team.html#hyeonjun.an"><u>Hyeonjun An</u></a>, 
-                                                    <a href="team.html#hyunjoon.kim"><u>Hyunjoon Kim</u></a>,  
-                                                    <a href="https://www.microsoft.com/en-us/research/people/rasen/"><u>Rathijit Sen</u></a>,
-                                                    Kangkyu Park, Jinho Baek, Kwangsik Shin, Youngpyo Joo, and
-                                                    <b>Kwanghyun Park</b>
-                                                </i>
-                                                </p>
-                                                <!--
-                                                <div class="news-block-collaborators" style="font-size:14px; margin-top:1px; margin-bottom:1px; line-height:0.8; padding:0;">
-                                                    Collaborators:
-                                                    <a href="https://research.skhynix.com/" target="_blank"><img src="images/logos/hynix.png" alt="Hynix" style="height:45px; width:auto; margin-right:2px;"></a>
-                                                    <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank"><img src="images/logos/MS.jpg" alt="Microsoft" style="height:32px; width:auto; margin-right:2px;"></a>
-                                                </div>
-                                                -->
-                                                <a href="https://dac.com/2026" class="tags-block-link">
-                                                    Design Automation Conference <span class="badge badge-pill badge-primary">DAC</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="https://arxiv.org/abs/2512.09695">
-                                            <img src="images/research/exqutor.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        <!--
-                                        <p>
-                                            <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/"><img src="images/icons/MS.png" alt="Microsoft" style="height: 24px; vertical-align: middle; margin-left: 4px;"></a>
-                                            <a href="https://bdai.yonsei.ac.kr/"><img src="images/icons/header.png" alt="Microsoft" style="height: 24px; vertical-align: middle; margin-left: 2px;"></a>
-                                        </p>
-                                        -->  
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!--<a href="https://github.com/BDAI-Research/Exqutor" class="social-icon-link bi-github"></a>--> 
-
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://arxiv.org/abs/2512.09695" target="_blank" style="height:25px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-
-                                            <!-- Code/github -->
-                                            <a href="https://github.com/BDAI-Research/Exqutor" target="_blank">
-                                                    <i class="fa fa-github"></i> Code
-                                            </a>
-
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Authors -->
-                                             <!--
-                                            <a href="https://github.com/BDAI-Research/DFLOP" target="_blank" >
-                                                    <i class="fa fa-user">‌</i>
-                                            </a>
-                                            -->
-                                            
-                                            <a href="#" target="_blank"><img src="images/logos/BDAI_Text.png" alt="BDAI" style="height:17px; margin-right: 10px;"></a>            
-                                            <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank"><img src="images/logos/MS.jpg" alt="Microsoft" style="height:32px; width:auto;"></a>
-
-                                        </div>
-
-                                    </div>
-                                    
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://arxiv.org/abs/2512.09695" class="news-block-title-link">Exqutor: Extended Query Optimizer for Vector-augmented Analytical Queries</a> 
-                                            </h8> 
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                    <i>
-                                                        <a href="team.html#hyunjoon.kim"><u>Hyunjoon Kim</u></a>, 
-                                                        <a href="team.html#chaerim.lim"><u>Chaerim Lim</u></a>, 
-                                                        <a href="team.html#hyeonjun.an"><u>Hyeonjun An</u></a>,
-                                                        <a href="https://www.microsoft.com/en-us/research/people/rasen/"><u>Rathijit Sen</u></a>,
-                                                        <b>Kwanghyun Park</b>
-                                                    </i>
-                                                </p>
-                                                
-                                                <!--
-                                                <div class="news-block-collaborators" style="font-size:14px; margin-top:1px; margin-bottom:1px; line-height:0.8; padding:0;">
-                                                    Collaborators:
-                                                    <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank"><img src="images/logos/MS.jpg" alt="Microsoft" style="height:32px; width:auto; margin-right:2px;"></a>
-                                                </div>
-                                                -->
-                                                <a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" class="tags-block-link">
-                                                    2026 IEEE 42nd International Conference on Data Engineering <span class="badge badge-pill badge-primary">ICDE</span>
-                                                </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                        <a href="#">
-                                            <img src="images/logos/coming_soon.png" class="news-image img-fluid" alt="">
-                                        </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="#" class="news-block-title-link">FaScalSQL: A Fast and Scalable GPU-Accelerated SQL Query Engine for Out-of-Memory Tables</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    Chaemin Lim, Suhyun Lee, Jinwoo Choi, <b>Kwanghyun Park</b>, Jinho Lee, Joonsung Kim, Youngsok Kim
-                                                </i>
-                                                </p>
-                                                <a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" class="tags-block-link">
-                                                    2026 IEEE 42nd International Conference on Data Engineering <span class="badge badge-pill badge-primary">ICDE</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-                                           
-                            </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                 <!-- End 2026 -->
-
-                <!-- Begin 2025 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2025" data-speed="300"></span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">2026</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/DFLOP.png" alt="DFLOP: A Data-driven Framework for Multimodal LLM Training Pipeline Optimization">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://sigmod.org/" target="_blank" rel="noopener">SIGMOD</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Han_Spatial_Transport_Optimization_by_Repositioning_Attention_Map_for_Training-Free_Text-to-Image_CVPR_2025_paper.html">
-                                                <img src="images/research/STORM.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Han_Spatial_Transport_Optimization_by_Repositioning_Attention_Map_for_Training-Free_Text-to-Image_CVPR_2025_paper.html" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://openaccess.thecvf.com/content/CVPR2025/html/Han_Spatial_Transport_Optimization_by_Repositioning_Attention_Map_for_Training-Free_Text-to-Image_CVPR_2025_paper.html" class="news-block-title-link">Spatial Transport Optimization by Repositioning Attention Map for Training-Free Text-to-Image Synthesis</a></h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    Woojung Han, Yeonkyung Lee, Chanyoung Kim, <b>Kwanghyun Park</b>, Seong Jae Hwang
-                                                </i>
-                                                </p>
-                                                <a href="https://cvpr.thecvf.com/Conferences/2025" class="tags-block-link">
-                                                    The IEEE/CVF Conference on Computer Vision and Pattern Recognition <span class="badge badge-pill badge-primary">CVPR</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://arxiv.org/abs/2603.25120" target="_blank" rel="noopener">DFLOP: A Data-driven Framework for Multimodal LLM Training Pipeline Optimization</a></h4>
+                                    <p class="pub-authors"><em><a href="team.html#hyeonjun.an">Hyeonjun An</a>, <a href="team.html#sihyun.kim">Sihyun Kim</a>, <a href="team.html#chaerim.lim">Chaerim Lim</a>, <a href="team.html#hyunjoon.kim">Hyunjoon Kim</a>, <a href="https://www.microsoft.com/en-us/research/people/rasen/">Rathijit Sen</a>, Sangmin Jung, Hyeonsoo Lee, Dongwook Kim, Takki Yu, Jinkyu Jeong, Youngsok Kim, and <strong>Kwanghyun Park</strong></em></p>
+                                    <p class="pub-venue-full"><a href="https://sigmod.org/" target="_blank" rel="noopener">Proceedings of the International Conference on Management of Data</a></p>
+                                    <div class="pub-collab-strip"><span class="pub-collab-label">Collaborators</span><a class="pub-collab-logo logo-bdai" href="https://bdai.yonsei.ac.kr/" target="_blank" rel="noopener"><img src="images/logos/BDAI_Text.png" alt="BDAI"></a><a class="pub-collab-logo logo-skt" href="https://www.sktelecom.com/index_en.html" target="_blank" rel="noopener"><img src="images/logos/SKT.png" alt="SK Telecom"></a><a class="pub-collab-logo logo-ms" href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank" rel="noopener"><img src="images/logos/MS.jpg" alt="Microsoft"></a></div>
+                                    <div class="pub-actions">
+                                        <a href="https://arxiv.org/abs/2603.25120" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        <a href="https://github.com/BDAI-Research/DFLOP" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
                                     </div>
                                 </div>
-           
-                            </div>
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb placeholder">
+                                    <img src="images/logos/coming_soon.png" alt="CANNON: A CXL-Based Near-Memory Processing Architecture for Approximate Nearest Neighbor Search on Real Hardware">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://dac.com/2026" target="_blank" rel="noopener">DAC</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="https://dac.com/2026" target="_blank" rel="noopener">CANNON: A CXL-Based Near-Memory Processing Architecture for Approximate Nearest Neighbor Search on Real Hardware</a></h4>
+                                    <p class="pub-authors"><em><a href="team.html#ganghyun.kim">Ganghyun Kim</a>, <a href="team.html#hyeonjun.an">Hyeonjun An</a>, <a href="team.html#hyunjoon.kim">Hyunjoon Kim</a>, <a href="https://www.microsoft.com/en-us/research/people/rasen/">Rathijit Sen</a>, Kangkyu Park, Jinho Baek, Kwangsik Shin, Youngpyo Joo, and <strong>Kwanghyun Park</strong></em></p>
+                                    <p class="pub-venue-full"><a href="https://dac.com/2026" target="_blank" rel="noopener">Design Automation Conference</a></p>
+                                    <div class="pub-collab-strip"><span class="pub-collab-label">Collaborators</span><a class="pub-collab-logo logo-bdai" href="https://bdai.yonsei.ac.kr/" target="_blank" rel="noopener"><img src="images/logos/BDAI_Text.png" alt="BDAI"></a><a class="pub-collab-logo logo-hynix" href="https://research.skhynix.com/" target="_blank" rel="noopener"><img src="images/logos/hynix.png" alt="SK hynix"></a><a class="pub-collab-logo logo-ms" href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank" rel="noopener"><img src="images/logos/MS.jpg" alt="Microsoft"></a></div>
+                                    <div class="pub-actions">
+                                        <a href="https://dac.com/2026" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/exqutor.png" alt="Exqutor: Extended Query Optimizer for Vector-augmented Analytical Queries">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">ICDE</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="https://arxiv.org/abs/2512.09695" target="_blank" rel="noopener">Exqutor: Extended Query Optimizer for Vector-augmented Analytical Queries</a></h4>
+                                    <p class="pub-authors"><em><a href="team.html#hyunjoon.kim">Hyunjoon Kim</a>, <a href="team.html#chaerim.lim">Chaerim Lim</a>, <a href="team.html#hyeonjun.an">Hyeonjun An</a>, <a href="https://www.microsoft.com/en-us/research/people/rasen/">Rathijit Sen</a>, <strong>Kwanghyun Park</strong></em></p>
+                                    <p class="pub-venue-full"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">IEEE International Conference on Data Engineering</a></p>
+                                    <div class="pub-collab-strip"><span class="pub-collab-label">Collaborators</span><a class="pub-collab-logo logo-bdai" href="https://bdai.yonsei.ac.kr/" target="_blank" rel="noopener"><img src="images/logos/BDAI_Text.png" alt="BDAI"></a><a class="pub-collab-logo logo-ms" href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/" target="_blank" rel="noopener"><img src="images/logos/MS.jpg" alt="Microsoft"></a></div>
+                                    <div class="pub-actions">
+                                        <a href="https://arxiv.org/abs/2512.09695" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        <a href="https://github.com/BDAI-Research/Exqutor" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb placeholder">
+                                    <img src="images/logos/coming_soon.png" alt="FaScalSQL: A Fast and Scalable GPU-Accelerated SQL Query Engine for Out-of-Memory Tables">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">ICDE</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">FaScalSQL: A Fast and Scalable GPU-Accelerated SQL Query Engine for Out-of-Memory Tables</a></h4>
+                                    <p class="pub-authors"><em>Chaemin Lim, Suhyun Lee, Jinwoo Choi, <strong>Kwanghyun Park</strong>, Jinho Lee, Joonsung Kim, Youngsok Kim</em></p>
+                                    <p class="pub-venue-full"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">IEEE International Conference on Data Engineering</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                 <!-- End 2025 -->
-                
-                <!-- Begin 2024 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2024" data-speed="300"></span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/STORM.png" alt="Spatial Transport Optimization by Repositioning Attention Map for Training-Free Text-to-Image Synthesis">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://cvpr.thecvf.com/" target="_blank" rel="noopener">CVPR</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/10.1145/3698827">
-                                                <img src="images/research/SIGMOD2024.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/10.1145/3698827" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/10.1145/3698827" class="news-block-title-link">SPID-Join: A Skew-resistant Processing-in-DIMM Join Algorithm Exploiting the Bank- and Rank-level Parallelisms of DIMMs</a></h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    Suhyun Lee, Chaemin Lim, Jinwoo Choi, Heelim Choi, Chan Lee, Yongjun Park, <b>Kwanghyun Park</b>, Hanjun Kim, Youngsok Kim
-                                                </i>
-                                                </p>
-                                                <a href="https://sigmod.org/" class="tags-block-link">
-                                                    Proceedings of the International Conference on Management of Data <span class="badge badge-pill badge-primary">SIGMOD</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://openaccess.thecvf.com/content/CVPR2025/html/Han_Spatial_Transport_Optimization_by_Repositioning_Attention_Map_for_Training-Free_Text-to-Image_CVPR_2025_paper.html" target="_blank" rel="noopener">Spatial Transport Optimization by Repositioning Attention Map for Training-Free Text-to-Image Synthesis</a></h4>
+                                    <p class="pub-authors"><em>Woojung Han, Yeonkyung Lee, Chanyoung Kim, <strong>Kwanghyun Park</strong>, Seong Jae Hwang</em></p>
+                                    <p class="pub-venue-full"><a href="https://cvpr.thecvf.com/" target="_blank" rel="noopener">IEEE/CVF Conference on Computer Vision and Pattern Recognition</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Han_Spatial_Transport_Optimization_by_Repositioning_Attention_Map_for_Training-Free_Text-to-Image_CVPR_2025_paper.html" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://ieeexplore.ieee.org/document/10597705">
-                                                <img src="images/research/ICDE2024.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://ieeexplore.ieee.org/document/10597705" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://ieeexplore.ieee.org/document/10597705" class="news-block-title-link">Pushing ML Predictions into DBMSs (Extended Abstract)</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Matteo Paganelli, Paolo Sottovia, <b>Kwanghyun Park</b>, Matteo Interlandi, Francesco Guerra</i>
-                                                </p>
-                                                <a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" class="tags-block-link">
-                                                    2024 IEEE 40th International Conference on Data Engineering <span class="badge badge-pill badge-primary">ICDE</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-                                           
-                            </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                 <!-- End 2024 -->
-                
-                <!-- Begin 2023 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2023" data-speed="500"></span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">2024</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/SIGMOD2024.png" alt="SPID-Join: A Skew-resistant Processing-in-DIMM Join Algorithm Exploiting the Bank- and Rank-level Parallelisms of DIMMs">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://sigmod.org/" target="_blank" rel="noopener">SIGMOD</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://www.vldb.org/pvldb/vol16/p4230-camacho-rodriguez.pdf">
-                                                <img src="images/research/feathrpo.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://www.vldb.org/pvldb/vol16/p4230-camacho-rodriguez.pdf" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://www.vldb.org/pvldb/vol16/p4230-camacho-rodriguez.pdf" class="news-block-title-link">Optimizing Data Pipelines for Machine Learning in Feature Stores</a></h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    Rui Liu, <b>Kwanghyun Park</b>, Fotis Psallidas, Xiaoyong Zhu, Jinghui Mo, Rathijit Sen, Matteo Interlandi, Konstantinos Karanasos, Yuanyuan Tian, Jesús Camacho-Rodríguez</i>
-                                                </p>
-                                                <a href="https://www.vldb.org/" class="tags-block-link">
-                                                    Proceedings of the VLDB Endowment <span class="badge badge-pill badge-primary">VLDB</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3698827" target="_blank" rel="noopener">SPID-Join: A Skew-resistant Processing-in-DIMM Join Algorithm Exploiting the Bank- and Rank-level Parallelisms of DIMMs</a></h4>
+                                    <p class="pub-authors"><em>Suhyun Lee, Chaemin Lim, Jinwoo Choi, Heelim Choi, Chan Lee, Yongjun Park, <strong>Kwanghyun Park</strong>, Hanjun Kim, Youngsok Kim</em></p>
+                                    <p class="pub-venue-full"><a href="https://sigmod.org/" target="_blank" rel="noopener">Proceedings of the International Conference on Management of Data</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/10.1145/3698827" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://ieeexplore.ieee.org/abstract/document/10107490">
-                                                <img src="images/research/MASQFramework.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://ieeexplore.ieee.org/abstract/document/10107490" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/ICDE2024.png" alt="Pushing ML Predictions into DBMSs (Extended Abstract)">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">ICDE</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://ieeexplore.ieee.org/abstract/document/10107490" class="news-block-title-link">Pushing ML Predictions into DBMSs</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Matteo Paganelli, Paolo Sottovia, <b>Kwanghyun Park</b>, Matteo Interlandi, Francesco Guerra</i>
-                                                </p>
-                                                <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69" class="tags-block-link">
-                                                    IEEE Transactions on Knowledge and Data Engineering <span class="badge badge-pill badge-primary">TKDE</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/10597705" target="_blank" rel="noopener">Pushing ML Predictions into DBMSs (Extended Abstract)</a></h4>
+                                    <p class="pub-authors"><em>Matteo Paganelli, Paolo Sottovia, <strong>Kwanghyun Park</strong>, Matteo Interlandi, Francesco Guerra</em></p>
+                                    <p class="pub-venue-full"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">IEEE International Conference on Data Engineering</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://ieeexplore.ieee.org/document/10597705" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://ieeexplore.ieee.org/document/10375377">
-                                                <img src="images/research/Trinity2.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://ieeexplore.ieee.org/document/10375377" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://ieeexplore.ieee.org/document/10375377" class="news-block-title-link">Trinity: In-Database Near-Data Machine Learning Acceleration Platform for Advanced Data Analytics</a></h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    Ji-Hoon Kim, Seunghee Han, <b>Kwanghyun Park</b>, Soo-Young Ji, Joo-Young Kim
-                                                </i>
-                                                </p>
-                                                <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6287639" class="tags-block-link">
-                                                    IEEE Access 
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-             
-                            </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                 <!-- End 2023 -->
-                 
-                 
-                <!-- Begin 2022 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2022" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">2023</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/feathrpo.png" alt="Optimizing Data Pipelines for Machine Learning in Feature Stores">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.vldb.org/" target="_blank" rel="noopener">VLDB</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3514221.3526141">
-                                                <img src="images/research/raven.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3514221.3526141" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/abs/10.1145/3514221.3526141" class="news-block-title-link">End-to-end optimization of machine learning prediction queries</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i> 
-                                                    <b>Kwanghyun Park</b>, Karla Saur, Dalitso Banda, Rathijit Sen, Matteo Interlandi, Konstantinos Karanasos
-                                                </i>
-                                                </p>
-                                                <a href="https://sigmod.org/" class="tags-block-link">
-                                                    Proceedings of the International Conference on Management of Data <span class="badge badge-pill badge-primary">SIGMOD</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://www.vldb.org/pvldb/vol16/p4230-camacho-rodriguez.pdf" target="_blank" rel="noopener">Optimizing Data Pipelines for Machine Learning in Feature Stores</a></h4>
+                                    <p class="pub-authors"><em>Rui Liu, <strong>Kwanghyun Park</strong>, Fotis Psallidas, Xiaoyong Zhu, Jinghui Mo, Rathijit Sen, Matteo Interlandi, Konstantinos Karanasos, Yuanyuan Tian, Jesús Camacho-Rodríguez</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.vldb.org/" target="_blank" rel="noopener">Proceedings of the VLDB Endowment</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://www.vldb.org/pvldb/vol16/p4230-camacho-rodriguez.pdf" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/abs/10.14778/3547305.3547306">
-                                                <img src="images/research/research2.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/abs/10.14778/3547305.3547306" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/MASQFramework.png" alt="Pushing ML Predictions into DBMSs">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69" target="_blank" rel="noopener">TKDE</a></span><span class="pub-badge">IF 10.6</span>
+                                        <span class="pub-badge">Journal</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/abs/10.14778/3547305.3547306" class="news-block-title-link">VIP hashing: adapting to skew in popularity of data on the fly</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i> 
-                                                    Aarati Kakaraparthy, Jignesh M Patel, Brian P Kroth, <b>Kwanghyun Park</b>
-                                                </i>
-                                                </p>
-                                                <a href="https://www.vldb.org/" class="tags-block-link">
-                                                    Proceedings of the VLDB Endowment <span class="badge badge-pill badge-primary">VLDB</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10107490" target="_blank" rel="noopener">Pushing ML Predictions into DBMSs</a></h4>
+                                    <p class="pub-authors"><em>Matteo Paganelli, Paolo Sottovia, <strong>Kwanghyun Park</strong>, Matteo Interlandi, Francesco Guerra</em></p>
+                                    <p class="pub-venue-full"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69" target="_blank" rel="noopener">IEEE Transactions on Knowledge and Data Engineering (IF 10.6)</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/10107490" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/10.14778/3551793.3551833">
-                                                <img src="images/research/TQP.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/10.14778/3551793.3551833" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card">
+                                <div class="pub-thumb">
+                                    <img src="images/research/Trinity2.png" alt="Trinity: In-Database Near-Data Machine Learning Acceleration Platform for Advanced Data Analytics">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6287639" target="_blank" rel="noopener">IEEE Access</a></span><span class="pub-badge">IF 3.6</span>
+                                        
+                                        <span class="pub-badge">Journal</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/10.14778/3551793.3551833" class="news-block-title-link">Query processing on tensor computation runtimes</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i> 
-                                                    Dong He, Supun Nakandala, Dalitso Banda, Rathijit Sen, Karla Saur, <b>Kwanghyun Park</b>, Carlo Curino, Jesús Camacho-Rodríguez, Konstantinos Karanasos, Matteo Interlandi
-                                                </i>
-                                                </p>
-                                                <a href="https://www.vldb.org/" class="tags-block-link">
-                                                    Proceedings of the VLDB Endowment <span class="badge badge-pill badge-primary">VLDB</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/document/10375377" target="_blank" rel="noopener">Trinity: In-Database Near-Data Machine Learning Acceleration Platform for Advanced Data Analytics</a></h4>
+                                    <p class="pub-authors"><em>Ji-Hoon Kim, Seunghee Han, <strong>Kwanghyun Park</strong>, Soo-Young Ji, Joo-Young Kim</em></p>
+                                    <p class="pub-venue-full"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6287639" target="_blank" rel="noopener">IEEE Access (IF 3.6)</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://ieeexplore.ieee.org/document/10375377" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://www.usenix.org/conference/fast22/presentation/wu">
-                                                <img src="images/research/NyxCache.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://www.usenix.org/conference/fast22/presentation/wu" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://www.usenix.org/conference/fast22/presentation/wu" class="news-block-title-link">{NyxCache}: Flexible and efficient multi-tenant persistent memory caching</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i> 
-                                                    Kan Wu, Kaiwei Tu, Yuvraj Patel, Rathijit Sen, <b>Kwanghyun Park</b>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau
-                                                </i>
-                                                </p>
-                                                <a href="https://dblp.org/db/conf/fast/index.html" class="tags-block-link">
-                                                    20th USENIX Conference on File and Storage Technologies <span class="badge badge-pill badge-primary">FAST</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://www.computer.org/csdl/proceedings-article/hcs/2022/09895601/1GZiFY5g8Cs">
-                                                <img src="images/research/Trinity.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://www.computer.org/csdl/proceedings-article/hcs/2022/09895601/1GZiFY5g8Cs" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://www.computer.org/csdl/proceedings-article/hcs/2022/09895601/1GZiFY5g8Cs" class="news-block-title-link">Trinity: End-to-End In-Database Near-Data Machine Learning Acceleration Platform for Advanced Data Analytics</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i> 
-                                                    Ji-Hoon Kim, Seunghee Han, <b>Kwanghyun Park</b>, Soo-Young Ji, Joo-Young Kim
-                                                </i>
-                                                </p>
-                                                <a href="https://hotchips.org/" class="tags-block-link">
-                                                    2022 IEEE Hot Chips 34 Symposium (HCS) <span class="badge badge-pill badge-primary">HCS</span>
-                                                </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                 <!-- End 2022 -->
-
-
-                <!-- Begin 2021 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2021" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">2022</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/raven.png" alt="End-to-end optimization of machine learning prediction queries">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://sigmod.org/" target="_blank" rel="noopener">SIGMOD</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://ieeexplore.ieee.org/abstract/document/9458844">
-                                                <img src="images/research/FPGAaggregate.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://ieeexplore.ieee.org/abstract/document/9458844" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://ieeexplore.ieee.org/abstract/document/9458844" class="news-block-title-link">FPGA for aggregate processing: The good, the bad, and the ugly</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Zubeyr F Eryilmaz, Aarati Kakaraparthy, Jignesh M Patel, Rathijit Sen, <b>Kwanghyun Park</b></i>
-                                                </p>
-                                                <a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" class="tags-block-link">
-                                                    2021 IEEE 37th International Conference on Data Engineering <span class="badge badge-pill badge-primary">ICDE</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3514221.3526141" target="_blank" rel="noopener">End-to-end optimization of machine learning prediction queries</a></h4>
+                                    <p class="pub-authors"><em><strong>Kwanghyun Park</strong>, Karla Saur, Dalitso Banda, Rathijit Sen, Matteo Interlandi, Konstantinos Karanasos</em></p>
+                                    <p class="pub-venue-full"><a href="https://sigmod.org/" target="_blank" rel="noopener">Proceedings of the International Conference on Management of Data</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3514221.3526141" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://www.usenix.org/conference/fast21/presentation/wu-kan">
-                                                <img src="images/research/StorageHierarchy.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://www.usenix.org/conference/fast21/presentation/wu-kan" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/research2.png" alt="VIP hashing: adapting to skew in popularity of data on the fly">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.vldb.org/" target="_blank" rel="noopener">VLDB</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://www.usenix.org/conference/fast21/presentation/wu-kan" class="news-block-title-link">The storage hierarchy is not a hierarchy: Optimizing caching on modern storage devices with orthus</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Kan Wu, Zhihan Guo, Guanzhou Hu, Kaiwei Tu, Ramnatthan Alagappan, Rathijit Sen, <b>Kwanghyun Park</b>, Andrea C Arpaci-Dusseau, Remzi H Arpaci-Dusseau</i>
-                                                </p>
-                                                <a href="https://dblp.org/db/conf/fast/index.html" class="tags-block-link">
-                                                    19th USENIX Conference on File and Storage Technologies <span class="badge badge-pill badge-primary">FAST</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.14778/3547305.3547306" target="_blank" rel="noopener">VIP hashing: adapting to skew in popularity of data on the fly</a></h4>
+                                    <p class="pub-authors"><em>Aarati Kakaraparthy, Jignesh M Patel, Brian P Kroth, <strong>Kwanghyun Park</strong></em></p>
+                                    <p class="pub-venue-full"><a href="https://www.vldb.org/" target="_blank" rel="noopener">Proceedings of the VLDB Endowment</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/abs/10.14778/3547305.3547306" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://ieeexplore.ieee.org/abstract/document/9408191">
-                                                <img src="images/research/research3.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://ieeexplore.ieee.org/abstract/document/9408191" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/TQP.png" alt="Query processing on tensor computation runtimes">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.vldb.org/" target="_blank" rel="noopener">VLDB</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://ieeexplore.ieee.org/abstract/document/9408191" class="news-block-title-link">Hardware acceleration for DBMS machine learning scoring: Is it worth the overheads?</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Zahra Azad, Rathijit Sen, <b>Kwanghyun Park</b>, Ajay Joshi</i>
-                                                </p>
-                                                <a href="https://ieeexplore.ieee.org/xpl/conhome/5755445/proceeding" class="tags-block-link">
-                                                    2021 IEEE International Symposium on Performance Analysis of Systems and Software <span class="badge badge-pill badge-primary">ISPASS</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/10.14778/3551793.3551833" target="_blank" rel="noopener">Query processing on tensor computation runtimes</a></h4>
+                                    <p class="pub-authors"><em>Dong He, Supun Nakandala, Dalitso Banda, Rathijit Sen, Karla Saur, <strong>Kwanghyun Park</strong>, Carlo Curino, Jesús Camacho-Rodríguez, Konstantinos Karanasos, Matteo Interlandi</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.vldb.org/" target="_blank" rel="noopener">Proceedings of the VLDB Endowment</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/10.14778/3551793.3551833" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-                            </div>
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/NyxCache.png" alt="{NyxCache}: Flexible and efficient multi-tenant persistent memory caching">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.usenix.org/conferences/byname/146" target="_blank" rel="noopener">FAST</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="https://www.usenix.org/conference/fast22/presentation/wu" target="_blank" rel="noopener">{NyxCache}: Flexible and efficient multi-tenant persistent memory caching</a></h4>
+                                    <p class="pub-authors"><em>Kan Wu, Kaiwei Tu, Yuvraj Patel, Rathijit Sen, <strong>Kwanghyun Park</strong>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.usenix.org/conferences/byname/146" target="_blank" rel="noopener">USENIX Conference on File and Storage Technologies</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://www.usenix.org/conference/fast22/presentation/wu" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="pub-card">
+                                <div class="pub-thumb">
+                                    <img src="images/research/Trinity.png" alt="Trinity: End-to-End In-Database Near-Data Machine Learning Acceleration Platform for Advanced Data Analytics">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://hotchips.org/" target="_blank" rel="noopener">Hot Chips</a></span>
+                                        
+                                        <span class="pub-badge">HCS</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="https://www.computer.org/csdl/proceedings-article/hcs/2022/09895601/1GZiFY5g8Cs" target="_blank" rel="noopener">Trinity: End-to-End In-Database Near-Data Machine Learning Acceleration Platform for Advanced Data Analytics</a></h4>
+                                    <p class="pub-authors"><em>Ji-Hoon Kim, Seunghee Han, <strong>Kwanghyun Park</strong>, Soo-Young Ji, Joo-Young Kim</em></p>
+                                    <p class="pub-venue-full"><a href="https://hotchips.org/" target="_blank" rel="noopener">IEEE Hot Chips Symposium</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://www.computer.org/csdl/proceedings-article/hcs/2022/09895601/1GZiFY5g8Cs" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                <!-- End 2021 -->
-
-
-                <!-- Begin 2020 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2020" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">2021</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/FPGAaggregate.png" alt="FPGA for aggregate processing: The good, the bad, and the ugly">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">ICDE</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://arxiv.org/abs/1911.00231">
-                                                <img src="images/research/ExtendingRQPwithMLInference.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://arxiv.org/abs/1911.00231" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://arxiv.org/abs/1911.00231" class="news-block-title-link">Extending relational query processing with ML inference</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Konstantinos Karanasos, Matteo Interlandi, Doris Xin, Fotis Psallidas, Rathijit Sen, <b>Kwanghyun Park</b>, Ivan Popivanov, Supun Nakandal, Subru Krishnan, Markus Weimer, Yuan Yu, Raghu Ramakrishnan, Carlo Curino</i>
-                                                </p>
-                                                <a href="https://www.cidrdb.org/" class="tags-block-link">
-                                                    Conference on Innovative Data Systems Research <span class="badge badge-pill badge-primary">CIDR</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/9458844" target="_blank" rel="noopener">FPGA for aggregate processing: The good, the bad, and the ugly</a></h4>
+                                    <p class="pub-authors"><em>Zubeyr F Eryilmaz, Aarati Kakaraparthy, Jignesh M Patel, Rathijit Sen, <strong>Kwanghyun Park</strong></em></p>
+                                    <p class="pub-venue-full"><a href="https://ieeexplore.ieee.org/xpl/conhome/1000178/all-proceedings" target="_blank" rel="noopener">IEEE International Conference on Data Engineering</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/9458844" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://arxiv.org/abs/1909.00084">
-                                                <img src="images/research/research1.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://arxiv.org/abs/1909.00084" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/StorageHierarchy.png" alt="The storage hierarchy is not a hierarchy: Optimizing caching on modern storage devices with Orthus">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.usenix.org/conferences/byname/146" target="_blank" rel="noopener">FAST</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://arxiv.org/abs/1909.00084" class="news-block-title-link">Cloudy with high chance of DBMS: A 10-year prediction for Enterprise-Grade ML</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    Ashvin Agrawal, Rony Chatterjee, Carlo Curino, Avrilia Floratou, Neha Gowdal, Matteo Interlandi, Alekh Jindal, Kostantinos Karanasos, Subru Krishnan, Brian Kroth, Jyoti Leeka, <b>Kwanghyun Park</b>, Hiren Patel, Olga Poppe, Fotis Psallidas, Raghu Ramakrishnan, Abhishek Roy, Karla Saur, Rathijit Sen, Markus Weimer, Travis Wright, Yiwen Zhu
-                                                </i>
-                                                </p>
-                                                <a href="https://www.cidrdb.org/" class="tags-block-link">
-                                                    Conference on Innovative Data Systems Research <span class="badge badge-pill badge-primary">CIDR</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://www.usenix.org/conference/fast21/presentation/wu-kan" target="_blank" rel="noopener">The storage hierarchy is not a hierarchy: Optimizing caching on modern storage devices with Orthus</a></h4>
+                                    <p class="pub-authors"><em>Kan Wu, Zhihan Guo, Guanzhou Hu, Kaiwei Tu, Ramnatthan Alagappan, Rathijit Sen, <strong>Kwanghyun Park</strong>, Andrea C Arpaci-Dusseau, Remzi H Arpaci-Dusseau</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.usenix.org/conferences/byname/146" target="_blank" rel="noopener">USENIX Conference on File and Storage Technologies</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://www.usenix.org/conference/fast21/presentation/wu-kan" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3399666.3399898">
-                                                <img src="images/research/fileio_DAX_mem.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3399666.3399898" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card">
+                                <div class="pub-thumb">
+                                    <img src="images/research/research3.png" alt="Hardware acceleration for DBMS machine learning scoring: Is it worth the overheads?">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://ieeexplore.ieee.org/xpl/conhome/5755445/proceeding" target="_blank" rel="noopener">ISPASS</a></span>
+                                        
+                                        <span class="pub-badge">Conference</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/abs/10.1145/3399666.3399898" class="news-block-title-link">Lessons learned from the early performance evaluation of Intel optane DC persistent memory in DBMS</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>
-                                                    Yinjun Wu, <b>Kwanghyun Park</b>, Rathijit Sen, Brian Kroth, Jaeyoung Do
-                                                </i>
-                                                </p>
-                                                <a href="https://dblp.org/db/conf/damon/index.html" class="tags-block-link">
-                                                    Proceedings of the 16th International Workshop on Data Management on New Hardware <span class="badge badge-pill badge-primary">DaMoN</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/9408191" target="_blank" rel="noopener">Hardware acceleration for DBMS machine learning scoring: Is it worth the overheads?</a></h4>
+                                    <p class="pub-authors"><em>Zahra Azad, Rathijit Sen, <strong>Kwanghyun Park</strong>, Ajay Joshi</em></p>
+                                    <p class="pub-venue-full"><a href="https://ieeexplore.ieee.org/xpl/conhome/5755445/proceeding" target="_blank" rel="noopener">IEEE International Symposium on Performance Analysis of Systems and Software</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/9408191" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-             
-                            </div>
+                            </article>
                         </div>
                     </div>
-                 </div>
-                <!-- End 2020 -->
-
-                <!-- Begin 2019 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2019" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">2020</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/ExtendingRQPwithMLInference.png" alt="Extending relational query processing with ML inference">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.cidrdb.org/" target="_blank" rel="noopener">CIDR</a></span>
+                                        <span class="pub-badge">Conference</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/abs/10.14778/3372716.3372724">
-                                                <img src="images/research/HiddenParamsOfSSDs.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/abs/10.14778/3372716.3372724" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/abs/10.14778/3372716.3372724" class="news-block-title-link">Optimizing databases by learning hidden parameters of solid state drives</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Aarati Kakaraparthy, Jignesh M Patel, <b>Kwanghyun Park</b>, Brian P Kroth</i>
-                                                </p>
-                                                <a href="https://www.vldb.org/" class="tags-block-link">
-                                                    Proceedings of the VLDB Endowment <span class="badge badge-pill badge-primary">VLDB</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://arxiv.org/abs/1911.00231" target="_blank" rel="noopener">Extending relational query processing with ML inference</a></h4>
+                                    <p class="pub-authors"><em>Konstantinos Karanasos, Matteo Interlandi, Doris Xin, Fotis Psallidas, Rathijit Sen, <strong>Kwanghyun Park</strong>, Ivan Popivanov, Supun Nakandal, Subru Krishnan, Markus Weimer, Yuan Yu, Raghu Ramakrishnan, Carlo Curino</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.cidrdb.org/" target="_blank" rel="noopener">Conference on Innovative Data Systems Research</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://arxiv.org/abs/1911.00231" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/abs/10.14778/3352063.3352072">
-                                                <img src="images/research/BlackMagic.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/abs/10.14778/3352063.3352072" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/research1.png" alt="Cloudy with high chance of DBMS: A 10-year prediction for Enterprise-Grade ML">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.cidrdb.org/" target="_blank" rel="noopener">CIDR</a></span>
+                                        <span class="pub-badge">Conference</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/abs/10.14778/3352063.3352072" class="news-block-title-link">Blackmagic: Automatic inlining of scalar udfs into sql queries with froid</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Karthik Ramachandra, <b>Kwanghyun Park</b></i>
-                                                </p>
-                                                <a href="https://www.vldb.org/" class="tags-block-link">
-                                                    Proceedings of the VLDB Endowment <span class="badge badge-pill badge-primary">VLDB</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://arxiv.org/abs/1909.00084" target="_blank" rel="noopener">Cloudy with high chance of DBMS: A 10-year prediction for Enterprise-Grade ML</a></h4>
+                                    <p class="pub-authors"><em>Ashvin Agrawal, Rony Chatterjee, Carlo Curino, Avrilia Floratou, Neha Gowdal, Matteo Interlandi, Alekh Jindal, Kostantinos Karanasos, Subru Krishnan, Brian Kroth, Jyoti Leeka, <strong>Kwanghyun Park</strong>, Hiren Patel, Olga Poppe, Fotis Psallidas, Raghu Ramakrishnan, Abhishek Roy, Karla Saur, Rathijit Sen, Markus Weimer, Travis Wright, Yiwen Zhu</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.cidrdb.org/" target="_blank" rel="noopener">Conference on Innovative Data Systems Research</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://arxiv.org/abs/1909.00084" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3329785.3329916">
-                                                <img src="images/research/IntelOptane.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3329785.3329916" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card">
+                                <div class="pub-thumb">
+                                    <img src="images/research/fileio_DAX_mem.png" alt="Lessons learned from the early performance evaluation of Intel Optane DC persistent memory in DBMS">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://damon-db.org/" target="_blank" rel="noopener">DaMoN</a></span>
+                                        
+                                        <span class="pub-badge">Workshop</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/abs/10.1145/3329785.3329916" class="news-block-title-link">Exploiting intel optane ssd for microsoft sql server</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Kan Wu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, Rathijit Sen, <b>Kwanghyun Park</b></i>
-                                                </p>
-                                                <a href="https://dblp.org/db/conf/damon/index.html" class="tags-block-link">
-                                                    Proceedings of the 15th International Workshop on Data Management on New Hardware <span class="badge badge-pill badge-primary">DaMoN</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3399666.3399898" target="_blank" rel="noopener">Lessons learned from the early performance evaluation of Intel Optane DC persistent memory in DBMS</a></h4>
+                                    <p class="pub-authors"><em>Yinjun Wu, <strong>Kwanghyun Park</strong>, Rathijit Sen, Brian Kroth, Jaeyoung Do</em></p>
+                                    <p class="pub-venue-full"><a href="https://damon-db.org/" target="_blank" rel="noopener">International Workshop on Data Management on New Hardware</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3399666.3399898" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-             
-                            </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                <!-- End 2019 -->
-
-
-                <!-- Begin Before 2019 -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <h4>Before </h4>  <span class="counter-number" data-from="1" data-to="2019" data-speed="1000"></span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">2019</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/HiddenParamsOfSSDs.png" alt="Optimizing databases by learning hidden parameters of solid state drives">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.vldb.org/" target="_blank" rel="noopener">VLDB</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-            
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3186728.3164140">
-                                                <img src="images/research/Froid.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3186728.3164140" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/abs/10.1145/3186728.3164140" class="news-block-title-link">Froid: Optimization of imperative programs in a relational database</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Karthik Ramachandra, <b>Kwanghyun Park</b>, K Venkatesh Emani, Alan Halverson, César Galindo-Legaria, Conor Cunningham</i>
-                                                </p>
-                                                <a href="https://www.vldb.org/" class="tags-block-link">
-                                                    Proceedings of the VLDB Endowment <span class="badge badge-pill badge-primary">VLDB</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.14778/3372716.3372724" target="_blank" rel="noopener">Optimizing databases by learning hidden parameters of solid state drives</a></h4>
+                                    <p class="pub-authors"><em>Aarati Kakaraparthy, Jignesh M Patel, <strong>Kwanghyun Park</strong>, Brian P Kroth</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.vldb.org/" target="_blank" rel="noopener">Proceedings of the VLDB Endowment</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/abs/10.14778/3372716.3372724" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://ieeexplore.ieee.org/abstract/document/7495612">
-                                                <img src="images/research/AggressiveBPWarmup.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://ieeexplore.ieee.org/abstract/document/7495612" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/BlackMagic.png" alt="Blackmagic: Automatic inlining of scalar UDFs into SQL queries with Froid">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.vldb.org/" target="_blank" rel="noopener">VLDB</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://ieeexplore.ieee.org/abstract/document/7495612" class="news-block-title-link">Aggressive buffer pool warm-up after restart in SQL Server</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i><b>Kwanghyun Park</b>, Jaeyoung Do, Nikhil Teletia, Jignesh M Patel</i>
-                                                </p>
-                                                <a href="https://ieeexplore.ieee.org/xpl/conhome/7491933/proceeding" class="tags-block-link">
-                                                    2016 IEEE 32nd International Conference on Data Engineering Workshops <span class="badge badge-pill badge-primary">ICDEW</span>
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.14778/3352063.3352072" target="_blank" rel="noopener">Blackmagic: Automatic inlining of scalar UDFs into SQL queries with Froid</a></h4>
+                                    <p class="pub-authors"><em>Karthik Ramachandra, <strong>Kwanghyun Park</strong></em></p>
+                                    <p class="pub-venue-full"><a href="https://www.vldb.org/" target="_blank" rel="noopener">Proceedings of the VLDB Endowment</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/abs/10.14778/3352063.3352072" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="http://sites.computer.org/debull/A14june/A14JUN-CD.pdf#page=21">
-                                                <img src="images/research/SmartSSD.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="http://sites.computer.org/debull/A14june/A14JUN-CD.pdf#page=21" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
+                            </article>
+                            <article class="pub-card">
+                                <div class="pub-thumb">
+                                    <img src="images/research/IntelOptane.png" alt="Exploiting Intel Optane SSD for Microsoft SQL Server">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://damon-db.org/" target="_blank" rel="noopener">DaMoN</a></span>
+                                        
+                                        <span class="pub-badge">Workshop</span>
                                     </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="http://sites.computer.org/debull/A14june/A14JUN-CD.pdf#page=21" class="news-block-title-link">Query Processing on Smart SSDs</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i><b>Kwanghyun Park</b>, Yang-Suk Kee, Jignesh M Patel, Jaeyoung Do, Chanik Park, David J Dewitt</i>
-                                                </p>
-                                                <a href="http://sites.computer.org/debull/bull_issues.html" class="tags-block-link">
-                                                    IEEE Data Eng. Bull
-                                                </a>
-                                                
-                                        </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3329785.3329916" target="_blank" rel="noopener">Exploiting Intel Optane SSD for Microsoft SQL Server</a></h4>
+                                    <p class="pub-authors"><em>Kan Wu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, Rathijit Sen, <strong>Kwanghyun Park</strong></em></p>
+                                    <p class="pub-venue-full"><a href="https://damon-db.org/" target="_blank" rel="noopener">International Workshop on Data Management on New Hardware</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3329785.3329916" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
                                 </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/2463676.2465295">
-                                                <img src="images/research/SmartSSD2.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/2463676.2465295" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://dl.acm.org/doi/abs/10.1145/2463676.2465295" class="news-block-title-link">Query processing on smart ssds: Opportunities and challenges</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Jaeyoung Do, Yang-Suk Kee, Jignesh M Patel, Chanik Park, <b>Kwanghyun Park</b>, David J DeWitt</i>
-                                                </p>
-                                                <a href="https://sigmod.org/" class="tags-block-link">
-                                                    Proceedings of the International Conference on Management of Data <span class="badge badge-pill badge-primary">SIGMOD</span>
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="news-block news-block-two-col d-flex mt-4">
-                                    <div class="news-block-body">
-                                        <div class="news-block-two-col-image-wrap">
-                                            <a href="https://www.mcponline.org/article/S1535-9476(20)32584-6/fulltext">
-                                                <img src="images/research/Phosphoproteomics.png" class="news-image img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <!-- Paper/arXiv -->
-                                            <a href="https://www.mcponline.org/article/S1535-9476(20)32584-6/fulltext" target="_blank" style="height:55px; width:auto; margin-right:12px;">
-                                                <i class="fa fa-file-pdf-o"></i> Paper
-                                            </a>
-                                        </div>
-
-                                    </div>
-            
-                                    <div class="news-block-two-col-info">
-                                        <div class="news-block-title mb-2">
-                                            <h8><a href="https://www.mcponline.org/article/S1535-9476(20)32584-6/fulltext" class="news-block-title-link">Rapid phosphoproteomic and transcriptomic changes in the rhizobia-legume symbiosis</a> </h8>
-                                        </div>
-            
-                                        <div class="news-block-body">
-                                                <p>
-                                                <i>Christopher M Rose, Muthusubramanian Venkateshwaran, Jeremy D Volkening, Paul A Grimsrud, Junko Maeda, Derek J Bailey, <b>Kwanghyun Park</b>, Maegen Howes-Podoll, Désirée Den Os, Li Huey Yeun, Michael S Westphall, Michael R Sussman, Jean-Michel Ane, Joshua J Coon</i>
-                                                </p>
-                                                <a href="https://www.mcponline.org/" class="tags-block-link">
-                                                    Molecular & Cellular Proteomics
-                                                </a>
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-
-             
-                            </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                <!-- End Before 2019 -->
-
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <h4>Conference/Journal Information</span>
-                                        <span class="counter-number-text"></span>
+                    <div class="pub-year-group">
+                        <div class="pub-year-header">
+                            <span class="pub-year">Before 2019</span>
+                            <span class="pub-year-line"></span>
+                        </div>
+                        <div class="pub-list">
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/Froid.png" alt="Froid: Optimization of imperative programs in a relational database">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.vldb.org/" target="_blank" rel="noopener">VLDB</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
                                     </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-
-                                    <div class="news-block-body">
-                                        <a href="https://www.kiise.or.kr/academy/main/getContent.fa?content_no=86&MENU_ID=130400" class="tags-block-link">
-                                            BK 21+ Top Conference List
-                                        </a>    
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3186728.3164140" target="_blank" rel="noopener">Froid: Optimization of imperative programs in a relational database</a></h4>
+                                    <p class="pub-authors"><em>Karthik Ramachandra, <strong>Kwanghyun Park</strong>, K Venkatesh Emani, Alan Halverson, César Galindo-Legaria, Conor Cunningham</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.vldb.org/" target="_blank" rel="noopener">Proceedings of the VLDB Endowment</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/3186728.3164140" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
                                     </div>
-
-                                    <div class="news-block-body">
-                                        <a href="https://jcr.clarivate.com/" class="tags-block-link">
-                                            JCR Impact Factor
-                                        </a>    
+                                </div>
+                            </article>
+                            <article class="pub-card">
+                                <div class="pub-thumb">
+                                    <img src="images/research/AggressiveBPWarmup.png" alt="Aggressive buffer pool warm-up after restart in SQL Server">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://ieeexplore.ieee.org/xpl/conhome/7491933/proceeding" target="_blank" rel="noopener">ICDEW</a></span>
+                                        
+                                        <span class="pub-badge">Workshop</span>
                                     </div>
-                                </div> 
-                                
-                               
-                            </div>
+                                    <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/7495612" target="_blank" rel="noopener">Aggressive buffer pool warm-up after restart in SQL Server</a></h4>
+                                    <p class="pub-authors"><em><strong>Kwanghyun Park</strong>, Jaeyoung Do, Nikhil Teletia, Jignesh M Patel</em></p>
+                                    <p class="pub-venue-full"><a href="https://ieeexplore.ieee.org/xpl/conhome/7491933/proceeding" target="_blank" rel="noopener">IEEE International Conference on Data Engineering Workshops</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/7495612" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="pub-card">
+                                <div class="pub-thumb">
+                                    <img src="images/research/SmartSSD.png" alt="Query Processing on Smart SSDs">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="http://sites.computer.org/debull/bull_issues.html" target="_blank" rel="noopener">IEEE Data Eng. Bull.</a></span>
+                                        
+                                        <span class="pub-badge">Bulletin</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="http://sites.computer.org/debull/A14june/A14JUN-CD.pdf#page=21" target="_blank" rel="noopener">Query Processing on Smart SSDs</a></h4>
+                                    <p class="pub-authors"><em><strong>Kwanghyun Park</strong>, Yang-Suk Kee, Jignesh M Patel, Jaeyoung Do, Chanik Park, David J Dewitt</em></p>
+                                    <p class="pub-venue-full"><a href="http://sites.computer.org/debull/bull_issues.html" target="_blank" rel="noopener">IEEE Data Engineering Bulletin</a></p>
+                                    <div class="pub-actions">
+                                        <a href="http://sites.computer.org/debull/A14june/A14JUN-CD.pdf#page=21" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="pub-card top-tier">
+                                <div class="pub-thumb">
+                                    <img src="images/research/SmartSSD2.png" alt="Query processing on smart SSDs: Opportunities and challenges">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://sigmod.org/" target="_blank" rel="noopener">SIGMOD</a></span>
+                                        <span class="pub-badge"><i class="bi bi-stars"></i> Top-tier</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/2463676.2465295" target="_blank" rel="noopener">Query processing on smart SSDs: Opportunities and challenges</a></h4>
+                                    <p class="pub-authors"><em>Jaeyoung Do, Yang-Suk Kee, Jignesh M Patel, Chanik Park, <strong>Kwanghyun Park</strong>, David J DeWitt</em></p>
+                                    <p class="pub-venue-full"><a href="https://sigmod.org/" target="_blank" rel="noopener">Proceedings of the International Conference on Management of Data</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://dl.acm.org/doi/abs/10.1145/2463676.2465295" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="pub-card">
+                                <div class="pub-thumb">
+                                    <img src="images/research/Phosphoproteomics.png" alt="Rapid phosphoproteomic and transcriptomic changes in the rhizobia-legume symbiosis">
+                                </div>
+                                <div class="pub-content">
+                                    <div class="pub-meta">
+                                        <span class="pub-badge venue"><a href="https://www.mcponline.org/" target="_blank" rel="noopener">Molecular & Cellular Proteomics</a></span><span class="pub-badge">IF 5.5</span>
+                                        
+                                        <span class="pub-badge">Journal</span>
+                                    </div>
+                                    <h4 class="pub-title"><a href="https://www.mcponline.org/article/S1535-9476(20)32584-6/fulltext" target="_blank" rel="noopener">Rapid phosphoproteomic and transcriptomic changes in the rhizobia-legume symbiosis</a></h4>
+                                    <p class="pub-authors"><em>Christopher M Rose, Muthusubramanian Venkateshwaran, Jeremy D Volkening, Paul A Grimsrud, Junko Maeda, Derek J Bailey, <strong>Kwanghyun Park</strong>, Maegen Howes-Podoll, Désirée Den Os, Li Huey Yeun, Michael S Westphall, Michael R Sussman, Jean-Michel Ane, Joshua J Coon</em></p>
+                                    <p class="pub-venue-full"><a href="https://www.mcponline.org/" target="_blank" rel="noopener">Molecular & Cellular Proteomics (IF 5.5)</a></p>
+                                    <div class="pub-actions">
+                                        <a href="https://www.mcponline.org/article/S1535-9476(20)32584-6/fulltext" target="_blank" rel="noopener">Paper <i class="bi bi-arrow-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-12 col-12 mx-auto">
-                            <div class="custom-text-box">
-                                <div class="counter-thumb"> 
-                                    <div class="d-flex">
-                                        <h4>Conference Schedule</span>
-                                        <span class="counter-number-text"></span>
-                                    </div>
-
-                                    <!--<span class="counter-text">Founded</span>-->
-                                </div> 
-                                
-                                <div style="margin: 0 auto; width:100%; height:1150px;">
-                                    <object type="text/html" data="https://confsearch.ethz.ch/?query=OSDI+DAC+CVPR+ISCA+WWW+CHI+NSDI+ASPLOS+HPCA+KDD+AAAI+EMNLP+Neurips+SOSP+SC+MobiCom+SIGCOMM+ACL+IJCAI+ICML+FAST+CIDR+EDBT+ICDE+VLDB+SIGMOD+"
-                                            style="width:100%; height:100%; margin:0%;">
-                                    </object>
-                                </div>
-                            </div>
+                    <div class="pub-info-panel">
+                        <h4>Conference / Journal Information</h4>
+                        <div class="pub-info-links">
+                            <a href="https://www.kiise.or.kr/academy/main/getContent.fa?content_no=86&MENU_ID=130400">BK 21+ Top Conference List <i class="bi bi-arrow-right"></i></a>
+                            <a href="https://jcr.clarivate.com/">JCR Impact Factor <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
+
+                    <div class="pub-info-panel">
+                        <h4>Conference Schedule</h4>
+                        <div class="pub-schedule-frame">
+                            <object type="text/html" data="https://confsearch.ethz.ch/?query=OSDI+DAC+CVPR+ISCA+WWW+CHI+NSDI+ASPLOS+HPCA+KDD+AAAI+EMNLP+Neurips+SOSP+SC+MobiCom+SIGCOMM+ACL+IJCAI+ICML+FAST+CIDR+EDBT+ICDE+VLDB+SIGMOD+" style="width:100%; height:100%; border:0;"></object>
+                        </div>
+                    </div>
+
                 </div>
             </section>
-            <!-- End Conferences -->
+            <!-- Publications End -->
 
             <section class="contact-section section-padding" id="section_contact">
                 <div class="container">
@@ -1691,24 +1029,6 @@ https://templatemo.com/tm-581-kind-heart-charity
                                     <a href="#" class="social-icon-link bi-youtube"></a>
                                 </li>
                             </ul>
-                        </div>
-                        -->
-                        
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/counter.js"></script>
-        <script src="js/custom.js"></script>
-
-    </body>
-</html>        </ul>
                         </div>
                         -->
                         
