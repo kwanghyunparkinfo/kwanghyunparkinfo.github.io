@@ -965,6 +965,46 @@
 	text-transform: uppercase;
 }
 
+        
+/* ===== Gallery row-major chronological grid ===== */
+.bdai-gallery-grid{
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+    column-count: initial !important;
+    column-gap: initial !important;
+    align-items: start;
+}
+
+.bdai-gallery-card{
+    width: 100%;
+    margin: 0 !important;
+    break-inside: auto !important;
+    -webkit-column-break-inside: auto !important;
+    page-break-inside: auto !important;
+}
+
+@media (max-width:1360px){
+    .bdai-gallery-grid{
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        column-count: initial !important;
+    }
+}
+
+@media (max-width:991px){
+    .bdai-gallery-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        column-count: initial !important;
+    }
+}
+
+@media (max-width:640px){
+    .bdai-gallery-grid{
+        grid-template-columns: 1fr !important;
+        column-count: initial !important;
+    }
+}
+
         </style>
 
                 <div class="bdai-gallery-wrap">
@@ -981,7 +1021,7 @@
 
                         <div class="bdai-gallery-grid" id="bdaiGalleryGrid">
 
-                            <article class="bdai-gallery-card" data-category="conference" data-search="IEEE BigData 2025 conference december 2025 research presentation" data-title="IEEE BigData 2025" data-link="https://conferences.cis.um.edu.mo/ieeebigdata2025/" data-link-label="Event website" data-desc="Presented BDAI’s latest research on data systems and AI at IEEE BigData 2025, strengthening our global presence in large-scale data analytics and AI-driven systems." data-date="8-11 December 2025" data-tag="Conference" data-image="images/gallery/BigData2025.png">
+<article class="bdai-gallery-card" data-category="conference" data-search="IEEE BigData 2025 conference december 2025 research presentation" data-title="IEEE BigData 2025" data-link="https://conferences.cis.um.edu.mo/ieeebigdata2025/" data-link-label="Event website" data-desc="Presented BDAI’s latest research on data systems and AI at IEEE BigData 2025, strengthening our global presence in large-scale data analytics and AI-driven systems." data-date="8-11 December 2025" data-tag="Conference" data-image="images/gallery/BigData2025.png">
                                 <div class="bdai-gallery-media bdai-gallery-hl" style="background-image:url('images/gallery/BigData2025.png')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-stars"></i> Conference</span>
@@ -994,7 +1034,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="workshop" data-search="IEEE BigDataW 2025 D2ET workshop december 2025" data-title="IEEE BigDataW 2025 (D2ET)" data-link="https://ws-d2et.w.waseda.jp/" data-link-label="Workshop website" data-desc="Showcased ongoing research at specialized workshop tracks, fostering in-depth technical discussions on emerging directions in AI and data systems." data-date="10 December 2025" data-tag="Workshop" data-image="images/gallery/BigDataW2025.jpeg">
+<article class="bdai-gallery-card" data-category="workshop" data-search="IEEE BigDataW 2025 D2ET workshop december 2025" data-title="IEEE BigDataW 2025 (D2ET)" data-link="https://ws-d2et.w.waseda.jp/" data-link-label="Workshop website" data-desc="Showcased ongoing research at specialized workshop tracks, fostering in-depth technical discussions on emerging directions in AI and data systems." data-date="10 December 2025" data-tag="Workshop" data-image="images/gallery/BigDataW2025.jpeg">
                                 <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/BigDataW2025.jpeg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-braces-asterisk"></i> Workshop</span>
@@ -1007,7 +1047,38 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="visit" data-search="Microsoft GSL Yiwen visit november 2025 industry collaboration" data-title="Meeting with Yiwen (Microsoft GSL)" data-link="https://www.microsoft.com/en-us/research/people/yiwzh/" data-link-label="Yiwen Zhu at Microsoft Research" data-desc="Engaged in collaborative discussions with Microsoft GSL on large-scale AI systems, exploring future directions in industry-academic research partnerships." data-date="14 November 2025" data-tag="Visit" data-image="images/gallery/MSvisit2025.jpeg">
+<article class="bdai-gallery-card" 
+    data-category="lab"
+    data-search="Winter Break 2025 research kickoff december 2025 lab kickoff"
+    data-title="Winter Break Research Kickoff"
+    data-desc="Kicked off Winter Break 2025 with focused research discussions, planning next-phase projects and aligning lab directions for data and AI-centric research."
+    data-date="December 2025"
+    data-tag="Lab Life"
+    data-image="images/gallery/2025WinterBreakKickoff.png">
+
+    <div class="bdai-gallery-media bdai-gallery-hm" 
+        style="background-image:url('images/gallery/2025WinterBreakKickoff.png')"></div>
+
+    <div class="bdai-gallery-overlay">
+        <span class="bdai-gallery-tag">
+            <i class="bi bi-snow"></i> Lab Life
+        </span>
+
+        <h3>Winter Break Research Kickoff</h3>
+
+        <p>
+            Initiated Winter Break 2025 with a lab-wide research kickoff session,
+            setting goals and aligning upcoming research directions.
+        </p>
+
+        <div class="bdai-gallery-meta">
+            <span><i class="bi bi-calendar-event"></i> Dec 2025</span>
+            <span><i class="bi bi-people"></i> Lab</span>
+        </div>
+    </div>
+</article>
+
+<article class="bdai-gallery-card" data-category="visit" data-search="Microsoft GSL Yiwen visit november 2025 industry collaboration" data-title="Meeting with Yiwen (Microsoft GSL)" data-link="https://www.microsoft.com/en-us/research/people/yiwzh/" data-link-label="Yiwen Zhu at Microsoft Research" data-desc="Engaged in collaborative discussions with Microsoft GSL on large-scale AI systems, exploring future directions in industry-academic research partnerships." data-date="14 November 2025" data-tag="Visit" data-image="images/gallery/MSvisit2025.jpeg">
                                 <div class="bdai-gallery-media bdai-gallery-hm" style="background-image:url('images/gallery/MSvisit2025.jpeg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-buildings"></i> Visit</span>
@@ -1019,7 +1090,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="conference" data-search="Korean Database Conference 2025 conference november 2025 domestic" data-title="Korean Database Conference 2025" data-link="https://www.dbsociety.kr/kdbc/kdbc2025/organization.html" data-link-label="Conference website" data-desc="Actively contributed to the Korean database community through presentations and technical discussions on next-generation data systems and AI integration." data-date="8 November 2025" data-tag="Conference" data-image="images/gallery/KDBC25.jpeg">
+<article class="bdai-gallery-card" data-category="conference" data-search="Korean Database Conference 2025 conference november 2025 domestic" data-title="Korean Database Conference 2025" data-link="https://www.dbsociety.kr/kdbc/kdbc2025/organization.html" data-link-label="Conference website" data-desc="Actively contributed to the Korean database community through presentations and technical discussions on next-generation data systems and AI integration." data-date="8 November 2025" data-tag="Conference" data-image="images/gallery/KDBC25.jpeg">
                                 <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/KDBC25.jpeg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-mic"></i> Conference</span>
@@ -1031,7 +1102,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="conference" data-search="Computer System Society 2025 society event february 2025" data-title="Computer System Society 2025" data-link="https://css.or.kr/csc2025/" data-link-label="Event website" data-desc="Engaged with the systems research community through technical exchanges on scalable computing, data infrastructure, and AI-driven system design." data-date="11 February 2025" data-tag="Conference" data-image="images/gallery/ComSys25.jpeg">
+<article class="bdai-gallery-card" data-category="conference" data-search="Computer System Society 2025 society event february 2025" data-title="Computer System Society 2025" data-link="https://css.or.kr/csc2025/" data-link-label="Event website" data-desc="Engaged with the systems research community through technical exchanges on scalable computing, data infrastructure, and AI-driven system design." data-date="11 February 2025" data-tag="Conference" data-image="images/gallery/ComSys25.jpeg">
                                 <div class="bdai-gallery-media bdai-gallery-hm" style="background-image:url('images/gallery/ComSys25.jpeg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-diagram-3"></i> Society Event</span>
@@ -1043,7 +1114,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="conference" data-search="SK AI Summit 2024 november 2024 summit conference industry" data-title="SK AI Summit 2024" data-link="https://www.skaisummit.com/" data-link-label="Event website" data-desc="Participated in a major industry summit, presenting BDAI’s vision on data-centric AI systems and strengthening collaboration with leading industry partners." data-date="05 November 2024" data-tag="Conference" data-image="images/gallery/SKAISummit24.jpg">
+<article class="bdai-gallery-card" data-category="conference" data-search="SK AI Summit 2024 november 2024 summit conference industry" data-title="SK AI Summit 2024" data-link="https://www.skaisummit.com/" data-link-label="Event website" data-desc="Participated in a major industry summit, presenting BDAI’s vision on data-centric AI systems and strengthening collaboration with leading industry partners." data-date="05 November 2024" data-tag="Conference" data-image="images/gallery/SKAISummit24.jpg">
                                 <div class="bdai-gallery-media bdai-gallery-hm" style="background-image:url('images/gallery/SKAISummit24.jpg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-cpu"></i> Summit</span>
@@ -1055,7 +1126,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="conference" data-search="VLDB 2024 conference august 2024 international paper" data-title="VLDB 2024" data-link="https://vldb.org/2024/" data-link-label="Conference website" data-desc="Presented cutting-edge research at VLDB, a top-tier international database conference, demonstrating BDAI’s leadership in data systems and AI-driven analytics." data-date="27 August 2024" data-tag="Conference" data-image="images/gallery/VLDB24.jpeg">
+<article class="bdai-gallery-card" data-category="conference" data-search="VLDB 2024 conference august 2024 international paper" data-title="VLDB 2024" data-link="https://vldb.org/2024/" data-link-label="Conference website" data-desc="Presented cutting-edge research at VLDB, a top-tier international database conference, demonstrating BDAI’s leadership in data systems and AI-driven analytics." data-date="27 August 2024" data-tag="Conference" data-image="images/gallery/VLDB24.jpeg">
                                 <div class="bdai-gallery-media bdai-gallery-hl" style="background-image:url('images/gallery/VLDB24.jpeg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-globe2"></i> Conference</span>
@@ -1069,7 +1140,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="visit" data-search="TU Delft Rihan visit august 2024 academic collaboration" data-title="Gathering with Prof. Rihan - TUDelft" data-link="https://www.wis.ewi.tudelft.nl/hai" data-link-label="TU Delft host page" data-desc="Hosted an academic collaboration meeting with TU Delft, strengthening international research ties in data systems and AI." data-date="1 August 2024" data-tag="Visit" data-image="images/gallery/RihanVisit2.jpg">
+<article class="bdai-gallery-card" data-category="visit" data-search="TU Delft Rihan visit august 2024 academic collaboration" data-title="Gathering with Prof. Rihan - TUDelft" data-link="https://www.wis.ewi.tudelft.nl/hai" data-link-label="TU Delft host page" data-desc="Hosted an academic collaboration meeting with TU Delft, strengthening international research ties in data systems and AI." data-date="1 August 2024" data-tag="Visit" data-image="images/gallery/RihanVisit2.jpg">
                                 <div class="bdai-gallery-media bdai-gallery-hm" style="background-image:url('images/gallery/RihanVisit2.jpg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-mortarboard-fill"></i> Visit</span>
@@ -1081,7 +1152,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="workshop" data-search="DI Workshop 2024 july 2024 workshop" data-title="DI Workshop 2024" data-link="https://dbsociety.kr/diworkshop/2024/" data-link-label="Workshop website" data-desc="Contributed to focused workshop discussions on emerging topics in data intelligence, enabling deeper technical exchange with the research community." data-date="11 July 2024" data-tag="Workshop" data-image="images/gallery/diworkshop.jpg">
+<article class="bdai-gallery-card" data-category="workshop" data-search="DI Workshop 2024 july 2024 workshop" data-title="DI Workshop 2024" data-link="https://dbsociety.kr/diworkshop/2024/" data-link-label="Workshop website" data-desc="Contributed to focused workshop discussions on emerging topics in data intelligence, enabling deeper technical exchange with the research community." data-date="11 July 2024" data-tag="Workshop" data-image="images/gallery/diworkshop.jpg">
                                 <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/diworkshop.jpg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-kanban"></i> Workshop</span>
@@ -1093,7 +1164,38 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="visit" data-search="Tech Meetup Apollon february 2024 meetup" data-title="Tech Meetup (Apollon)" data-link="https://www.apollon.bio/" data-link-label="Apollon website" data-desc="Participated in a technical meetup with industry professionals, exchanging ideas on real-world applications of data and AI systems." data-date="8 February 2024" data-tag="Visit" data-image="images/gallery/ApollonMeetup.jpeg">
+<article class="bdai-gallery-card" 
+    data-category="lab"
+    data-search="Spring Semester 2024 lab party march 2024 beginning semester"
+    data-title="Spring Semester Opening Lab Party"
+    data-desc="Celebrated the beginning of the 2024 Spring semester with a lab gathering, strengthening team bonding and welcoming a new research cycle at BDAI Lab."
+    data-date="March 2024"
+    data-tag="Lab Life"
+    data-image="images/gallery/BeginingOf2024Spring.jpeg">
+
+    <div class="bdai-gallery-media bdai-gallery-hm" 
+        style="background-image:url('images/gallery/BeginingOf2024Spring.jpeg')"></div>
+
+    <div class="bdai-gallery-overlay">
+        <span class="bdai-gallery-tag">
+            <i class="bi bi-emoji-smile"></i> Lab Life
+        </span>
+
+        <h3>Spring Semester Lab Party</h3>
+
+        <p>
+            Celebrated the beginning of the Spring 2024 semester with a lab party,
+            fostering collaboration and a strong research community.
+        </p>
+
+        <div class="bdai-gallery-meta">
+            <span><i class="bi bi-calendar-event"></i> Mar 2024</span>
+            <span><i class="bi bi-people"></i> Lab</span>
+        </div>
+    </div>
+</article>
+
+<article class="bdai-gallery-card" data-category="visit" data-search="Tech Meetup Apollon february 2024 meetup" data-title="Tech Meetup (Apollon)" data-link="https://www.apollon.bio/" data-link-label="Apollon website" data-desc="Participated in a technical meetup with industry professionals, exchanging ideas on real-world applications of data and AI systems." data-date="8 February 2024" data-tag="Visit" data-image="images/gallery/ApollonMeetup.jpeg">
                                 <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/ApollonMeetup.jpeg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-cup-hot"></i> Meetup</span>
@@ -1105,7 +1207,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="lab" data-search="Game Day august 2023 lab activity" data-title="Game Day" data-desc="Strengthening team cohesion through internal activities, fostering a collaborative and creative research environment at BDAI Lab." data-date="31 August 2023" data-tag="Lab Life" data-image="images/gallery/GameDay.png">
+<article class="bdai-gallery-card" data-category="lab" data-search="Game Day august 2023 lab activity" data-title="Game Day" data-desc="Strengthening team cohesion through internal activities, fostering a collaborative and creative research environment at BDAI Lab." data-date="31 August 2023" data-tag="Lab Life" data-image="images/gallery/GameDay.png">
                                 <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/GameDay.png')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-emoji-smile"></i> Lab Life</span>
@@ -1117,7 +1219,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="lab" data-search="New Furniture august 2023 lab activity" data-title="New Furniture Arrived!" data-desc="Upgraded the lab environment to support high-impact research, creating a more productive and comfortable workspace for our members." data-date="6 August 2023" data-tag="Lab Life" data-image="images/gallery/Furniture.jpeg">
+<article class="bdai-gallery-card" data-category="lab" data-search="New Furniture august 2023 lab activity" data-title="New Furniture Arrived!" data-desc="Upgraded the lab environment to support high-impact research, creating a more productive and comfortable workspace for our members." data-date="6 August 2023" data-tag="Lab Life" data-image="images/gallery/Furniture.jpeg">
                                 <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/Furniture.jpeg')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-house-heart"></i> Lab Life</span>
@@ -1129,7 +1231,7 @@
                                 </div>
                             </article>
 
-                            <article class="bdai-gallery-card" data-category="lab" data-search="Sunchon Trip july 2023 lab trip retreat" data-title="Sunchon Trip" data-desc="Organized a lab retreat to promote collaboration, team bonding, and idea exchange beyond the research setting." data-date="15 July 2023" data-tag="Lab Life" data-image="images/gallery/Sunchon.png">
+<article class="bdai-gallery-card" data-category="lab" data-search="Sunchon Trip july 2023 lab trip retreat" data-title="Sunchon Trip" data-desc="Organized a lab retreat to promote collaboration, team bonding, and idea exchange beyond the research setting." data-date="15 July 2023" data-tag="Lab Life" data-image="images/gallery/Sunchon.png">
                                 <div class="bdai-gallery-media bdai-gallery-hl" style="background-image:url('images/gallery/Sunchon.png')"></div>
                                 <div class="bdai-gallery-overlay">
                                     <span class="bdai-gallery-tag"><i class="bi bi-airplane"></i> Lab Life</span>
@@ -1142,7 +1244,7 @@
                                 </div>
                             </article>
 
-                        </div>
+</div>
                     </div>
                 </div>
 
