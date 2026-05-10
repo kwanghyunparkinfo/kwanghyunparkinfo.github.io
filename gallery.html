@@ -347,6 +347,7 @@
                     .bdai-gallery-modal-meta{
                         display:grid;
                         gap:12px;
+                        margin-top:22px;
                     }
                     .bdai-gallery-modal-meta .meta{
                         padding:14px 16px;
@@ -1005,7 +1006,229 @@
     }
 }
 
-        </style>
+        
+/* ===== Premium multi-photo gallery event ===== */
+.bdai-gallery-card.multi-photo-event{
+	position: relative;
+}
+
+.bdai-event-carousel{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.bdai-event-carousel-track{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	transition: transform .34s ease;
+}
+
+.bdai-event-carousel-slide{
+	min-width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.bdai-event-carousel-btn{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 38px;
+	height: 38px;
+	border: 0;
+	border-radius: 999px;
+	background: rgba(7, 11, 18, .52);
+	color: #fff;
+	z-index: 5;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 10px 20px rgba(0,0,0,.25);
+	opacity: .88;
+	transition: background .18s ease, opacity .18s ease, transform .18s ease;
+}
+
+.bdai-event-carousel-btn:hover{
+	background: rgba(11, 47, 115, .92);
+	opacity: 1;
+	transform: translateY(-50%) scale(1.04);
+}
+
+.bdai-event-carousel-prev{ left: 12px; }
+.bdai-event-carousel-next{ right: 12px; }
+
+.bdai-event-carousel-dots{
+	position: absolute;
+	left: 50%;
+	bottom: 14px;
+	transform: translateX(-50%);
+	z-index: 5;
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 7px 9px;
+	border-radius: 999px;
+	background: rgba(7, 11, 18, .30);
+	backdrop-filter: blur(4px);
+}
+
+.bdai-event-carousel-dot{
+	width: 9px;
+	height: 9px;
+	border: 0;
+	padding: 0;
+	border-radius: 999px;
+	background: rgba(255,255,255,.48);
+	cursor: pointer;
+	transition: transform .18s ease, background .18s ease;
+}
+
+.bdai-event-carousel-dot.active{
+	background: #fff;
+	transform: scale(1.18);
+}
+
+.bdai-event-photo-count{
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 6;
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 8px 11px;
+	border-radius: 999px;
+	background: rgba(7, 11, 18, .46);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 800;
+	backdrop-filter: blur(5px);
+}
+
+/* modal multi-photo layout */
+.bdai-gallery-modal-media.has-multi-photo{
+	display: grid;
+	grid-template-rows: minmax(0, 1fr) auto;
+	gap: 12px;
+	padding: 12px;
+	background: #080d17;
+}
+
+.bdai-modal-photo-stage{
+	position: relative;
+	min-height: 0;
+	border-radius: 20px;
+	overflow: hidden;
+	background: #0d1422;
+}
+
+.bdai-modal-photo-track{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	transition: transform .34s ease;
+}
+
+.bdai-modal-photo-slide{
+	min-width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.bdai-modal-photo-btn{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 50px;
+	border: 0;
+	border-radius: 999px;
+	background: rgba(7, 11, 18, .58);
+	color: #fff;
+	z-index: 4;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	box-shadow: 0 12px 28px rgba(0,0,0,.30);
+}
+
+.bdai-modal-photo-btn:hover{
+	background: rgba(11, 47, 115, .94);
+}
+
+.bdai-modal-photo-prev{ left: 18px; }
+.bdai-modal-photo-next{ right: 18px; }
+
+.bdai-modal-photo-thumbs{
+	display: flex;
+	gap: 10px;
+	overflow-x: auto;
+	padding: 2px 2px 4px;
+	scrollbar-width: thin;
+}
+
+.bdai-modal-photo-thumb{
+	flex: 0 0 86px;
+	height: 62px;
+	border: 2px solid transparent;
+	border-radius: 14px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: .72;
+	transition: opacity .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.bdai-modal-photo-thumb.active{
+	opacity: 1;
+	border-color: #fff;
+	transform: translateY(-1px);
+}
+
+.bdai-modal-photo-index{
+	position: absolute;
+	left: 18px;
+	bottom: 18px;
+	z-index: 5;
+	padding: 8px 12px;
+	border-radius: 999px;
+	background: rgba(7, 11, 18, .50);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 800;
+	backdrop-filter: blur(5px);
+}
+
+.bdai-gallery-modal-media.has-multi-photo + .bdai-gallery-modal-panel .bdai-gallery-modal-kicker::after{
+	content: " · Multi-photo Event";
+	color: rgba(235,241,255,.54);
+}
+
+@media (max-width: 991px){
+	.bdai-gallery-modal-media.has-multi-photo{
+		min-height: 56vh;
+	}
+	.bdai-modal-photo-thumb{
+		flex-basis: 74px;
+		height: 54px;
+	}
+}
+
+
+.bdai-gallery-modal-link{
+    margin-bottom: 18px !important;
+}
+
+</style>
 
                 <div class="bdai-gallery-wrap">
                     <div class="container">
@@ -1021,31 +1244,63 @@
 
                         <div class="bdai-gallery-grid" id="bdaiGalleryGrid">
 
-<article class="bdai-gallery-card" data-category="conference" data-search="IEEE BigData 2025 conference december 2025 research presentation" data-title="IEEE BigData 2025" data-link="https://conferences.cis.um.edu.mo/ieeebigdata2025/" data-link-label="Event website" data-desc="Presented BDAI’s latest research on data systems and AI at IEEE BigData 2025, strengthening our global presence in large-scale data analytics and AI-driven systems." data-date="8-11 December 2025" data-tag="Conference" data-image="images/gallery/BigData2025.png">
-                                <div class="bdai-gallery-media bdai-gallery-hl" style="background-image:url('images/gallery/BigData2025.png')"></div>
-                                <div class="bdai-gallery-overlay">
-                                    <span class="bdai-gallery-tag"><i class="bi bi-stars"></i> Conference</span>
-                                    <h3>IEEE BigData 2025</h3>
-                                    <p>Presented BDAI’s latest research on data systems and AI at IEEE BigData 2025, strengthening our global presence in large-scale data analytics and AI-driven systems.</p>
-                                    <div class="bdai-gallery-meta">
-                                        <span><i class="bi bi-calendar-event"></i> Dec 2025</span>
-                                        <span><i class="bi bi-globe2"></i> International</span>
-                                    </div>
-                                </div>
-                            </article>
 
-<article class="bdai-gallery-card" data-category="workshop" data-search="IEEE BigDataW 2025 D2ET workshop december 2025" data-title="IEEE BigDataW 2025 (D2ET)" data-link="https://ws-d2et.w.waseda.jp/" data-link-label="Workshop website" data-desc="Showcased ongoing research at specialized workshop tracks, fostering in-depth technical discussions on emerging directions in AI and data systems." data-date="10 December 2025" data-tag="Workshop" data-image="images/gallery/BigDataW2025.jpeg">
-                                <div class="bdai-gallery-media bdai-gallery-hs" style="background-image:url('images/gallery/BigDataW2025.jpeg')"></div>
-                                <div class="bdai-gallery-overlay">
-                                    <span class="bdai-gallery-tag"><i class="bi bi-braces-asterisk"></i> Workshop</span>
-                                    <h3>BigDataW 2025</h3>
-                                    <p>Showcased ongoing research at specialized workshop tracks, fostering in-depth technical discussions on emerging directions in AI and data systems.</p>
-                                    <div class="bdai-gallery-meta">
-                                        <span><i class="bi bi-calendar-event"></i> Dec 2025</span>
-                                        <span><i class="bi bi-globe2"></i> International</span>
-                                    </div>
-                                </div>
-                            </article>
+<article class="bdai-gallery-card multi-photo-event"
+	data-category="conference"
+	data-search="IEEE BigData 2025 BigDataW 2025 D2ET conference workshop december 2025 research presentation"
+	data-title="IEEE BigData 2025 & BigDataW 2025"
+	data-link="https://conferences.cis.um.edu.mo/ieeebigdata2025/"
+	data-link-label="IEEE BigData 2025 website"
+	data-link2="https://ws-d2et.w.waseda.jp/"
+	data-link2-label="IEEE BigDataW 2025 website"
+	data-desc="BDAI Lab presented its latest research at IEEE BigData 2025 and the associated BigDataW workshop, engaging with the international data and AI systems research community through conference presentations and specialized workshop discussions."
+	data-date="8-11 December 2025"
+	data-tag="Conference & Workshop"
+	data-image="images/gallery/BigData2025.png"
+	data-images="images/gallery/BigData2025.png|images/gallery/BigDataW2025.jpeg"
+	data-image-labels="IEEE BigData 2025|IEEE BigDataW 2025">
+
+	<div class="bdai-gallery-media bdai-gallery-hl">
+		<div class="bdai-event-carousel" aria-label="IEEE BigData 2025 photo carousel">
+			<div class="bdai-event-carousel-track">
+				<div class="bdai-event-carousel-slide" style="background-image:url('images/gallery/BigData2025.png')"></div>
+				<div class="bdai-event-carousel-slide" style="background-image:url('images/gallery/BigDataW2025.jpeg')"></div>
+			</div>
+
+			<button class="bdai-event-carousel-btn bdai-event-carousel-prev" type="button" aria-label="Previous photo">
+				<i class="bi bi-chevron-left"></i>
+			</button>
+			<button class="bdai-event-carousel-btn bdai-event-carousel-next" type="button" aria-label="Next photo">
+				<i class="bi bi-chevron-right"></i>
+			</button>
+
+			<div class="bdai-event-carousel-dots" aria-label="Photo navigation">
+				<button class="bdai-event-carousel-dot active" type="button" aria-label="Show IEEE BigData 2025 photo"></button>
+				<button class="bdai-event-carousel-dot" type="button" aria-label="Show IEEE BigDataW 2025 photo"></button>
+			</div>
+
+			<div class="bdai-event-photo-count">
+				<i class="bi bi-images"></i>
+				<span>2 Photos</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="bdai-gallery-overlay">
+		<span class="bdai-gallery-tag"><i class="bi bi-stars"></i> Conference & Workshop</span>
+		<h3>IEEE BigData 2025 & BigDataW</h3>
+		<p>
+			Presented BDAI Lab’s latest research at IEEE BigData 2025 and BigDataW,
+			strengthening international collaboration in data and AI systems research.
+		</p>
+		<div class="bdai-gallery-meta">
+			<span><i class="bi bi-calendar-event"></i> Dec 2025</span>
+			<span><i class="bi bi-images"></i> Multiple Photos</span>
+			<span><i class="bi bi-globe2"></i> International</span>
+		</div>
+	</div>
+</article>
+
 
 <article class="bdai-gallery-card" 
     data-category="lab"
@@ -1261,6 +1516,7 @@
                             </div>
                             <div class="bdai-gallery-modal-desc" id="bdaiGalleryModalDesc"></div>
                             <a class="bdai-gallery-modal-link" id="bdaiGalleryModalLink" href="#" target="_blank" rel="noopener" style="display:none;"><i class="bi bi-box-arrow-up-right"></i> <span id="bdaiGalleryModalLinkLabel">External link</span></a>
+                            <a class="bdai-gallery-modal-link" id="bdaiGalleryModalLink2" href="#" target="_blank" rel="noopener" style="display:none;"><i class="bi bi-box-arrow-up-right"></i> <span id="bdaiGalleryModalLinkLabel2">External link</span></a>
                             <div class="bdai-gallery-modal-meta">
                                 <div class="meta"><span class="label">Category</span><span class="value" id="bdaiGalleryModalCategory">-</span></div>
                                 <div class="meta"><span class="label">Date</span><span class="value" id="bdaiGalleryModalDate">-</span></div>
@@ -1269,85 +1525,281 @@
                     </div>
                 </div>
 
-                <script>
-                (function(){
-                    const input = null;
-                    const buttons = Array.from(document.querySelectorAll('.bdai-gallery-filter'));
-                    const cards = Array.from(document.querySelectorAll('.bdai-gallery-card'));
-                    let active = 'all';
+                
+<script>
+(function(){
+	const buttons = Array.from(document.querySelectorAll('.bdai-gallery-filter'));
+	const cards = Array.from(document.querySelectorAll('.bdai-gallery-card'));
+	let active = 'all';
 
-                    function updateGallery(){
-                        const q = '';
-                        cards.forEach(card => {
-                            const cat = (card.dataset.category || '').toLowerCase();
-                            const text = (card.dataset.search || card.textContent || '').toLowerCase();
-                            const okCat = active === 'all' || cat === active || (active === 'conference' && cat === 'workshop');
-                            const okSearch = true;
-                            card.classList.toggle('hidden-card', !(okCat && okSearch));
-                        });
-                    }
+	function updateGallery(){
+		cards.forEach(card => {
+			const cat = (card.dataset.category || '').toLowerCase();
+			const okCat = active === 'all' || cat === active || (active === 'conference' && cat === 'workshop');
+			card.classList.toggle('hidden-card', !okCat);
+		});
+	}
 
-                    buttons.forEach(btn => {
-                        btn.addEventListener('click', function(){
-                            buttons.forEach(b => b.classList.remove('active'));
-                            btn.classList.add('active');
-                            active = btn.dataset.filter || 'all';
-                            updateGallery();
-                        });
-                    });
+	buttons.forEach(btn => {
+		btn.addEventListener('click', function(){
+			buttons.forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+			active = btn.dataset.filter || 'all';
+			updateGallery();
+		});
+	});
 
-                    
-                    updateGallery();
+	function initSmallCarousel(carousel){
+		if (!carousel || carousel.dataset.ready === 'true') return;
+		carousel.dataset.ready = 'true';
 
-                    const modal = document.getElementById('bdaiGalleryModal');
-                    const modalMedia = document.getElementById('bdaiGalleryModalMedia');
-                    const modalTitle = document.getElementById('bdaiGalleryModalTitle');
-                    const modalDesc = document.getElementById('bdaiGalleryModalDesc');
-                    const modalCategory = document.getElementById('bdaiGalleryModalCategory');
-                    const modalDate = document.getElementById('bdaiGalleryModalDate');
-                    const modalLink = document.getElementById('bdaiGalleryModalLink');
-                    const modalLinkLabel = document.getElementById('bdaiGalleryModalLinkLabel');
-                    const closeBtn = document.getElementById('bdaiGalleryModalClose');
+		const track = carousel.querySelector('.bdai-event-carousel-track');
+		const slides = Array.from(carousel.querySelectorAll('.bdai-event-carousel-slide'));
+		const dots = Array.from(carousel.querySelectorAll('.bdai-event-carousel-dot'));
+		const prev = carousel.querySelector('.bdai-event-carousel-prev');
+		const next = carousel.querySelector('.bdai-event-carousel-next');
 
-                    function openModal(card){
-                        modalMedia.style.backgroundImage = "url('" + (card.dataset.image || "") + "')";
-                        modalTitle.textContent = card.dataset.title || "";
-                        modalDesc.textContent = card.dataset.desc || "";
-                        modalCategory.textContent = card.dataset.tag || card.dataset.category || "";
-                        modalDate.textContent = card.dataset.date || "";
-                        if (card.dataset.link) {
-                            modalLink.href = card.dataset.link;
-                            modalLinkLabel.textContent = card.dataset.linkLabel || "External link";
-                            modalLink.style.display = "inline-flex";
-                        } else {
-                            modalLink.style.display = "none";
-                            modalLink.href = "#";
-                        }
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    }
+		if (!track || slides.length < 2) return;
 
-                    function closeModal(){
-                        modal.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
+		let idx = 0;
 
-                    cards.forEach(card => {
-                        card.addEventListener('click', function(e){
-                            if (e.target.closest('a')) return;
-                            openModal(card);
-                        });
-                    });
+		function show(nextIdx){
+			idx = (nextIdx + slides.length) % slides.length;
+			track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+			dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
+		}
 
-                    closeBtn.addEventListener('click', closeModal);
-                    modal.addEventListener('click', function(e){
-                        if (e.target === modal) closeModal();
-                    });
-                    document.addEventListener('keydown', function(e){
-                        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-                    });
-                })();
-                </script>
+		prev.addEventListener('click', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			show(idx - 1);
+		});
+
+		next.addEventListener('click', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			show(idx + 1);
+		});
+
+		dots.forEach((dot, i) => {
+			dot.addEventListener('click', function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				show(i);
+			});
+		});
+
+		let startX = null;
+		carousel.addEventListener('touchstart', function(e){
+			startX = e.touches && e.touches.length ? e.touches[0].clientX : null;
+		}, {passive:true});
+
+		carousel.addEventListener('touchend', function(e){
+			if (startX === null || !e.changedTouches || !e.changedTouches.length) return;
+			const dx = e.changedTouches[0].clientX - startX;
+			if (Math.abs(dx) > 40) show(dx < 0 ? idx + 1 : idx - 1);
+			startX = null;
+		}, {passive:true});
+
+		show(0);
+	}
+
+	document.querySelectorAll('.bdai-event-carousel').forEach(initSmallCarousel);
+	updateGallery();
+
+	const modal = document.getElementById('bdaiGalleryModal');
+	const modalMedia = document.getElementById('bdaiGalleryModalMedia');
+	const modalTitle = document.getElementById('bdaiGalleryModalTitle');
+	const modalDesc = document.getElementById('bdaiGalleryModalDesc');
+	const modalCategory = document.getElementById('bdaiGalleryModalCategory');
+	const modalDate = document.getElementById('bdaiGalleryModalDate');
+	const modalLink = document.getElementById('bdaiGalleryModalLink');
+	const modalLinkLabel = document.getElementById('bdaiGalleryModalLinkLabel');
+	const modalLink2 = document.getElementById('bdaiGalleryModalLink2');
+	const modalLinkLabel2 = document.getElementById('bdaiGalleryModalLinkLabel2');
+	const closeBtn = document.getElementById('bdaiGalleryModalClose');
+
+	function buildModalCarousel(images, labels){
+		modalMedia.innerHTML = '';
+		modalMedia.classList.add('has-multi-photo');
+
+		const stage = document.createElement('div');
+		stage.className = 'bdai-modal-photo-stage';
+
+		const track = document.createElement('div');
+		track.className = 'bdai-modal-photo-track';
+
+		images.forEach(src => {
+			const slide = document.createElement('div');
+			slide.className = 'bdai-modal-photo-slide';
+			slide.style.backgroundImage = "url('" + src + "')";
+			track.appendChild(slide);
+		});
+
+		const prev = document.createElement('button');
+		prev.type = 'button';
+		prev.className = 'bdai-modal-photo-btn bdai-modal-photo-prev';
+		prev.innerHTML = '<i class="bi bi-chevron-left"></i>';
+		prev.setAttribute('aria-label', 'Previous photo');
+
+		const next = document.createElement('button');
+		next.type = 'button';
+		next.className = 'bdai-modal-photo-btn bdai-modal-photo-next';
+		next.innerHTML = '<i class="bi bi-chevron-right"></i>';
+		next.setAttribute('aria-label', 'Next photo');
+
+		const index = document.createElement('div');
+		index.className = 'bdai-modal-photo-index';
+
+		stage.appendChild(track);
+		if (images.length > 1) {
+			stage.appendChild(prev);
+			stage.appendChild(next);
+			stage.appendChild(index);
+		}
+
+		const thumbs = document.createElement('div');
+		thumbs.className = 'bdai-modal-photo-thumbs';
+
+		images.forEach((src, i) => {
+			const thumb = document.createElement('button');
+			thumb.type = 'button';
+			thumb.className = 'bdai-modal-photo-thumb';
+			thumb.style.backgroundImage = "url('" + src + "')";
+			thumb.setAttribute('aria-label', labels[i] || ('Photo ' + (i + 1)));
+			if (i === 0) thumb.classList.add('active');
+			thumbs.appendChild(thumb);
+		});
+
+		modalMedia.appendChild(stage);
+		if (images.length > 1) modalMedia.appendChild(thumbs);
+
+		const thumbButtons = Array.from(thumbs.querySelectorAll('.bdai-modal-photo-thumb'));
+		let idx = 0;
+
+		function show(nextIdx){
+			idx = (nextIdx + images.length) % images.length;
+			track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+			thumbButtons.forEach((thumb, i) => thumb.classList.toggle('active', i === idx));
+			index.textContent = (idx + 1) + ' / ' + images.length;
+		}
+
+		prev.addEventListener('click', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			show(idx - 1);
+		});
+
+		next.addEventListener('click', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			show(idx + 1);
+		});
+
+		thumbButtons.forEach((thumb, i) => {
+			thumb.addEventListener('click', function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				show(i);
+			});
+		});
+
+		let startX = null;
+		stage.addEventListener('touchstart', function(e){
+			startX = e.touches && e.touches.length ? e.touches[0].clientX : null;
+		}, {passive:true});
+
+		stage.addEventListener('touchend', function(e){
+			if (startX === null || !e.changedTouches || !e.changedTouches.length) return;
+			const dx = e.changedTouches[0].clientX - startX;
+			if (Math.abs(dx) > 40) show(dx < 0 ? idx + 1 : idx - 1);
+			startX = null;
+		}, {passive:true});
+
+		show(0);
+	}
+
+	function openModal(card){
+		const images = (card.dataset.images || card.dataset.image || '')
+			.split('|')
+			.map(s => s.trim())
+			.filter(Boolean);
+		const labels = (card.dataset.imageLabels || '')
+			.split('|')
+			.map(s => s.trim());
+
+		modalMedia.innerHTML = '';
+		modalMedia.classList.remove('has-multi-photo');
+		modalMedia.style.backgroundImage = '';
+
+		if (images.length > 1) {
+			buildModalCarousel(images, labels);
+		} else {
+			modalMedia.style.backgroundImage = "url('" + (images[0] || '') + "')";
+		}
+
+		modalTitle.textContent = card.dataset.title || '';
+		modalDesc.textContent = card.dataset.desc || '';
+		modalCategory.textContent = card.dataset.tag || card.dataset.category || '';
+		modalDate.textContent = card.dataset.date || '';
+
+		if (card.dataset.link) {
+			modalLink.href = card.dataset.link;
+			modalLinkLabel.textContent = card.dataset.linkLabel || 'External link';
+			modalLink.style.display = 'inline-flex';
+		} else {
+			modalLink.style.display = 'none';
+			modalLink.href = '#';
+		}
+
+		if (card.dataset.link2) {
+			modalLink2.href = card.dataset.link2;
+			modalLinkLabel2.textContent = card.dataset.link2Label || 'External link';
+			modalLink2.style.display = 'inline-flex';
+		} else {
+			modalLink2.style.display = 'none';
+			modalLink2.href = '#';
+		}
+
+		modal.classList.add('active');
+		modal.setAttribute('aria-hidden', 'false');
+		document.body.style.overflow = 'hidden';
+	}
+
+	function closeModal(){
+		modal.classList.remove('active');
+		modal.setAttribute('aria-hidden', 'true');
+		document.body.style.overflow = '';
+		modalMedia.innerHTML = '';
+		modalMedia.classList.remove('has-multi-photo');
+	}
+
+	cards.forEach(card => {
+		card.addEventListener('click', function(e){
+			if (e.target.closest('a, button')) return;
+			openModal(card);
+		});
+	});
+
+	closeBtn.addEventListener('click', closeModal);
+	modal.addEventListener('click', function(e){
+		if (e.target === modal) closeModal();
+	});
+
+	document.addEventListener('keydown', function(e){
+		if (!modal.classList.contains('active')) return;
+
+		if (e.key === 'Escape') closeModal();
+
+		const modalNext = modal.querySelector('.bdai-modal-photo-next');
+		const modalPrev = modal.querySelector('.bdai-modal-photo-prev');
+
+		if (e.key === 'ArrowRight' && modalNext) modalNext.click();
+		if (e.key === 'ArrowLeft' && modalPrev) modalPrev.click();
+	});
+})();
+</script>
+
             </section>
             <!-- Gallery End -->
 
