@@ -965,6 +965,96 @@
 	}
 }
 
+
+/* ===== BDAI Social Community Links ===== */
+.bdai-social-hero {
+	margin-top: 28px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.bdai-social-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	padding: 11px 16px;
+	border-radius: 999px;
+	background: rgba(255,255,255,.94);
+	border: 1px solid rgba(255,255,255,.60);
+	color: #0b2f73;
+	font-size: 13px;
+	font-weight: 850;
+	text-decoration: none;
+	box-shadow: 0 12px 28px rgba(0,0,0,.16);
+	backdrop-filter: blur(8px);
+	transition: transform .18s ease, background .18s ease, color .18s ease;
+}
+
+.bdai-social-pill:hover {
+	transform: translateY(-2px);
+	background: #0b2f73;
+	color: #ffffff;
+}
+
+.bdai-social-pill i,
+.bdai-social-pill .hf-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.bdai-social-pill .hf-icon {
+	font-size: 17px;
+}
+
+.footer-social-title {
+	color: rgba(255,255,255,.75);
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	margin-right: 10px;
+}
+
+.social-icon .social-icon-link.bdai-hf-link {
+	font-size: 15px;
+	font-weight: 900;
+	font-family: Arial, sans-serif;
+}
+
+@media (max-width: 991px) {
+	.bdai-social-hero {
+		margin-top: 22px;
+	}
+	.bdai-social-pill {
+		padding: 10px 13px;
+		font-size: 12px;
+	}
+}
+
+
+.bdai-social-hero{
+ display:flex!important;
+ visibility:visible!important;
+ opacity:1!important;
+ justify-content:center;
+ gap:12px;
+ margin:24px 0;
+ z-index:1000;
+ position:relative;
+}
+.x-icon{
+ font-weight:900;
+ font-size:16px;
+ font-family:Arial,sans-serif;
+}
+
 </style>
 </head>
 <body id="section_1">
@@ -3011,34 +3101,23 @@
 			</p>
 			</div>
 			<div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+			
 			<ul class="social-icon">
+				
+				<li class="social-icon-item">
+					<a href="https://github.com/BDAI-Research" target="_blank" rel="noopener" class="social-icon-link bi-github" title="BDAI Lab GitHub"></a>
+				</li>
+				<li class="social-icon-item">
+					<a href="https://www.linkedin.com/groups/19233004/" target="_blank" rel="noopener" class="social-icon-link bi-linkedin" title="BDAI Lab LinkedIn Group"></a>
+				</li>
+				<li class="social-icon-item">
+					<a href="https://x.com/bdai_research?s=21&t=0LleJC0cT0hqCbyElWKUDQ" target="_blank" rel="noopener" class="social-icon-link bi-twitter" title="BDAI Lab Twitter/X"></a>
+				</li>
 				<!--
-																<li class="social-icon-item">
-																		<a href="#" class="social-icon-link bi-twitter"></a>
-																</li>
-
-																<li class="social-icon-item">
-																		<a href="#" class="social-icon-link bi-facebook"></a>
-																</li>
-
-																<li class="social-icon-item">
-																		<a href="#" class="social-icon-link bi-instagram"></a>
-																</li>
-
-																<li class="social-icon-item">
-																		<a href="#" class="social-icon-link bi-linkedin"></a>
-																</li>
-
-																<li class="social-icon-item">
-																		<a href="#" class="social-icon-link bi-youtube"></a>
-																</li>
-																
-
-																<li class="social-icon-item">
-																		<a href="https://github.com/orgs/BDAI-Research/repositories" class="social-icon-link bi-github"></a>
-																</li>
-
-																-->
+				<li class="social-icon-item">
+					<a href="https://huggingface.co/bdai-lab" target="_blank" rel="noopener" class="social-icon-link bdai-hf-link" title="BDAI Lab Hugging Face">🤗</a>
+				</li>
+				-->
 			</ul>
 			</div>
 		</div>
